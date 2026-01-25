@@ -2,7 +2,7 @@ import { IconSquare as TablerIcon } from '@tabler/icons-react';
 
 import type { IconProps } from './types.js';
 
-export const IconSquarte: React.FC<IconProps> = ({
+export const IconSquare: React.FC<IconProps> = ({
   width = '24',
   fillColor = 'none',
   strokeColor = 'currentColor',

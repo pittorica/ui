@@ -17,6 +17,7 @@ export default defineConfig({
       include: ['src'],
       rollupTypes: false,
       outDir: 'dist',
+      tsconfigPath: './tsconfig.app.json',
     }),
   ],
 

@@ -1,6 +1,6 @@
 {
   "name": "@pittorica/styles",
-  "version": "0.0.1",
+  "version": "0.6.0",
   "private": false,
   "license": "MIT",
   "author": {
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "rolldown": "1.0.0-rc.1",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "publishConfig": {
     "access": "public"
