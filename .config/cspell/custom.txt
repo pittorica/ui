@@ -12,3 +12,7 @@ shrc
 spellbookx
 Sqrd
 wnodex
+xlarge
+xsmall
+xxlarge
+xxxxlarge

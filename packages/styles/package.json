@@ -1,0 +1,35 @@
+{
+  "name": "@pittorica/styles",
+  "version": "0.0.1",
+  "private": false,
+  "license": "MIT",
+  "author": {
+    "name": "Davide Di Criscito"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rolldown -c",
+    "postbuild": "tsc --emitDeclarationOnly --outDir dist"
+  },
+  "dependencies": {
+    "@vanilla-extract/css": "^1.18.0",
+    "@vanilla-extract/sprinkles": "^1.6.5",
+    "color": "^5.0.3"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "rolldown": "1.0.0-rc.1",
+    "typescript": "5.9.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
