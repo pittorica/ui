@@ -1,6 +1,6 @@
 {
   "name": "@pittorica/iconbutton-react",
-  "version": "0.8.2",
+  "version": "0.20.0",
   "private": false,
   "author": {
     "name": "Davide Di Criscito"
@@ -34,6 +34,7 @@
     "@types/node": "^25.0.10",
     "@types/react": "^19.2.9",
     "@types/react-dom": "^19.2.3",
+    "@vanilla-extract/vite-plugin": "^5.1.4",
     "@vitejs/plugin-react": "^5.1.2",
     "babel-plugin-react-compiler": "^1.0.0",
     "typescript": "~5.9.3",
