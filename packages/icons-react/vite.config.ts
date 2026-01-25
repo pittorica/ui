@@ -23,7 +23,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(import.meta.dirname, 'src/index.ts'),
-      name: '@pittorica/icons',
+      name: '@pittorica/icons-react',
       formats: ['es', 'cjs'],
       fileName: (format: string): string =>
         `index.${format === 'es' ? 'js' : 'cjs'}`,
