@@ -24,6 +24,7 @@
     "@release-it/conventional-changelog": "^10.0.4",
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
+    "@turbo/gen": "^2.7.6",
     "commitizen": "^4.3.1",
     "commitlint-config-spellbookx": "^0.4.1",
     "cspell-config-spellbookx": "^0.3.3",

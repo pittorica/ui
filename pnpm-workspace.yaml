@@ -1,3 +1,6 @@
 packages:
-  - '.config/*'
-  - 'packages/*'
+  - .config/*
+  - packages/*
+
+onlyBuiltDependencies:
+  - core-js-pure
