@@ -125,4 +125,12 @@
   .pittorica-text[data-weight='bold'] {
     font-weight: 700;
   }
+
+  /* --- heading --- */
+  .pittorica-heading {
+    font-family: var(--pittorica-font-heading);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
 }

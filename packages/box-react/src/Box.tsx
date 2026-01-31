@@ -71,11 +71,6 @@ export const Box = ({
   if (pb) utilityStyles.paddingBottom = `var(--pittorica-space-${pb})`;
   if (pl) utilityStyles.paddingLeft = `var(--pittorica-space-${pl})`;
 
-  /**
-   * ORDINE DI MERGE:
-   * Fondamentale per far sì che lo 'style' calcolato dai componenti
-   * figli (come Text) sovrascriva le utility props del Box.
-   */
   const finalStyles: React.CSSProperties = {
     ...utilityStyles,
     ...style,
