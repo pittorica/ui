@@ -100,6 +100,43 @@ importers:
 
   .config/typescript: {}
 
+  packages/blockquote-react:
+    dependencies:
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../text-react
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(@types/react@18.3.27)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: ^18.0.0
+        version: 18.3.27
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.7.0(vite@5.4.21(@types/node@25.0.10)(lightningcss@1.31.1))
+      jsdom:
+        specifier: ^22.0.0
+        version: 22.1.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.10)(lightningcss@1.31.1)
+      vitest:
+        specifier: ^1.0.0
+        version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
+
   packages/box-react:
     dependencies:
       clsx:
@@ -134,11 +171,91 @@ importers:
         specifier: ^1.0.0
         version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
 
+  packages/code-react:
+    dependencies:
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../text-react
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
+      react-syntax-highlighter:
+        specifier: ^16.1.0
+        version: 16.1.0(react@19.2.4)
+    devDependencies:
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(@types/react@18.3.27)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: ^18.0.0
+        version: 18.3.27
+      '@types/react-syntax-highlighter':
+        specifier: ^15.5.13
+        version: 15.5.13
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.7.0(vite@5.4.21(@types/node@25.0.10)(lightningcss@1.31.1))
+      jsdom:
+        specifier: ^22.0.0
+        version: 22.1.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.10)(lightningcss@1.31.1)
+      vitest:
+        specifier: ^1.0.0
+        version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
+
   packages/container-react:
     dependencies:
       '@pittorica/box-react':
         specifier: workspace:*
         version: link:../box-react
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(@types/react@18.3.27)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: ^18.0.0
+        version: 18.3.27
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.7.0(vite@5.4.21(@types/node@25.0.10)(lightningcss@1.31.1))
+      jsdom:
+        specifier: ^22.0.0
+        version: 22.1.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.10)(lightningcss@1.31.1)
+      vitest:
+        specifier: ^1.0.0
+        version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
+
+  packages/em-react:
+    dependencies:
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../text-react
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -282,7 +399,118 @@ importers:
         specifier: ^1.0.0
         version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
 
+  packages/kbd-react:
+    dependencies:
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../text-react
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(@types/react@18.3.27)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: ^18.0.0
+        version: 18.3.27
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.7.0(vite@5.4.21(@types/node@25.0.10)(lightningcss@1.31.1))
+      jsdom:
+        specifier: ^22.0.0
+        version: 22.1.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.10)(lightningcss@1.31.1)
+      vitest:
+        specifier: ^1.0.0
+        version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
+
+  packages/link-react:
+    dependencies:
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../text-react
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(@types/react@18.3.27)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: ^18.0.0
+        version: 18.3.27
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.7.0(vite@5.4.21(@types/node@25.0.10)(lightningcss@1.31.1))
+      jsdom:
+        specifier: ^22.0.0
+        version: 22.1.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.10)(lightningcss@1.31.1)
+      vitest:
+        specifier: ^1.0.0
+        version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
+
   packages/pittorica: {}
+
+  packages/quote-react:
+    dependencies:
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../text-react
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+      react:
+        specifier: '>=18'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(@types/react@18.3.27)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: ^18.0.0
+        version: 18.3.27
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.7.0(vite@5.4.21(@types/node@25.0.10)(lightningcss@1.31.1))
+      jsdom:
+        specifier: ^22.0.0
+        version: 22.1.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.10)(lightningcss@1.31.1)
+      vitest:
+        specifier: ^1.0.0
+        version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
 
   packages/react-theme:
     dependencies:
@@ -357,6 +585,43 @@ importers:
       '@pittorica/flex-react':
         specifier: workspace:*
         version: link:../flex-react
+      react:
+        specifier: '>=18'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(@types/react@18.3.27)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: ^18.0.0
+        version: 18.3.27
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.7.0(vite@5.4.21(@types/node@25.0.10)(lightningcss@1.31.1))
+      jsdom:
+        specifier: ^22.0.0
+        version: 22.1.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.10)(lightningcss@1.31.1)
+      vitest:
+        specifier: ^1.0.0
+        version: 1.6.1(@types/node@25.0.10)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)
+
+  packages/strong-react:
+    dependencies:
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../text-react
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       react:
         specifier: '>=18'
         version: 19.2.4
@@ -2714,6 +2979,12 @@ packages:
         integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==,
       }
 
+  '@types/hast@3.0.4':
+    resolution:
+      {
+        integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==,
+      }
+
   '@types/inquirer@6.5.0':
     resolution:
       {
@@ -2776,6 +3047,12 @@ packages:
       }
     deprecated: This is a stub types definition. parse-path provides its own type definitions, so you do not need this installed.
 
+  '@types/prismjs@1.26.5':
+    resolution:
+      {
+        integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==,
+      }
+
   '@types/prop-types@15.7.15':
     resolution:
       {
@@ -2789,6 +3066,12 @@ packages:
       }
     peerDependencies:
       '@types/react': ^18.0.0
+
+  '@types/react-syntax-highlighter@15.5.13':
+    resolution:
+      {
+        integrity: sha512-uLGJ87j6Sz8UaBAooU0T6lWJ0dBmjZgN1PZTrj05TNql2/XpC6+4HhMT5syIdFUUt+FASfCeLLv4kBygNU+8qA==,
+      }
 
   '@types/react@18.3.27':
     resolution:
@@ -2806,6 +3089,12 @@ packages:
     resolution:
       {
         integrity: sha512-iEN8J0BoMnsWBqjVbWH/c0G0Hh7O21lpR2/+PrvAVgWdzL7eexIFm4JN/Wn10PTcmNdtS6U67r499mlWMXOxNw==,
+      }
+
+  '@types/unist@2.0.11':
+    resolution:
+      {
+        integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==,
       }
 
   '@types/unist@3.0.3':
@@ -3532,10 +3821,22 @@ packages:
         integrity: sha512-HRQyTk2/YPEkt9TnUPbOpr64Uw3KOicFWPVBb+xiHvd6eBx/qPr9xqfBFDT8P2vWsvvz4jbEkfDe71W3VyNu2w==,
       }
 
+  character-entities-legacy@3.0.0:
+    resolution:
+      {
+        integrity: sha512-RpPp0asT/6ufRm//AJVwpViZbGM/MkjQFxJccQRHmISF/22NBtsHqAWmL+/pmkPWoIUJdWyeVleTl1wydHATVQ==,
+      }
+
   character-entities@2.0.2:
     resolution:
       {
         integrity: sha512-shx7oQ0Awen/BRIdkjkvz54PnEEI/EjwXDSIZp86/KKdbafHh1Df/RYGBhn4hbe2+uKC9FnT5UCEdyPz3ai9hQ==,
+      }
+
+  character-reference-invalid@2.0.1:
+    resolution:
+      {
+        integrity: sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw==,
       }
 
   chardet@0.7.0:
@@ -3717,6 +4018,12 @@ packages:
         integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==,
       }
     engines: { node: '>= 0.8' }
+
+  comma-separated-tokens@2.0.3:
+    resolution:
+      {
+        integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==,
+      }
 
   commander@10.0.0:
     resolution:
@@ -5005,6 +5312,12 @@ packages:
         integrity: sha512-GwLTyxkCXjXbxqIhTsMI2Nui8huMPtnxg7krajPJAjnEG/iiOS7i+zCtWGZR9G0NBKbXKh6X9m9UIsYX/N6vvQ==,
       }
 
+  fault@1.0.4:
+    resolution:
+      {
+        integrity: sha512-CJ0HCB5tL5fYTEA7ToAq5+kTwd++Borf1/bifxd9iT70QcXr4MRrO3Llf8Ifs70q+SJcGHFtnIE/Nw6giCtECA==,
+      }
+
   fault@2.0.1:
     resolution:
       {
@@ -5459,10 +5772,34 @@ packages:
       }
     engines: { node: '>= 0.4' }
 
+  hast-util-parse-selector@4.0.0:
+    resolution:
+      {
+        integrity: sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==,
+      }
+
+  hastscript@9.0.1:
+    resolution:
+      {
+        integrity: sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==,
+      }
+
   header-case@1.0.1:
     resolution:
       {
         integrity: sha512-i0q9mkOeSuhXw6bGgiQCCBgY/jlZuV/7dZXyZ9c6LcBrqwvT8eT719E9uxE5LiZftdl+z81Ugbg/VvXV4OJOeQ==,
+      }
+
+  highlight.js@10.7.3:
+    resolution:
+      {
+        integrity: sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==,
+      }
+
+  highlightjs-vue@1.0.0:
+    resolution:
+      {
+        integrity: sha512-PDEfEF102G23vHmPhLyPboFCD+BkMGu+GuJe2d9/eH4FsCwvgBpnc9n0pGE+ffKdph38s6foEZiEjdgHdzp+IA==,
       }
 
   homedir-polyfill@1.0.3:
@@ -5689,6 +6026,18 @@ packages:
       }
     engines: { node: '>= 12' }
 
+  is-alphabetical@2.0.1:
+    resolution:
+      {
+        integrity: sha512-FWyyY60MeTNyeSRpkM2Iry0G9hpr7/9kD40mD/cGQEuilcZYS4okz8SN2Q6rLCJ8gbCt6fN+rC+6tMGS99LaxQ==,
+      }
+
+  is-alphanumerical@2.0.1:
+    resolution:
+      {
+        integrity: sha512-hmbYhX/9MUMF5uh7tOXyK/n0ZvWpad5caBA17GsC6vyuCqaWliRG5K1qS9inmUhEMaOBIW7/whAnSwveW/LtZw==,
+      }
+
   is-arguments@1.2.0:
     resolution:
       {
@@ -5765,6 +6114,12 @@ packages:
       }
     engines: { node: '>= 0.4' }
 
+  is-decimal@2.0.1:
+    resolution:
+      {
+        integrity: sha512-AAB9hiomQs5DXWcRB1rqsxGUstbRroFOPPVAomNk/3XHR5JyEZChOyTWe2oayKnsSsr/kcGqF+z6yuH6HHpN0A==,
+      }
+
   is-docker@3.0.0:
     resolution:
       {
@@ -5807,6 +6162,12 @@ packages:
         integrity: sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==,
       }
     engines: { node: '>=0.10.0' }
+
+  is-hexadecimal@2.0.1:
+    resolution:
+      {
+        integrity: sha512-DgZQp241c8oO6cA1SbTEWiXeoxV42vlcJxgH+B3hi1AiqqKruZR3ZGF8In3fj4+/y/7rHvlOZLZtgJ/4ttYGZg==,
+      }
 
   is-immutable-type@5.0.1:
     resolution:
@@ -6536,6 +6897,12 @@ packages:
     resolution:
       {
         integrity: sha512-2Fgx1Ycm599x+WGpIYwJOvsjmXFzTSc34IwDWALRA/8AopUKAVPwfJ+h5+f85BCp0PWmmJcWzEpxOpoXycMpdA==,
+      }
+
+  lowlight@1.20.0:
+    resolution:
+      {
+        integrity: sha512-8Ktj+prEb1RoCPkEOrPMYUN/nCggB7qAWe3a7OpMjWQkh3l2RD5wKRQ+o8Q8YuI9RG/xs95waaI/E6ym/7NsTw==,
       }
 
   lru-cache@10.4.3:
@@ -7358,6 +7725,12 @@ packages:
       }
     engines: { node: '>=8' }
 
+  parse-entities@4.0.2:
+    resolution:
+      {
+        integrity: sha512-GG2AQYWoLgL877gQIKeRPGO1xF9+eG1ujIb5soS5gPvLQ1y2o8FL90w2QWNdf9I361Mpp7726c+lj3U0qK1uGw==,
+      }
+
   parse-imports-exports@0.2.4:
     resolution:
       {
@@ -7726,12 +8099,25 @@ packages:
       }
     engines: { node: ^14.15.0 || ^16.10.0 || >=18.0.0 }
 
+  prismjs@1.30.0:
+    resolution:
+      {
+        integrity: sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==,
+      }
+    engines: { node: '>=6' }
+
   proc-log@5.0.0:
     resolution:
       {
         integrity: sha512-Azwzvl90HaF0aCz1JrDdXQykFakSSNPaPoiZ9fm5qJIMHioDZEi7OAdRwSm6rSoPtY3Qutnm3L7ogmg3dc+wbQ==,
       }
     engines: { node: ^18.17.0 || >=20.5.0 }
+
+  property-information@7.1.0:
+    resolution:
+      {
+        integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==,
+      }
 
   proto-list@1.2.4:
     resolution:
@@ -7831,6 +8217,15 @@ packages:
       }
     engines: { node: '>=0.10.0' }
 
+  react-syntax-highlighter@16.1.0:
+    resolution:
+      {
+        integrity: sha512-E40/hBiP5rCNwkeBN1vRP+xow1X0pndinO+z3h7HLsHyjztbyjfzNWNKuAsJj+7DLam9iT4AaaOZnueCU+Nplg==,
+      }
+    engines: { node: '>= 16.20.2' }
+    peerDependencies:
+      react: '>= 0.14.0'
+
   react@19.2.3:
     resolution:
       {
@@ -7865,6 +8260,12 @@ packages:
         integrity: sha512-00o4I+DVrefhv+nX0ulyi3biSHCPDe+yLv5o/p6d/UVlirijB8E16FtfwSAi4g3tcqrQ4lRAqQSoFEZJehYEcw==,
       }
     engines: { node: '>= 0.4' }
+
+  refractor@5.0.0:
+    resolution:
+      {
+        integrity: sha512-QXOrHQF5jOpjjLfiNk5GFnWhRXvxjUVnlFxkeDmewR5sXkr3iM46Zo+CnRR8B+MDVqkULW4EcLVcRBNOPXHosw==,
+      }
 
   regexp-to-ast@0.5.0:
     resolution:
@@ -8325,6 +8726,12 @@ packages:
         integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==,
       }
     engines: { node: '>=0.10.0' }
+
+  space-separated-tokens@2.0.2:
+    resolution:
+      {
+        integrity: sha512-PEGlAwrG8yXGXRjW32fGbg66JAlOAwbObuqVoJpv/mRgoWDQfgH1wDPvtzWyUSNAXBGSk8h755YDbbcEy3SH2Q==,
+      }
 
   spdx-correct@3.2.0:
     resolution:
@@ -10930,6 +11337,10 @@ snapshots:
       '@types/minimatch': 6.0.0
       '@types/node': 25.0.10
 
+  '@types/hast@3.0.4':
+    dependencies:
+      '@types/unist': 3.0.3
+
   '@types/inquirer@6.5.0':
     dependencies:
       '@types/through': 0.0.33
@@ -10963,9 +11374,15 @@ snapshots:
     dependencies:
       parse-path: 7.1.0
 
+  '@types/prismjs@1.26.5': {}
+
   '@types/prop-types@15.7.15': {}
 
   '@types/react-dom@18.3.7(@types/react@18.3.27)':
+    dependencies:
+      '@types/react': 18.3.27
+
+  '@types/react-syntax-highlighter@15.5.13':
     dependencies:
       '@types/react': 18.3.27
 
@@ -10979,6 +11396,8 @@ snapshots:
       '@types/node': 25.0.10
 
   '@types/tinycolor2@1.4.6': {}
+
+  '@types/unist@2.0.11': {}
 
   '@types/unist@3.0.3': {}
 
@@ -11501,7 +11920,11 @@ snapshots:
 
   change-case@5.4.4: {}
 
+  character-entities-legacy@3.0.0: {}
+
   character-entities@2.0.2: {}
+
+  character-reference-invalid@2.0.1: {}
 
   chardet@0.7.0: {}
 
@@ -11587,6 +12010,8 @@ snapshots:
   combined-stream@1.0.8:
     dependencies:
       delayed-stream: 1.0.0
+
+  comma-separated-tokens@2.0.3: {}
 
   commander@10.0.0: {}
 
@@ -12716,6 +13141,10 @@ snapshots:
     dependencies:
       reusify: 1.1.0
 
+  fault@1.0.4:
+    dependencies:
+      format: 0.2.2
+
   fault@2.0.1:
     dependencies:
       format: 0.2.2
@@ -12997,10 +13426,26 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
+  hast-util-parse-selector@4.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+
+  hastscript@9.0.1:
+    dependencies:
+      '@types/hast': 3.0.4
+      comma-separated-tokens: 2.0.3
+      hast-util-parse-selector: 4.0.0
+      property-information: 7.1.0
+      space-separated-tokens: 2.0.2
+
   header-case@1.0.1:
     dependencies:
       no-case: 2.3.2
       upper-case: 1.1.3
+
+  highlight.js@10.7.3: {}
+
+  highlightjs-vue@1.0.0: {}
 
   homedir-polyfill@1.0.3:
     dependencies:
@@ -13170,6 +13615,13 @@ snapshots:
 
   ip-address@10.1.0: {}
 
+  is-alphabetical@2.0.1: {}
+
+  is-alphanumerical@2.0.1:
+    dependencies:
+      is-alphabetical: 2.0.1
+      is-decimal: 2.0.1
+
   is-arguments@1.2.0:
     dependencies:
       call-bound: 1.0.4
@@ -13221,6 +13673,8 @@ snapshots:
       call-bound: 1.0.4
       has-tostringtag: 1.0.2
 
+  is-decimal@2.0.1: {}
+
   is-docker@3.0.0: {}
 
   is-extglob@2.1.1: {}
@@ -13242,6 +13696,8 @@ snapshots:
   is-glob@4.0.3:
     dependencies:
       is-extglob: 2.1.1
+
+  is-hexadecimal@2.0.1: {}
 
   is-immutable-type@5.0.1(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3):
     dependencies:
@@ -13627,6 +14083,11 @@ snapshots:
       lower-case: 1.1.4
 
   lower-case@1.1.4: {}
+
+  lowlight@1.20.0:
+    dependencies:
+      fault: 1.0.4
+      highlight.js: 10.7.3
 
   lru-cache@10.4.3: {}
 
@@ -14293,6 +14754,16 @@ snapshots:
     dependencies:
       callsites: 3.1.0
 
+  parse-entities@4.0.2:
+    dependencies:
+      '@types/unist': 2.0.11
+      character-entities-legacy: 3.0.0
+      character-reference-invalid: 2.0.1
+      decode-named-character-reference: 1.3.0
+      is-alphanumerical: 2.0.1
+      is-decimal: 2.0.1
+      is-hexadecimal: 2.0.1
+
   parse-imports-exports@0.2.4:
     dependencies:
       parse-statements: 1.0.11
@@ -14483,7 +14954,11 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 18.3.1
 
+  prismjs@1.30.0: {}
+
   proc-log@5.0.0: {}
+
+  property-information@7.1.0: {}
 
   proto-list@1.2.4: {}
 
@@ -14542,6 +15017,16 @@ snapshots:
 
   react-refresh@0.17.0: {}
 
+  react-syntax-highlighter@16.1.0(react@19.2.4):
+    dependencies:
+      '@babel/runtime': 7.28.6
+      highlight.js: 10.7.3
+      highlightjs-vue: 1.0.0
+      lowlight: 1.20.0
+      prismjs: 1.30.0
+      react: 19.2.4
+      refractor: 5.0.0
+
   react@19.2.3: {}
 
   react@19.2.4: {}
@@ -14564,6 +15049,13 @@ snapshots:
       get-intrinsic: 1.3.0
       get-proto: 1.0.1
       which-builtin-type: 1.2.1
+
+  refractor@5.0.0:
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/prismjs': 1.26.5
+      hastscript: 9.0.1
+      parse-entities: 4.0.2
 
   regexp-to-ast@0.5.0: {}
 
@@ -14878,6 +15370,8 @@ snapshots:
   source-map-js@1.2.1: {}
 
   source-map@0.6.1: {}
+
+  space-separated-tokens@2.0.2: {}
 
   spdx-correct@3.2.0:
     dependencies:
