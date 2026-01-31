@@ -50,30 +50,41 @@ export const Box = ({
   className,
   ...props
 }: BoxProps) => {
-  const customStyles: React.CSSProperties = { ...style };
+  const utilityStyles: React.CSSProperties = {};
 
-  if (display) customStyles.display = display;
-  if (width) customStyles.width = width;
-  if (height) customStyles.height = height;
-  if (position) customStyles.position = position;
+  if (display) utilityStyles.display = display;
+  if (width) utilityStyles.width = width;
+  if (height) utilityStyles.height = height;
+  if (position) utilityStyles.position = position;
 
-  // Mapping layout props only if they exist
-  if (m) customStyles.margin = `var(--pittorica-space-${m})`;
-  if (mt) customStyles.marginTop = `var(--pittorica-space-${mt})`;
-  if (mr) customStyles.marginRight = `var(--pittorica-space-${mr})`;
-  if (mb) customStyles.marginBottom = `var(--pittorica-space-${mb})`;
-  if (ml) customStyles.marginLeft = `var(--pittorica-space-${ml})`;
+  // Margin Mapping
+  if (m) utilityStyles.margin = `var(--pittorica-space-${m})`;
+  if (mt) utilityStyles.marginTop = `var(--pittorica-space-${mt})`;
+  if (mr) utilityStyles.marginRight = `var(--pittorica-space-${mr})`;
+  if (mb) utilityStyles.marginBottom = `var(--pittorica-space-${mb})`;
+  if (ml) utilityStyles.marginLeft = `var(--pittorica-space-${ml})`;
 
-  if (p) customStyles.padding = `var(--pittorica-space-${p})`;
-  if (pt) customStyles.paddingTop = `var(--pittorica-space-${pt})`;
-  if (pr) customStyles.paddingRight = `var(--pittorica-space-${pr})`;
-  if (pb) customStyles.paddingBottom = `var(--pittorica-space-${pb})`;
-  if (pl) customStyles.paddingLeft = `var(--pittorica-space-${pl})`;
+  // Padding Mapping
+  if (p) utilityStyles.padding = `var(--pittorica-space-${p})`;
+  if (pt) utilityStyles.paddingTop = `var(--pittorica-space-${pt})`;
+  if (pr) utilityStyles.paddingRight = `var(--pittorica-space-${pr})`;
+  if (pb) utilityStyles.paddingBottom = `var(--pittorica-space-${pb})`;
+  if (pl) utilityStyles.paddingLeft = `var(--pittorica-space-${pl})`;
+
+  /**
+   * ORDINE DI MERGE:
+   * Fondamentale per far sì che lo 'style' calcolato dai componenti
+   * figli (come Text) sovrascriva le utility props del Box.
+   */
+  const finalStyles: React.CSSProperties = {
+    ...utilityStyles,
+    ...style,
+  };
 
   return (
     <Tag
       className={clsx('pittorica-box', className)}
-      style={customStyles}
+      style={finalStyles}
       {...props}
     >
       {children}
