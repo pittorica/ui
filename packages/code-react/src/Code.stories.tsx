@@ -17,6 +17,11 @@ const meta: Meta<typeof Code> = {
       control: 'boolean',
       description: 'If true, line numbers will be displayed in code blocks.',
     },
+    theme: {
+      control: 'radio',
+      options: ['dark', 'light'],
+      description: 'Theme for syntax highlighting.',
+    },
   },
 };
 
@@ -37,6 +42,18 @@ export const CodeBlock: Story = {
 
 greet("Storybook");`,
     language: 'typescript',
+    showLineNumbers: true,
+  },
+};
+
+export const LightMode: Story = {
+  args: {
+    children: `const isLight = true;
+if (isLight) {
+  console.log("It's bright in here!");
+}`,
+    language: 'typescript',
+    theme: 'light',
     showLineNumbers: true,
   },
 };
