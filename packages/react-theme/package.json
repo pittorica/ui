@@ -9,7 +9,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build && tsc --project tsconfig.json --declaration --emitDeclarationOnly --outDir dist",
+    "build": "npm run clean && npm run build:js && npm run build:types",
+    "build:js": "vite build",
+    "build:types": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
     "dev": "vite",
     "test": "vitest run",
     "test:watch": "vitest"

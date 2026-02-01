@@ -9,7 +9,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build && tsc --project tsconfig.json --declaration --emitDeclarationOnly --outDir dist --noEmit false",
+    "clean": "rm -rf dist",
+    "build:js": "vite build",
+    "build:types": "tsc -p tsconfig.json",
+    "build": "npm run clean && npm run build:js && npm run build:types",
     "dev": "vite",
     "test": "vitest run",
     "test:watch": "vitest"
@@ -21,7 +24,9 @@
     "jsdom": "^22.0.0",
     "typescript": "^5.0.0",
     "vite": "^5.0.0",
-    "vitest": "^1.0.0"
+    "vitest": "^1.0.0",
+    "pittorica": "workspace:*",
+    "@pittorica/theme-react": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=18",

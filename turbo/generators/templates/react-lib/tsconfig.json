@@ -1,5 +1,14 @@
 {
   "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist",
+
+    /* Declarations */
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "declarationMap": true,
+
     /* Target and Modules */
     "target": "ESNext",
     "useDefineForClassFields": true,
@@ -12,7 +21,6 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
 
     /* Strictness and Quality */
@@ -20,6 +28,8 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
 
     /* Interoperability */
     "esModuleInterop": true,
