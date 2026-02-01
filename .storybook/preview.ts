@@ -1,5 +1,6 @@
-import 'pittorica/styles';
+import 'pittorica';
 
+// @ts-expect-error react is correctly installed
 import React from 'react';
 
 import { PittoricaTheme } from '@pittorica/react-theme';

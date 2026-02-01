@@ -25,10 +25,10 @@ const config: StorybookConfig = {
     config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...config.resolve.alias,
-      pittorica: path.resolve(import.meta.dirname, '../packages/pittorica'),
+      pittorica: path.resolve(process.cwd(), 'packages/pittorica'),
       '@pittorica/react-theme': path.resolve(
-        import.meta.dirname,
-        '../packages/react-theme'
+        process.cwd(),
+        'packages/react-theme'
       ),
     };
     return config;
