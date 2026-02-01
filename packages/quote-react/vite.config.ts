@@ -30,4 +30,7 @@ export default defineConfig({
      */
     dedupe: ['react', 'react-dom'],
   },
+  test: {
+    setupFiles: ['./vitest.setup.ts'],
+  },
 });

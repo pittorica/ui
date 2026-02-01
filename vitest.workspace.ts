@@ -10,6 +10,7 @@ export default defineWorkspace([
   'packages/*/vite.config.ts',
   {
     test: {
+      setupFiles: ['packages/*/vitest.setup.ts'],
       alias: {
         react: path.resolve(__dirname, './node_modules/react'),
         'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
