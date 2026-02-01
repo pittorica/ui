@@ -1,0 +1,5 @@
+/* --- grid --- */
+.pittorica-grid {
+  display: grid;
+  box-sizing: border-box;
+}

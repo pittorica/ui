@@ -1,0 +1,30 @@
+/* avatar */
+.pittorica-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  overflow: hidden;
+  user-select: none;
+  background-color: var(--pittorica-slate-3);
+  border-radius: var(--pittorica-radius-full);
+}
+
+.pittorica-avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+.pittorica-avatar-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--pittorica-indigo-3);
+  color: var(--pittorica-indigo-11);
+  font-weight: var(--pittorica-font-weight-medium);
+  text-transform: uppercase;
+}

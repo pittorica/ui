@@ -1,0 +1,50 @@
+/* --- chip --- */
+.pittorica-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: var(--pittorica-font-weight-medium);
+  gap: var(--pittorica-space-1);
+  border-radius: var(--pittorica-radius-full);
+  border: 1px solid transparent;
+  transition: all 0.2s;
+}
+
+.pittorica-chip--size-1 {
+  height: 20px;
+  font-size: 11px;
+  padding: 0 6px;
+}
+.pittorica-chip--size-2 {
+  height: 24px;
+  font-size: 12px;
+  padding: 0 8px;
+}
+.pittorica-chip--size-3 {
+  height: 32px;
+  font-size: 14px;
+  padding: 0 12px;
+}
+
+.pittorica-chip-delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 2px;
+  margin-right: -4px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.pittorica-chip-delete:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+}

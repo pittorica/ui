@@ -1,0 +1,39 @@
+/* --- text --- */
+.pittorica-text {
+  margin: 0;
+  font-family: var(--pittorica-font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pittorica-text--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pittorica-text[data-size='1'] {
+  font-size: var(--pittorica-font-size-1);
+  line-height: var(--pittorica-line-height-1);
+}
+.pittorica-text[data-size='3'] {
+  font-size: var(--pittorica-font-size-3);
+  line-height: var(--pittorica-line-height-3);
+}
+.pittorica-text[data-size='9'] {
+  font-size: var(--pittorica-font-size-9);
+  line-height: var(--pittorica-line-height-9);
+}
+
+.pittorica-text[data-weight='light'] {
+  font-weight: 300;
+}
+.pittorica-text[data-weight='regular'] {
+  font-weight: 400;
+}
+.pittorica-text[data-weight='medium'] {
+  font-weight: 500;
+}
+.pittorica-text[data-weight='bold'] {
+  font-weight: 700;
+}

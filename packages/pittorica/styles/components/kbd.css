@@ -1,0 +1,9 @@
+/* --- kbd --- */
+.pittorica-kbd {
+  font-family: var(--pittorica-font-mono);
+  background-color: var(--pittorica-slate-3);
+  padding: 0.1em 0.4em;
+  border-radius: var(--pittorica-radius-1);
+  box-shadow: 0 1px 0 var(--pittorica-slate-6);
+  font-size: 0.85em;
+}

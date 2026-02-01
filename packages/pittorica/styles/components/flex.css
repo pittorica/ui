@@ -1,0 +1,6 @@
+/* --- flex --- */
+.pittorica-flex {
+  display: flex;
+  box-sizing: border-box;
+  min-width: 0;
+}

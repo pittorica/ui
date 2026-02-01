@@ -1,0 +1,23 @@
+/* --- dialog --- */
+.pittorica-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--pittorica-z-index-modal);
+}
+
+.pittorica-dialog-content {
+  background-color: var(--pittorica-surface-2);
+  color: var(--pittorica-on-surface-2);
+  border-radius: var(--pittorica-radius-3);
+  box-shadow: var(--pittorica-shadow-5);
+  padding: var(--pittorica-space-6);
+  max-width: 90vw;
+  width: 450px;
+  position: relative;
+  outline: none;
+}
