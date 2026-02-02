@@ -37,4 +37,5 @@
 @import './components/skeleton.css' layer(pittorica-components);
 @import './components/slider.css' layer(pittorica-components);
 @import './components/table.css' layer(pittorica-components);
+@import './components/tabs.css' layer(pittorica-components);
 @import './components/text.css' layer(pittorica-components);
