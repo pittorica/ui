@@ -2705,14 +2705,11 @@ importers:
         specifier: ^2.1.9
         version: 2.1.9(@types/node@25.0.10)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)(msw@2.12.7(@types/node@25.0.10)(typescript@5.9.3))
 
-  packages-react/teaxt-area:
+  packages-react/text:
     dependencies:
       '@pittorica/box-react':
         specifier: workspace:*
         version: link:../box
-      '@pittorica/text-react':
-        specifier: workspace:*
-        version: link:../text
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -2723,9 +2720,6 @@ importers:
         specifier: '>=19'
         version: 19.2.4(react@19.2.4)
     devDependencies:
-      '@pittorica/flex-react':
-        specifier: workspace:*
-        version: link:../flex
       '@pittorica/theme-react':
         specifier: workspace:*
         version: link:../theme
@@ -2760,11 +2754,14 @@ importers:
         specifier: ^2.1.9
         version: 2.1.9(@types/node@25.0.10)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)(msw@2.12.7(@types/node@25.0.10)(typescript@5.9.3))
 
-  packages-react/text:
+  packages-react/text-area:
     dependencies:
       '@pittorica/box-react':
         specifier: workspace:*
         version: link:../box
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../text
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -2775,6 +2772,9 @@ importers:
         specifier: '>=19'
         version: 19.2.4(react@19.2.4)
     devDependencies:
+      '@pittorica/flex-react':
+        specifier: workspace:*
+        version: link:../flex
       '@pittorica/theme-react':
         specifier: workspace:*
         version: link:../theme
@@ -3027,6 +3027,199 @@ importers:
         version: 2.1.9(@types/node@25.0.10)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)(msw@2.12.7(@types/node@25.0.10)(typescript@5.9.3))
 
   packages/pittorica: {}
+
+  packages/react:
+    dependencies:
+      '@pittorica/alert-dialog-react':
+        specifier: workspace:*
+        version: link:../../packages-react/alert-dialog
+      '@pittorica/aspect-ratio-react':
+        specifier: workspace:*
+        version: link:../../packages-react/aspect-ratio
+      '@pittorica/avatar-react':
+        specifier: workspace:*
+        version: link:../../packages-react/avatar
+      '@pittorica/badge-react':
+        specifier: workspace:*
+        version: link:../../packages-react/badge
+      '@pittorica/blockquote-react':
+        specifier: workspace:*
+        version: link:../../packages-react/blockquote
+      '@pittorica/box-react':
+        specifier: workspace:*
+        version: link:../../packages-react/box
+      '@pittorica/button-react':
+        specifier: workspace:*
+        version: link:../../packages-react/button
+      '@pittorica/callout-react':
+        specifier: workspace:*
+        version: link:../../packages-react/callout
+      '@pittorica/card-react':
+        specifier: workspace:*
+        version: link:../../packages-react/card
+      '@pittorica/carousel-react':
+        specifier: workspace:*
+        version: link:../../packages-react/carousel
+      '@pittorica/checkbox-card-react':
+        specifier: workspace:*
+        version: link:../../packages-react/checkbox-card
+      '@pittorica/checkbox-group-react':
+        specifier: workspace:*
+        version: link:../../packages-react/checkbox-group
+      '@pittorica/checkbox-react':
+        specifier: workspace:*
+        version: link:../../packages-react/checkbox
+      '@pittorica/chip-react':
+        specifier: workspace:*
+        version: link:../../packages-react/chip
+      '@pittorica/code-react':
+        specifier: workspace:*
+        version: link:../../packages-react/code
+      '@pittorica/container-react':
+        specifier: workspace:*
+        version: link:../../packages-react/container
+      '@pittorica/context-menu-react':
+        specifier: workspace:*
+        version: link:../../packages-react/context-menu
+      '@pittorica/data-list-react':
+        specifier: workspace:*
+        version: link:../../packages-react/data-list
+      '@pittorica/dialog-react':
+        specifier: workspace:*
+        version: link:../../packages-react/dialog
+      '@pittorica/divider-react':
+        specifier: workspace:*
+        version: link:../../packages-react/divider
+      '@pittorica/dropdown-menu-react':
+        specifier: workspace:*
+        version: link:../../packages-react/dropdown-menu
+      '@pittorica/em-react':
+        specifier: workspace:*
+        version: link:../../packages-react/em
+      '@pittorica/flex-react':
+        specifier: workspace:*
+        version: link:../../packages-react/flex
+      '@pittorica/grid-react':
+        specifier: workspace:*
+        version: link:../../packages-react/grid
+      '@pittorica/heading-react':
+        specifier: workspace:*
+        version: link:../../packages-react/heading
+      '@pittorica/hover-card-react':
+        specifier: workspace:*
+        version: link:../../packages-react/hover-card
+      '@pittorica/icon-button-react':
+        specifier: workspace:*
+        version: link:../../packages-react/icon-button
+      '@pittorica/inset-react':
+        specifier: workspace:*
+        version: link:../../packages-react/inset
+      '@pittorica/kbd-react':
+        specifier: workspace:*
+        version: link:../../packages-react/kbd
+      '@pittorica/link-react':
+        specifier: workspace:*
+        version: link:../../packages-react/link
+      '@pittorica/popover-react':
+        specifier: workspace:*
+        version: link:../../packages-react/popover
+      '@pittorica/progress-react':
+        specifier: workspace:*
+        version: link:../../packages-react/progress
+      '@pittorica/quote-react':
+        specifier: workspace:*
+        version: link:../../packages-react/quote
+      '@pittorica/radio-card-react':
+        specifier: workspace:*
+        version: link:../../packages-react/radio-card
+      '@pittorica/radio-group-react':
+        specifier: workspace:*
+        version: link:../../packages-react/radio-group
+      '@pittorica/radio-react':
+        specifier: workspace:*
+        version: link:../../packages-react/radio
+      '@pittorica/section-react':
+        specifier: workspace:*
+        version: link:../../packages-react/section
+      '@pittorica/segmented-control-react':
+        specifier: workspace:*
+        version: link:../../packages-react/segmented-control
+      '@pittorica/select-react':
+        specifier: workspace:*
+        version: link:../../packages-react/select
+      '@pittorica/sheet-react':
+        specifier: workspace:*
+        version: link:../../packages-react/sheet
+      '@pittorica/skeleton-react':
+        specifier: workspace:*
+        version: link:../../packages-react/skeleton
+      '@pittorica/slider-react':
+        specifier: workspace:*
+        version: link:../../packages-react/slider
+      '@pittorica/stack-react':
+        specifier: workspace:*
+        version: link:../../packages-react/stack
+      '@pittorica/strong-react':
+        specifier: workspace:*
+        version: link:../../packages-react/strong
+      '@pittorica/switch-react':
+        specifier: workspace:*
+        version: link:../../packages-react/switch
+      '@pittorica/table-react':
+        specifier: workspace:*
+        version: link:../../packages-react/table
+      '@pittorica/text-area-react':
+        specifier: workspace:*
+        version: link:../../packages-react/text-area
+      '@pittorica/text-field-react':
+        specifier: workspace:*
+        version: link:../../packages-react/text-field
+      '@pittorica/text-react':
+        specifier: workspace:*
+        version: link:../../packages-react/text
+      '@pittorica/theme-react':
+        specifier: workspace:*
+        version: link:../../packages-react/theme
+      '@pittorica/toast-react':
+        specifier: workspace:*
+        version: link:../../packages-react/toast
+      '@pittorica/tooltip-react':
+        specifier: workspace:*
+        version: link:../../packages-react/tooltip
+      react:
+        specifier: '>=19'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=19'
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@testing-library/jest-dom':
+        specifier: ^6.9.1
+        version: 6.9.1
+      '@testing-library/react':
+        specifier: ^14.0.0
+        version: 14.3.1(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@types/react':
+        specifier: ^19.2.3
+        version: 19.2.10
+      '@types/react-dom':
+        specifier: ^19.2.3
+        version: 19.2.3(@types/react@19.2.10)
+      '@vitejs/plugin-react':
+        specifier: ^4.0.0
+        version: 4.7.0(vite@5.4.21(@types/node@25.0.10)(lightningcss@1.31.1))
+      jsdom:
+        specifier: ^22.0.0
+        version: 22.1.0
+      typescript:
+        specifier: ^5.0.0
+        version: 5.9.3
+      vite:
+        specifier: ^5.0.0
+        version: 5.4.21(@types/node@25.0.10)(lightningcss@1.31.1)
+      vitest:
+        specifier: ^2.1.9
+        version: 2.1.9(@types/node@25.0.10)(@vitest/browser@2.1.9)(@vitest/ui@2.1.9)(jsdom@22.1.0)(lightningcss@1.31.1)(msw@2.12.7(@types/node@25.0.10)(typescript@5.9.3))
 
 packages:
   '@acemir/cssom@0.9.31':

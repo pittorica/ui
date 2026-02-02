@@ -1,5 +1,5 @@
 {
-  "name": "@pittorica/teaxt-area-react",
+  "name": "@pittorica/text-area-react",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.js",
