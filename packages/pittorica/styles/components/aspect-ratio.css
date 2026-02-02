@@ -1,0 +1,14 @@
+@layer pittorica-components {
+  .pittorica-aspect-ratio {
+    display: block;
+    width: 100%;
+  }
+
+  .pittorica-aspect-ratio > img,
+  .pittorica-aspect-ratio > video,
+  .pittorica-aspect-ratio > iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
