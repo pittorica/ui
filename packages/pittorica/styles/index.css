@@ -24,6 +24,7 @@
 @import './components/heading.css' layer(pittorica-components);
 @import './components/hover-card.css' layer(pittorica-components);
 @import './components/icon-button.css' layer(pittorica-components);
+@import './components/inset.css' layer(pittorica-components);
 @import './components/kbd.css' layer(pittorica-components);
 @import './components/section.css' layer(pittorica-components);
 @import './components/text.css' layer(pittorica-components);
