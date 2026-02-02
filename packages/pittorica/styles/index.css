@@ -41,4 +41,5 @@
 @import './components/text-area.css' layer(pittorica-components);
 @import './components/text-field.css' layer(pittorica-components);
 @import './components/text.css' layer(pittorica-components);
+@import './components/toast.css' layer(pittorica-components);
 @import './components/tooltip.css' layer(pittorica-components);
