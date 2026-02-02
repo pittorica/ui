@@ -28,6 +28,7 @@
 @import './components/kbd.css' layer(pittorica-components);
 @import './components/popover.css' layer(pittorica-components);
 @import './components/progress.css' layer(pittorica-components);
+@import './components/radio-card.css' layer(pittorica-components);
 @import './components/radio-group.css' layer(pittorica-components);
 @import './components/radio.css' layer(pittorica-components);
 @import './components/section.css' layer(pittorica-components);
