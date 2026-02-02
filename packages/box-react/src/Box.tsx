@@ -1,11 +1,11 @@
-import React from 'react';
+import { type CSSProperties, type ElementType } from 'react';
 
 import { clsx } from 'clsx';
 
 type Spacing = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
 
 export interface BoxProps extends React.HTMLAttributes<HTMLElement> {
-  as?: React.ElementType;
+  as?: ElementType;
   display?:
     | 'none'
     | 'inline'
@@ -27,15 +27,16 @@ export interface BoxProps extends React.HTMLAttributes<HTMLElement> {
   width?: string;
   height?: string;
   position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
-  /** Link destination, used when 'as' is 'a' */
   href?: string;
-  /** Link target, used when 'as' is 'a' */
   target?: string;
-  /** Relationship to the linked resource */
   rel?: string;
 }
 
+/**
+ * Box component with forwardRef support for DOM access.
+ */
 export const Box = ({
+  ref,
   as: Tag = 'div',
   children,
   display,
@@ -58,8 +59,8 @@ export const Box = ({
   target,
   rel,
   ...props
-}: BoxProps) => {
-  const utilityStyles: React.CSSProperties = {};
+}: BoxProps & { ref?: React.RefObject<HTMLElement | null> }) => {
+  const utilityStyles: CSSProperties = {};
 
   if (display) utilityStyles.display = display;
   if (width) utilityStyles.width = width;
@@ -80,13 +81,14 @@ export const Box = ({
   if (pb) utilityStyles.paddingBottom = `var(--pittorica-space-${pb})`;
   if (pl) utilityStyles.paddingLeft = `var(--pittorica-space-${pl})`;
 
-  const finalStyles: React.CSSProperties = {
+  const finalStyles: CSSProperties = {
     ...utilityStyles,
     ...style,
   };
 
   return (
     <Tag
+      ref={ref}
       className={clsx('pittorica-box', className)}
       style={finalStyles}
       href={href}
@@ -98,3 +100,5 @@ export const Box = ({
     </Tag>
   );
 };
+
+Box.displayName = 'Box';

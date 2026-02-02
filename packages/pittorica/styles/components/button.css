@@ -20,12 +20,10 @@
     );
   }
 
-  /* --- Feedback Globale Hover --- */
   .pittorica-button:hover {
     box-shadow: var(--pittorica-shadow-4);
   }
 
-  /* --- Feedback Globale Active (Click) --- */
   .pittorica-button:active {
     box-shadow: none !important;
     filter: brightness(1.15);
