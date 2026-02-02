@@ -26,7 +26,7 @@ const config: StorybookConfig = {
     config.resolve.alias = {
       ...config.resolve.alias,
       pittorica: path.resolve(process.cwd(), 'packages/pittorica'),
-      '@pittorica/react-theme': path.resolve(
+      '@pittorica/theme-react': path.resolve(
         process.cwd(),
         'packages/react-theme'
       ),

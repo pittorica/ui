@@ -1,5 +1,5 @@
 {
-  "name": "@pittorica/react-theme",
+  "name": "@pittorica/theme-react",
   "version": "0.1.0",
   "type": "module",
   "main": "./dist/index.js",

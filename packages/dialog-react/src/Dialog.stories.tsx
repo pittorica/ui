@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { Button } from '@pittorica/button-react';
-import { PittoricaTheme } from '@pittorica/react-theme';
+import { PittoricaTheme } from '@pittorica/theme-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import {

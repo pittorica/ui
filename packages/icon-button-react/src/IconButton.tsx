@@ -44,7 +44,6 @@ export const IconButton = ({
     <Box
       {...props}
       as={props.href ? 'a' : 'button'}
-      // @ts-expect-error - React 19 ref transition: Box .d.ts expects RefObject but works with any Ref
       ref={ref}
       className={clsx(
         'pittorica-icon-button',

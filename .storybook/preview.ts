@@ -3,7 +3,7 @@ import 'pittorica';
 // @ts-expect-error react is correctly installed
 import React from 'react';
 
-import { PittoricaTheme } from '@pittorica/react-theme';
+import { PittoricaTheme } from '@pittorica/theme-react';
 import type { Preview } from '@storybook/react';
 
 const preview: Preview = {

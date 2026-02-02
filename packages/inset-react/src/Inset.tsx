@@ -32,7 +32,6 @@ export const Inset = ({
   return (
     <Box
       {...props}
-      // @ts-expect-error - React 19 ref transition: Box .d.ts expects RefObject but works with any Ref
       ref={ref}
       className={clsx('pittorica-inset', `pittorica-inset--${side}`, className)}
       style={{

@@ -112,13 +112,7 @@ export const PopoverTrigger = ({
   };
 
   return (
-    <Box
-      as="span"
-      display="inline-flex"
-      {...getReferenceProps()}
-      // @ts-expect-error - React 19 Ref merge callback vs Box RefObject legacy type
-      ref={setRefs}
-    >
+    <Box as="span" display="inline-flex" {...getReferenceProps()} ref={setRefs}>
       {children}
     </Box>
   );
@@ -154,7 +148,6 @@ export const PopoverContent = ({
       <Box
         {...props}
         {...getFloatingProps()}
-        // @ts-expect-error - React 19 Ref merge callback vs Box RefObject legacy type
         ref={setFloatingRefs}
         className={clsx('pittorica-popover-content', className)}
         style={{ ...floatingStyles, ...props.style }}
