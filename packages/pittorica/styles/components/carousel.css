@@ -1,39 +1,70 @@
 @layer pittorica-components {
+  /**
+   * Main container for the carousel.
+   * Prevents horizontal overflow during layout transitions.
+   */
   .pittorica-carousel-root {
     width: 100%;
-    position: relative;
+    overflow: hidden;
   }
 
+  /**
+   * Viewport that holds the items.
+   * Flex layout is required for motion/react layout animations.
+   */
   .pittorica-carousel-viewport {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    padding: var(--pittorica-space-4) 0;
+    min-height: 400px;
     gap: var(--pittorica-space-2);
-    padding: var(--pittorica-space-2) 0;
-    scrollbar-width: none; /* Firefox */
-    -webkit-overflow-scrolling: touch;
   }
 
-  .pittorica-carousel-viewport::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Edge */
-  }
-
+  /**
+   * Individual item container.
+   * Height is fixed to maintain MD3 Hero proportions.
+   */
   .pittorica-carousel-item {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    border-radius: var(--pittorica-radius-5);
+    position: relative;
+    height: 400px;
     overflow: hidden;
-    width: 75%;
-    aspect-ratio: 4 / 3;
     background-color: var(--pittorica-slate-3);
-    transition: transform 0.2s ease;
+    border-radius: var(--pittorica-radius-6);
+    cursor: pointer;
+    flex-shrink: 0;
   }
 
+  /**
+   * Image styling to prevent squashing during width animations.
+   * We use a large fixed width and center it to create a "window" effect.
+   */
   .pittorica-carousel-item img {
-    width: 100%;
+    position: absolute;
+    width: 1200px;
     height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     object-fit: cover;
+    pointer-events: none;
+  }
+
+  /**
+   * Scrim overlay for text readability.
+   */
+  .pittorica-carousel-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--pittorica-space-9) var(--pittorica-space-4)
+      var(--pittorica-space-4);
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.6) 50%,
+      transparent 100%
+    );
+    z-index: 2;
+    pointer-events: none;
+    color: #ffffff !important;
   }
 }

@@ -1,7 +1,6 @@
 @import './reset.css' layer(pittorica-reset);
 @import './tokens.css' layer(pittorica-tokens);
 
-/* ---- components --- */
 @import './components/aspect-ratio.css' layer(pittorica-components);
 @import './components/avatar.css' layer(pittorica-components);
 @import './components/badge.css' layer(pittorica-components);

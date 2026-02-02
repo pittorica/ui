@@ -1,5 +1,4 @@
 @layer pittorica-components {
-  /* --- flex --- */
   .pittorica-flex {
     display: flex;
     box-sizing: border-box;

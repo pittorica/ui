@@ -1,7 +1,7 @@
 @layer pittorica-components {
   .pittorica-inset {
     box-sizing: border-box;
-    /* Negative margins to counteract parent padding */
+
     --_inset-margin: calc(var(--pittorica-space-4) * -1);
   }
 
@@ -27,7 +27,6 @@
     margin-right: var(--_inset-margin);
   }
 
-  /* Ensure media content fits perfectly */
   .pittorica-inset > img,
   .pittorica-inset > video {
     display: block;

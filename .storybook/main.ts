@@ -3,11 +3,7 @@ import path from 'node:path';
 import type { StorybookConfig } from '@storybook/react-vite';
 
 const config: StorybookConfig = {
-  stories: [
-    '../packages/**/src/**/*.mdx',
-    '../packages/**/src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-    '../packages/**/src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
-  ],
+  stories: ['../packages-react/**/src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-a11y',
     '@storybook/addon-links',
@@ -28,7 +24,7 @@ const config: StorybookConfig = {
       pittorica: path.resolve(process.cwd(), 'packages/pittorica'),
       '@pittorica/theme-react': path.resolve(
         process.cwd(),
-        'packages/react-theme'
+        'packages-react/theme'
       ),
     };
     return config;

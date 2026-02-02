@@ -1,5 +1,4 @@
 @layer pittorica-components {
-  /* --- text --- */
   .pittorica-text {
     margin: 0;
     font-family: var(--pittorica-font-family);
@@ -17,9 +16,33 @@
     font-size: var(--pittorica-font-size-1);
     line-height: var(--pittorica-line-height-1);
   }
+  .pittorica-text[data-size='2'] {
+    font-size: var(--pittorica-font-size-2);
+    line-height: var(--pittorica-line-height-2);
+  }
   .pittorica-text[data-size='3'] {
     font-size: var(--pittorica-font-size-3);
     line-height: var(--pittorica-line-height-3);
+  }
+  .pittorica-text[data-size='4'] {
+    font-size: var(--pittorica-font-size-4);
+    line-height: var(--pittorica-line-height-4);
+  }
+  .pittorica-text[data-size='5'] {
+    font-size: var(--pittorica-font-size-5);
+    line-height: var(--pittorica-line-height-5);
+  }
+  .pittorica-text[data-size='6'] {
+    font-size: var(--pittorica-font-size-6);
+    line-height: var(--pittorica-line-height-6);
+  }
+  .pittorica-text[data-size='7'] {
+    font-size: var(--pittorica-font-size-7);
+    line-height: var(--pittorica-line-height-7);
+  }
+  .pittorica-text[data-size='8'] {
+    font-size: var(--pittorica-font-size-8);
+    line-height: var(--pittorica-line-height-8);
   }
   .pittorica-text[data-size='9'] {
     font-size: var(--pittorica-font-size-9);

@@ -1,5 +1,4 @@
 @layer pittorica-components {
-  /* --- chip --- */
   .pittorica-chip {
     display: inline-flex;
     align-items: center;

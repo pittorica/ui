@@ -19,7 +19,10 @@
   },
   "dependencies": {
     "@pittorica/box-react": "workspace:*",
-    "clsx": "^2.1.1"
+    "@pittorica/icon-button-react": "workspace:*",
+    "@tabler/icons-react": "^3.36.1",
+    "clsx": "^2.1.1",
+    "motion": "^12.30.0"
   },
   "devDependencies": {
     "@pittorica/text-react": "workspace:*",

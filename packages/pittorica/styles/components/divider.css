@@ -1,5 +1,4 @@
 @layer pittorica-components {
-  /* --- divider */
   .pittorica-divider {
     display: flex;
     clear: both;

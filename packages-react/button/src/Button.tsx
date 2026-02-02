@@ -24,24 +24,24 @@ export const Button = ({
   const isSemantic =
     color !== 'inherit' && !color?.startsWith('#') && !color?.startsWith('rgb');
 
-  const buttonStyles: React.CSSProperties = {
-    ...style,
-    '--pittorica-source-color': isSemantic
-      ? `var(--pittorica-${color}-9)`
-      : color,
-    '--pittorica-on-source-color': '#ffffff',
-  } as React.CSSProperties;
-
   return (
     <Box
       as={props.href ? 'a' : 'button'}
+      {...props}
       className={clsx(
         'pittorica-button',
         `pittorica-button--${variant}`,
         className
       )}
-      style={buttonStyles}
-      {...props}
+      style={
+        {
+          ...style,
+          '--pittorica-source-color': isSemantic
+            ? `var(--pittorica-${color}-9)`
+            : color,
+          '--pittorica-on-source-color': '#ffffff',
+        } as React.CSSProperties
+      }
     >
       {children}
     </Box>

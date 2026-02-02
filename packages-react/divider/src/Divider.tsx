@@ -31,7 +31,7 @@ export interface DividerProps extends Omit<BoxProps, 'children'> {
 }
 
 /**
- * Divider component with SVG patterns for decorative variants.
+ * Divider.tsx
  */
 export const Divider = ({
   variant = 'solid',
@@ -45,7 +45,6 @@ export const Divider = ({
   const uniqueId = useId();
   const isSvgVariant = variant !== 'solid' && variant in PATTERNS;
 
-  // Color Resolution Logic (consistent with our Text component)
   const isSemantic =
     color !== 'inherit' && !color?.startsWith('#') && !color?.startsWith('rgb');
   const resolvedColor = isSemantic ? `var(--pittorica-${color}-9)` : color;
@@ -53,7 +52,6 @@ export const Divider = ({
   if (isSvgVariant) {
     const patternId = `pittorica-pattern-${variant}-${uniqueId}`;
     const { d, w } = PATTERNS[variant as keyof typeof PATTERNS];
-
     const lineCap = ['dots', 'scallop', 'wave'].includes(variant)
       ? 'round'
       : 'square';
@@ -76,7 +74,6 @@ export const Divider = ({
           width="100%"
           height={SVG_HEIGHT}
           fill="none"
-          xmlns="http://www.w3.org/2000/svg"
           style={{ display: 'block', overflow: 'visible' }}
         >
           <defs>
@@ -101,11 +98,12 @@ export const Divider = ({
     );
   }
 
-  // Fallback to solid line (supports children)
+  const Tag = children ? 'div' : 'hr';
+
   return (
     <Box
-      as="div"
-      role="separator"
+      as={Tag}
+      {...(children ? { role: 'separator' } : {})}
       className={clsx(
         'pittorica-divider',
         'pittorica-divider--solid',

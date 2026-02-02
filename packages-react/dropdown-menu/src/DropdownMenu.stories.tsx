@@ -61,7 +61,6 @@ export const Subtitles: StoryObj<typeof DropdownMenu> = {
         itemCount={2}
         renderTrigger={({ ref, onClick }) => (
           <span ref={ref as React.RefObject<HTMLSpanElement>} onClick={onClick}>
-            {/* Corrected variant from "outline" to "outlined" */}
             <Button variant="outlined">Project Actions</Button>
           </span>
         )}

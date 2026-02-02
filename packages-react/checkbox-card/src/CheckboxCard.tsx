@@ -92,8 +92,8 @@ const CheckboxCardItem = ({
     throw new Error('CheckboxCard.Item must be used within CheckboxCard.Root');
 
   const isTranslucent = itemTranslucent ?? context.translucent;
-
   const isChecked = context.value.includes(value);
+
   const isSemantic =
     context.color !== 'inherit' &&
     !context.color?.startsWith('#') &&
@@ -110,19 +110,21 @@ const CheckboxCardItem = ({
       translucent={isTranslucent}
       className={clsx('pittorica-checkbox-card-item', className)}
       data-state={isChecked ? 'checked' : 'unchecked'}
+      data-disabled={context.disabled}
       style={
         {
           '--_checkbox-card-color': resolvedColor,
           ...style,
         } as React.CSSProperties
       }
-      onClick={() => !context.disabled && context.onItemChange(value)}
     >
       <input
         type="checkbox"
+        className="pittorica-checkbox-card-input"
         style={{ position: 'absolute', opacity: 0, pointerEvents: 'none' }}
         checked={isChecked}
-        readOnly
+        disabled={context.disabled}
+        onChange={() => context.onItemChange(value)}
       />
       {children}
     </Card>

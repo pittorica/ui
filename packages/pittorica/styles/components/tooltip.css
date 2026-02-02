@@ -5,10 +5,9 @@
   }
 
   .pittorica-tooltip-content {
-    position: fixed; /* Usato con Portal */
     z-index: 1000;
     padding: var(--pittorica-space-1) var(--pittorica-space-2);
-    background-color: var(--pittorica-slate-12); /* Sfondo scuro contrastato */
+
     color: var(--pittorica-slate-1);
     border-radius: var(--pittorica-radius-2);
     font-size: var(--pittorica-font-size-1);

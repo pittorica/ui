@@ -32,9 +32,6 @@ export interface TextFieldRootProps extends BoxProps {
   disabled?: boolean;
 }
 
-/**
- * Root container for TextField. Handles layout, label, and error states.
- */
 export const TextFieldRoot = ({
   children,
   label,
@@ -61,7 +58,14 @@ export const TextFieldRoot = ({
         data-error={error}
       >
         {label && (
-          <Text as="label" htmlFor={inputId} size="2" weight="medium" mb="1">
+          <Text
+            as="label"
+            htmlFor={inputId}
+            size="2"
+            weight="medium"
+            mb="1"
+            style={{ paddingLeft: '4px' }}
+          >
             {label}
           </Text>
         )}
@@ -90,12 +94,8 @@ export const TextFieldRoot = ({
 };
 
 /* --- Input --- */
-// Fix ESLint @typescript-eslint/no-empty-object-type
 export type TextFieldInputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-/**
- * The actual interactive input element.
- */
 export const TextFieldInput = ({
   className,
   ref,
@@ -116,9 +116,6 @@ export const TextFieldInput = ({
 };
 
 /* --- Slot --- */
-/**
- * Container for decorators like icons or text buttons.
- */
 export const TextFieldSlot = ({ children, className, ...props }: BoxProps) => (
   <div className={clsx('pittorica-text-field-slot', className)} {...props}>
     {children}

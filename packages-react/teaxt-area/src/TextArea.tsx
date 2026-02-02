@@ -1,7 +1,6 @@
 import {
   createContext,
   type ReactNode,
-  type Ref,
   use,
   useEffect,
   useId,
@@ -18,7 +17,6 @@ interface TextAreaContextType {
   inputId: string;
   helperId: string;
   disabled?: boolean;
-  autoResize?: boolean;
 }
 
 const TextAreaContext = createContext<TextAreaContextType | null>(null);
@@ -37,9 +35,11 @@ export interface TextAreaRootProps extends BoxProps {
   error?: boolean;
   color?: PittoricaColor;
   disabled?: boolean;
-  autoResize?: boolean;
 }
 
+/**
+ * MD3 Filled TextArea Root.
+ */
 export const TextAreaRoot = ({
   children,
   label,
@@ -47,7 +47,6 @@ export const TextAreaRoot = ({
   error,
   color = 'indigo',
   disabled,
-  autoResize,
   className,
   style,
   ...props
@@ -60,21 +59,27 @@ export const TextAreaRoot = ({
   const resolvedColor = isSemantic ? `var(--pittorica-${color}-9)` : color;
 
   return (
-    <TextAreaContext value={{ inputId, helperId, disabled, autoResize }}>
+    <TextAreaContext value={{ inputId, helperId, disabled }}>
       <Box
         {...props}
-        className={clsx('pittorica-text-area-root', className)}
+        className={clsx('pittorica-textarea-root', className)}
         data-error={error}
       >
         {label && (
-          <Text as="label" htmlFor={inputId} size="2" weight="medium" mb="1">
+          <Text
+            as="label"
+            htmlFor={inputId}
+            size="2"
+            weight="medium"
+            mb="1"
+            style={{ paddingLeft: '4px' }}
+          >
             {label}
           </Text>
         )}
 
         <div
-          className="pittorica-text-area-wrapper"
-          data-disabled={disabled}
+          className="pittorica-textarea-wrapper"
           style={
             {
               '--pittorica-source-color': resolvedColor,
@@ -86,7 +91,7 @@ export const TextAreaRoot = ({
         </div>
 
         {helperText && (
-          <div id={helperId} className="pittorica-text-area-helper">
+          <div id={helperId} className="pittorica-textarea-helper">
             {helperText}
           </div>
         )}
@@ -95,41 +100,46 @@ export const TextAreaRoot = ({
   );
 };
 
-/* --- Input --- */
-export type TextAreaInputProps =
-  React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+/* --- Content --- */
+export interface TextAreaContentProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  /** Enables automatic vertical resizing based on content */
+  autoResize?: boolean;
+}
 
-export const TextAreaInput = ({
+/**
+ * MD3 Filled TextArea Input with optional Auto-resizing.
+ */
+export const TextAreaContent = ({
   className,
-  ref,
+  autoResize = false,
   onChange,
+  value,
+  defaultValue,
   ...props
-}: TextAreaInputProps & { ref?: Ref<HTMLTextAreaElement> }) => {
-  const { inputId, helperId, disabled, autoResize } = useTextAreaContext();
-  const internalRef = useRef<HTMLTextAreaElement>(null);
-
-  // Sincronizza il ref esterno con quello interno
-  useEffect(() => {
-    if (typeof ref === 'function') ref(internalRef.current);
-    else if (ref)
-      (ref as React.MutableRefObject<HTMLTextAreaElement | null>).current =
-        internalRef.current;
-  }, [ref]);
+}: TextAreaContentProps) => {
+  const { inputId, helperId, disabled } = useTextAreaContext();
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const adjustHeight = () => {
-    if (autoResize && internalRef.current) {
-      const el = internalRef.current;
-      el.style.height = 'auto'; // Reset per calcolare lo scrollHeight corretto
-      el.style.height = `${el.scrollHeight}px`;
-    }
+    const el = textareaRef.current;
+    if (!el || !autoResize) return;
+
+    // Reset height to calculate scrollHeight correctly
+    el.style.height = 'auto';
+    // Set new height based on scrollHeight
+    el.style.height = `${el.scrollHeight}px`;
   };
 
   useEffect(() => {
-    adjustHeight();
-  }, [autoResize]);
+    if (autoResize) {
+      adjustHeight();
+    }
+  }, [value, defaultValue, autoResize]);
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    adjustHeight();
+    if (autoResize) {
+      adjustHeight();
+    }
     onChange?.(e);
   };
 
@@ -137,16 +147,19 @@ export const TextAreaInput = ({
     <textarea
       {...props}
       id={inputId}
-      ref={internalRef}
-      aria-describedby={helperId}
+      ref={textareaRef}
+      value={value}
+      defaultValue={defaultValue}
       disabled={disabled}
+      aria-describedby={helperId}
       onChange={handleChange}
-      className={clsx('pittorica-text-area-input', className)}
+      className={clsx('pittorica-textarea-input', className)}
+      style={{ overflow: autoResize ? 'hidden' : undefined }}
     />
   );
 };
 
 export const TextArea = {
   Root: TextAreaRoot,
-  Input: TextAreaInput,
+  Content: TextAreaContent,
 };

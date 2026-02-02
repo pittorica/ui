@@ -8,6 +8,7 @@ import { Box, type BoxProps } from '@pittorica/box-react';
 import type { PittoricaColor } from '@pittorica/text-react';
 import { Text } from '@pittorica/text-react';
 
+/* --- Context --- */
 interface SelectContextType {
   inputId: string;
   helperId: string;
@@ -33,7 +34,7 @@ export interface SelectRootProps extends BoxProps {
 }
 
 /**
- * Root container for Select. Includes the default chevron icon.
+ * MD3 Filled Select component with fixed chevron alignment.
  */
 export const SelectRoot = ({
   children,
@@ -61,14 +62,20 @@ export const SelectRoot = ({
         data-error={error}
       >
         {label && (
-          <Text as="label" htmlFor={inputId} size="2" weight="medium" mb="1">
+          <Text
+            as="label"
+            htmlFor={inputId}
+            size="2"
+            weight="medium"
+            mb="1"
+            style={{ paddingLeft: '4px' }}
+          >
             {label}
           </Text>
         )}
 
         <div
           className="pittorica-select-wrapper"
-          data-disabled={disabled}
           style={
             {
               '--pittorica-source-color': resolvedColor,
@@ -77,9 +84,10 @@ export const SelectRoot = ({
           }
         >
           {children}
-          <SelectSlot className="pittorica-select-chevron">
-            <IconChevronDown size={16} />
-          </SelectSlot>
+          {/* Slot chevron bilanciato orizzontalmente e centrato verticalmente */}
+          <div className="pittorica-select-chevron">
+            <IconChevronDown size={20} />
+          </div>
         </div>
 
         {helperText && (

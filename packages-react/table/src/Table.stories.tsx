@@ -6,6 +6,7 @@ import { Table } from './Table';
 
 const meta: Meta<typeof Table.Root> = {
   title: 'Components/Table',
+  tags: ['autodocs'],
   component: Table.Root,
 };
 

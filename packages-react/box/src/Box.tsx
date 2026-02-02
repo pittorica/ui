@@ -36,9 +36,6 @@ export interface BoxProps extends React.HTMLAttributes<HTMLElement> {
   disabled?: boolean;
 }
 
-/**
- * Box component with forwardRef support for DOM access.
- */
 export const Box = ({
   ref,
   as: Tag = 'div',
@@ -66,7 +63,7 @@ export const Box = ({
   type,
   disabled,
   ...props
-}: BoxProps & { ref?: React.Ref<HTMLElement> }) => {
+}: BoxProps & { ref?: React.RefObject<HTMLElement | null> }) => {
   const utilityStyles: CSSProperties = {};
 
   if (display) utilityStyles.display = display;
@@ -89,8 +86,8 @@ export const Box = ({
   if (pl) utilityStyles.paddingLeft = `var(--pittorica-space-${pl})`;
 
   const finalStyles: CSSProperties = {
-    ...utilityStyles,
     ...style,
+    ...utilityStyles,
   };
 
   return (

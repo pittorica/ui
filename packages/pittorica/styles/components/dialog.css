@@ -1,5 +1,4 @@
 @layer pittorica-components {
-  /* --- dialog --- */
   .pittorica-dialog-overlay {
     position: fixed;
     inset: 0;

@@ -1,53 +1,87 @@
 import { Flex } from '@pittorica/flex-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TextArea } from './TextArea';
+import { TextArea } from './TextArea.js';
 
+/**
+ * Storybook configuration for MD3 TextArea.
+ */
 const meta: Meta<typeof TextArea.Root> = {
   title: 'Components/TextArea',
   component: TextArea.Root,
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered',
+  },
+  argTypes: {
+    color: {
+      control: 'select',
+      options: ['indigo', 'cyan', 'orange', 'crimson'],
+    },
+  },
 };
 
 export default meta;
 
-export const Basic: StoryObj = {
-  render: () => (
-    <TextArea.Root
-      label="Description"
-      helperText="Write a brief overview of your project."
-    >
-      <TextArea.Input placeholder="Type something..." />
-    </TextArea.Root>
+/**
+ * Standard MD3 Filled TextArea.
+ */
+export const Basic: StoryObj<typeof TextArea.Root> = {
+  args: {
+    label: 'Description',
+    helperText: 'Write a brief overview of your project.',
+    color: 'indigo',
+  },
+  render: (args) => (
+    <Flex direction="column" style={{ width: '400px' }}>
+      <TextArea.Root {...args}>
+        <TextArea.Content placeholder="Enter your text here..." />
+      </TextArea.Root>
+    </Flex>
   ),
 };
 
-export const AutoResizing: StoryObj = {
-  render: () => (
-    <TextArea.Root
-      label="Auto-expanding field"
-      autoResize
-      helperText="This field grows as you type."
-      color="teal"
-    >
-      <TextArea.Input placeholder="Start typing a long text to see me grow..." />
-    </TextArea.Root>
+/**
+ * Auto-expanding field story.
+ */
+export const AutoResizing: StoryObj<typeof TextArea.Root> = {
+  args: {
+    label: 'Auto-expanding field',
+    helperText: 'This field grows as you type.',
+    color: 'indigo',
+  },
+  render: (args) => (
+    <Flex direction="column" style={{ width: '400px' }}>
+      <TextArea.Root {...args}>
+        <TextArea.Content
+          autoResize
+          placeholder="Start typing a long text to see me grow..."
+        />
+      </TextArea.Root>
+    </Flex>
   ),
 };
 
-export const States: StoryObj = {
+/**
+ * Visual verification of different states using Flex for spacing.
+ */
+export const States: StoryObj<typeof TextArea.Root> = {
   render: () => (
-    <Flex direction="column" gap="4" width="400px">
-      <TextArea.Root label="Disabled state" disabled>
-        <TextArea.Input defaultValue="I am disabled and cannot be edited." />
+    <Flex direction="column" gap="6" style={{ width: '400px' }}>
+      <TextArea.Root
+        label="Error State"
+        error
+        helperText="Please enter a valid description."
+      >
+        <TextArea.Content placeholder="Something is wrong..." />
       </TextArea.Root>
 
       <TextArea.Root
-        label="Error state"
-        error
-        helperText="This field is required."
+        label="Disabled State"
+        disabled
+        helperText="This field is currently locked."
       >
-        <TextArea.Input placeholder="Fix the error..." />
+        <TextArea.Content placeholder="You cannot type here" />
       </TextArea.Root>
     </Flex>
   ),

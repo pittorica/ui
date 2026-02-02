@@ -1,6 +1,5 @@
 @layer pittorica-tokens {
   :root {
-    /* --- TYPOGRAPHY --- */
     --pittorica-font-family: system-ui, -apple-system, sans-serif;
     --pittorica-font-heading: var(--pittorica-font-family);
     --pittorica-font-code: ui-monospace, SFMono-Regular, monospace;
@@ -8,14 +7,12 @@
     --pittorica-font-em: inherit;
     --pittorica-font-quote: inherit;
 
-    /* --- BREAKPOINTS --- */
     --pittorica-bp-xs: 520px;
     --pittorica-bp-sm: 768px;
     --pittorica-bp-md: 1024px;
     --pittorica-bp-lg: 1280px;
     --pittorica-bp-xl: 1640px;
 
-    /* --- SPACING & PADDING --- */
     --pittorica-space-0: 0px;
     --pittorica-space-1: 4px;
     --pittorica-space-2: 8px;
@@ -27,7 +24,6 @@
     --pittorica-space-8: 64px;
     --pittorica-space-9: 96px;
 
-    /* --- RADIUS --- */
     --pittorica-radius-0: 0px;
     --pittorica-radius-1: 4px;
     --pittorica-radius-2: 8px;
@@ -37,7 +33,6 @@
     --pittorica-radius-6: 32px;
     --pittorica-radius-full: 9999px;
 
-    /* --- SHADOWS --- */
     --pittorica-shadow-1: 0 1px 2px 0 rgb(0 0 0 / 0.15);
     --pittorica-shadow-2: 0 2px 4px -1px rgb(0 0 0 / 0.15);
     --pittorica-shadow-3: 0 4px 6px -1px rgb(0 0 0 / 0.18);
@@ -48,15 +43,32 @@
     --pittorica-shadow-8: 0 20px 36px -6px rgb(0 0 0 / 0.22);
     --pittorica-shadow-9: 0 28px 48px -7px rgb(0 0 0 / 0.25);
 
-    /* --- CURSORS --- */
     --pittorica-cursor-button: pointer;
     --pittorica-cursor-disabled: not-allowed;
     --pittorica-cursor-text: text;
+
+    --pittorica-font-size-1: 12px;
+    --pittorica-font-size-2: 14px;
+    --pittorica-font-size-3: 16px;
+    --pittorica-font-size-4: 18px;
+    --pittorica-font-size-5: 20px;
+    --pittorica-font-size-6: 24px;
+    --pittorica-font-size-7: 28px;
+    --pittorica-font-size-8: 35px;
+    --pittorica-font-size-9: 60px;
+
+    --pittorica-line-height-1: 16px;
+    --pittorica-line-height-2: 20px;
+    --pittorica-line-height-3: 24px;
+    --pittorica-line-height-4: 26px;
+    --pittorica-line-height-5: 28px;
+    --pittorica-line-height-6: 30px;
+    --pittorica-line-height-7: 36px;
+    --pittorica-line-height-8: 40px;
+    --pittorica-line-height-9: 72px;
   }
 
-  /* --- THEME BASE --- */
   .pittorica-theme {
-    /* Default Source Color (Indigo MD3 Baseline) */
     --pittorica-source-color: #3f51b5;
     --pittorica-on-source-color: #ffffff;
 
@@ -118,49 +130,39 @@
     --pittorica-on-surface-8: #ffffff;
     --pittorica-on-surface-9: #ffffff;
 
-    /* --- SEMANTIC & BRAND COLORS (Light Mode Base) --- */
-
-    /* Indigo (Default/Primary) */
     --pittorica-indigo-3: color-mix(in srgb, #3f51b5 11%, #ffffff);
     --pittorica-indigo-9: #3f51b5;
     --pittorica-indigo-11: color-mix(in srgb, #3f51b5 25%, #000000);
 
-    /* Crimson (Accent) */
     --pittorica-crimson-3: color-mix(in srgb, #dc143c 11%, #ffffff);
     --pittorica-crimson-9: #dc143c;
     --pittorica-crimson-11: color-mix(in srgb, #dc143c 25%, #000000);
 
-    /* Teal (Accent) */
     --pittorica-teal-3: color-mix(in srgb, #008080 11%, #ffffff);
     --pittorica-teal-9: #008080;
     --pittorica-teal-11: color-mix(in srgb, #008080 25%, #000000);
 
-    /* Amber (Warning) */
     --pittorica-amber-3: color-mix(in srgb, #ffbf00 11%, #ffffff);
     --pittorica-amber-9: #ffbf00;
     --pittorica-amber-11: color-mix(in srgb, #ffbf00 25%, #000000);
 
-    /* Slate (Neutral/Gray) */
     --pittorica-slate-3: color-mix(in srgb, #64748b 11%, #ffffff);
     --pittorica-slate-4: color-mix(in srgb, #64748b 14%, #ffffff);
     --pittorica-slate-6: color-mix(in srgb, #64748b 30%, #ffffff);
     --pittorica-slate-9: #64748b;
     --pittorica-slate-12: #0f172a;
 
-    /* Semantic Aliases */
     --pittorica-danger-9: var(--pittorica-red-9, #ba1a1a);
     --pittorica-success-9: #2e7d32;
     --pittorica-info-9: #0288d1;
     --pittorica-error-9: var(--pittorica-danger-9);
 
-    /* Blue & Red Base for modifiers */
     --pittorica-blue-9: #005fb8;
     --pittorica-red-9: #ba1a1a;
     --pittorica-red-2: color-mix(in srgb, #ba1a1a 8%, #ffffff);
     --pittorica-red-7: color-mix(in srgb, #ba1a1a 90%, #000000);
   }
 
-  /* --- APPEARANCE MODIFIERS --- */
   .pittorica-theme[data-appearance='dark'] {
     --pittorica-surface-0: color-mix(
       in srgb,
@@ -236,7 +238,6 @@
     --pittorica-red-2: color-mix(in srgb, #ba1a1a 25%, #000000);
   }
 
-  /* --- ACCENT MODIFIERS --- */
   .pittorica-theme[data-accent='blue'] {
     --pittorica-source-color: #005fb8;
   }

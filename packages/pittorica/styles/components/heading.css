@@ -1,5 +1,4 @@
 @layer pittorica-components {
-  /* --- heading --- */
   .pittorica-heading {
     font-family: var(--pittorica-font-heading);
     line-height: 1.2;

@@ -1,2 +1,2 @@
-export type { TextAreaInputProps, TextAreaRootProps } from './TextArea.js';
-export { TextArea, TextAreaInput, TextAreaRoot } from './TextArea.js';
+export type { TextAreaContentProps, TextAreaRootProps } from './TextArea.js';
+export { TextArea, TextAreaContent, TextAreaRoot } from './TextArea.js';

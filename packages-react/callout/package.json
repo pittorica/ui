@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "@pittorica/theme-react": "workspace:*",
+    "@tabler/icons-react": "^3.36.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^14.0.0",
     "@types/react": "^19.2.3",

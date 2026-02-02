@@ -12,7 +12,7 @@ describe('TextArea', () => {
   it('links label and textarea correctly', () => {
     render(
       <TextArea.Root label="Comments">
-        <TextArea.Input />
+        <TextArea.Content />
       </TextArea.Root>
     );
 
@@ -25,7 +25,7 @@ describe('TextArea', () => {
   it('applies error state attributes', () => {
     render(
       <TextArea.Root error helperText="Invalid input">
-        <TextArea.Input />
+        <TextArea.Content />
       </TextArea.Root>
     );
 
@@ -35,8 +35,8 @@ describe('TextArea', () => {
 
   it('adjusts height when autoResize is enabled', () => {
     render(
-      <TextArea.Root autoResize>
-        <TextArea.Input />
+      <TextArea.Root>
+        <TextArea.Content autoResize />
       </TextArea.Root>
     );
 
@@ -55,7 +55,7 @@ describe('TextArea', () => {
   it('disables the textarea when root is disabled', () => {
     render(
       <TextArea.Root disabled>
-        <TextArea.Input />
+        <TextArea.Content />
       </TextArea.Root>
     );
 

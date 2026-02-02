@@ -1,5 +1,4 @@
 @layer pittorica-components {
-  /* --- kbd --- */
   .pittorica-kbd {
     font-family: var(--pittorica-font-mono);
     background-color: var(--pittorica-slate-3);
