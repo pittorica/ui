@@ -1,0 +1,82 @@
+@layer pittorica-components {
+  .pittorica-text-field-root {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pittorica-space-1);
+    width: 100%;
+  }
+
+  .pittorica-text-field-input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--pittorica-space-2);
+    padding: 0 var(--pittorica-space-2);
+    border: 1px solid var(--pittorica-slate-7);
+    border-radius: var(--pittorica-radius-2);
+    background-color: var(--pittorica-panel-background, white);
+    transition:
+      box-shadow 0.2s ease,
+      border-color 0.2s ease;
+    min-height: 32px;
+  }
+
+  .pittorica-text-field-input-wrapper:focus-within {
+    border-color: var(--pittorica-source-color);
+    box-shadow: 0 0 0 1px var(--pittorica-source-color);
+  }
+
+  .pittorica-text-field-input {
+    all: unset;
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    font-size: var(--pittorica-font-size-2);
+    color: var(--pittorica-slate-12);
+  }
+
+  .pittorica-text-field-input::placeholder {
+    color: var(--pittorica-slate-8);
+  }
+
+  .pittorica-text-field-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pittorica-slate-9);
+    flex-shrink: 0;
+    min-width: 0;
+  }
+
+  .pittorica-text-field-input-wrapper[data-disabled='true'] {
+    background-color: var(--pittorica-slate-3);
+    cursor: not-allowed;
+  }
+
+  .pittorica-text-field-helper {
+    margin-top: var(--pittorica-space-1);
+    color: var(--pittorica-slate-10);
+    font-size: var(--pittorica-font-size-1);
+    line-height: 1.25;
+  }
+
+  .pittorica-text-field-root[data-error='true'] .pittorica-text-field-helper {
+    color: var(--pittorica-red-9);
+  }
+
+  .pittorica-text-field-root[data-error='true']
+    .pittorica-text-field-input-wrapper {
+    border-color: var(--pittorica-red-8);
+  }
+
+  .pittorica-text-field-input-wrapper:has(
+    .pittorica-text-field-slot:first-child
+  ) {
+    padding-left: var(--pittorica-space-2);
+  }
+
+  .pittorica-text-field-input-wrapper:has(
+    .pittorica-text-field-slot:last-child
+  ) {
+    padding-right: var(--pittorica-space-2);
+  }
+}
