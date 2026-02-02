@@ -1,0 +1,35 @@
+@layer pittorica-components {
+  .pittorica-card {
+    display: block;
+    overflow: hidden;
+    box-sizing: border-box;
+    border-radius: var(--pittorica-radius-4);
+    border: 1px solid var(--pittorica-slate-4);
+    background-color: var(--pittorica-surface-1);
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .pittorica-card--translucent {
+    background-color: color-mix(
+      in srgb,
+      var(--pittorica-surface-1) 60%,
+      transparent
+    );
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid
+      color-mix(in srgb, var(--pittorica-surface-9) 10%, transparent);
+  }
+
+  .pittorica-card--variant-outlined {
+    background-color: transparent;
+    border: 1px solid var(--pittorica-slate-5);
+  }
+
+  .pittorica-card--variant-ghost {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+}

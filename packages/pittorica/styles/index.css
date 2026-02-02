@@ -8,6 +8,7 @@
 @import './components/box.css' layer(pittorica-components);
 @import './components/button.css' layer(pittorica-components);
 @import './components/callout.css' layer(pittorica-components);
+@import './components/card.css' layer(pittorica-components);
 @import './components/chip.css' layer(pittorica-components);
 @import './components/container.css' layer(pittorica-components);
 @import './components/dialog.css' layer(pittorica-components);
