@@ -26,5 +26,6 @@
 @import './components/icon-button.css' layer(pittorica-components);
 @import './components/inset.css' layer(pittorica-components);
 @import './components/kbd.css' layer(pittorica-components);
+@import './components/popover.css' layer(pittorica-components);
 @import './components/section.css' layer(pittorica-components);
 @import './components/text.css' layer(pittorica-components);
