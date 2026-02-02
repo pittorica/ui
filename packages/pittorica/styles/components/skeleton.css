@@ -1,0 +1,30 @@
+@layer pittorica-components {
+  .pittorica-skeleton {
+    display: block;
+    background-color: var(--pittorica-slate-4);
+    border-radius: var(--pittorica-radius-2);
+    width: 100%;
+    height: 1em;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pittorica-skeleton--loading {
+    animation: pittorica-skeleton-pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1)
+      infinite;
+  }
+
+  @keyframes pittorica-skeleton-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  .pittorica-skeleton--hiding-children > * {
+    visibility: hidden;
+  }
+}
