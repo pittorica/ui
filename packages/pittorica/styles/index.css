@@ -9,6 +9,7 @@
 @import './components/button.css' layer(pittorica-components);
 @import './components/callout.css' layer(pittorica-components);
 @import './components/card.css' layer(pittorica-components);
+@import './components/carousel.css' layer(pittorica-components);
 @import './components/checkbox-cards.css' layer(pittorica-components);
 @import './components/checkbox-group.css' layer(pittorica-components);
 @import './components/checkbox.css' layer(pittorica-components);
