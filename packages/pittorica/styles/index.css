@@ -36,6 +36,7 @@
 @import './components/segmented-control.css' layer(pittorica-components);
 @import './components/select.css' layer(pittorica-components);
 @import './components/switch.css' layer(pittorica-components);
+@import './components/sheet.css' layer(pittorica-components);
 @import './components/skeleton.css' layer(pittorica-components);
 @import './components/slider.css' layer(pittorica-components);
 @import './components/table.css' layer(pittorica-components);
