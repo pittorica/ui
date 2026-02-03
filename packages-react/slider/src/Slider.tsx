@@ -1,6 +1,7 @@
 import {
   type CSSProperties,
   type Ref,
+  RefObject,
   useCallback,
   useRef,
   useState,
@@ -102,7 +103,7 @@ export const Slider = ({
   return (
     <Box
       {...props}
-      ref={ref}
+      ref={ref as RefObject<HTMLDivElement>}
       className={clsx('pittorica-slider-root', className)}
       data-disabled={disabled}
       onPointerDown={handlePointerDown}

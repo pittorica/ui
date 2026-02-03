@@ -1,4 +1,4 @@
-import { type CSSProperties } from 'react';
+import { type CSSProperties, RefObject } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -44,7 +44,7 @@ export const IconButton = ({
     <Box
       {...props}
       as={props.href ? 'a' : 'button'}
-      ref={ref}
+      ref={ref as RefObject<HTMLButtonElement>}
       className={clsx(
         'pittorica-icon-button',
         `pittorica-icon-button--${variant}`,

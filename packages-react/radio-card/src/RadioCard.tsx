@@ -2,6 +2,7 @@ import {
   createContext,
   type ReactNode,
   type Ref,
+  RefObject,
   use,
   useMemo,
   useState,
@@ -131,7 +132,7 @@ const RadioCardItem = ({
       disabled={isDisabled}
       className={clsx('pittorica-radio-card-item', className)}
       onClick={() => !isDisabled && onValueChange(itemValue)}
-      ref={ref}
+      ref={ref as RefObject<HTMLButtonElement>}
       style={
         {
           '--pittorica-source-color': resolvedColor,

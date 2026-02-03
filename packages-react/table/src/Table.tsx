@@ -1,4 +1,4 @@
-import type { Ref } from 'react';
+import type { Ref, RefObject } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -21,7 +21,7 @@ const TableRoot = ({
   <Box
     as="table"
     className={clsx('pittorica-table-root', className)}
-    ref={ref}
+    ref={ref as RefObject<HTMLDivElement>}
     {...props}
   >
     {children}

@@ -1,4 +1,4 @@
-import { type CSSProperties, type Ref, useState } from 'react';
+import { type CSSProperties, type Ref, RefObject, useState } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -58,7 +58,7 @@ export const Switch = ({
       disabled={disabled}
       onClick={handleToggle}
       className={clsx('pittorica-switch-root', className)}
-      ref={ref}
+      ref={ref as RefObject<HTMLButtonElement>}
       style={
         {
           '--pittorica-source-color': resolvedColor,

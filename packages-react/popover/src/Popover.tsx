@@ -3,6 +3,7 @@ import {
   type CSSProperties,
   type ReactNode,
   type Ref,
+  RefObject,
   use,
   useMemo,
   useState,
@@ -112,7 +113,12 @@ export const PopoverTrigger = ({
   };
 
   return (
-    <Box as="span" display="inline-flex" {...getReferenceProps()} ref={setRefs}>
+    <Box
+      as="span"
+      display="inline-flex"
+      {...getReferenceProps()}
+      ref={setRefs as unknown as RefObject<HTMLElement>}
+    >
       {children}
     </Box>
   );
@@ -148,7 +154,7 @@ export const PopoverContent = ({
       <Box
         {...props}
         {...getFloatingProps()}
-        ref={setFloatingRefs}
+        ref={setFloatingRefs as unknown as RefObject<HTMLElement>}
         className={clsx('pittorica-popover-content', className)}
         style={{ ...floatingStyles, ...props.style }}
       >

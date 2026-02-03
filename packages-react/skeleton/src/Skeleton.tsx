@@ -1,4 +1,4 @@
-import { type Ref } from 'react';
+import { type Ref, RefObject } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -34,7 +34,7 @@ export const Skeleton = ({
   return (
     <Box
       {...props}
-      ref={ref}
+      ref={ref as RefObject<HTMLDivElement>}
       className={clsx(
         'pittorica-skeleton',
         'pittorica-skeleton--loading',

@@ -1,4 +1,4 @@
-import type { Ref } from 'react';
+import type { Ref, RefObject } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -32,7 +32,7 @@ export const Inset = ({
   return (
     <Box
       {...props}
-      ref={ref}
+      ref={ref as RefObject<HTMLDivElement>}
       className={clsx('pittorica-inset', `pittorica-inset--${side}`, className)}
       style={{
         overflow: clip ? 'hidden' : 'visible',

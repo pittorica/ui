@@ -1,2 +1,7 @@
-export type { CarouselItemProps, CarouselRootProps } from './Carousel.js';
-export { Carousel, CarouselItem, CarouselRoot } from './Carousel.js';
+export type { CarouselRootProps } from './Carousel.js';
+export {
+  Carousel,
+  CarouselDescription,
+  CarouselItem,
+  CarouselRoot,
+} from './Carousel.js';

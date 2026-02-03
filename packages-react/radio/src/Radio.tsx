@@ -1,4 +1,4 @@
-import { type CSSProperties, type Ref } from 'react';
+import { type CSSProperties, type Ref, RefObject } from 'react';
 
 import { clsx } from 'clsx';
 
@@ -46,7 +46,7 @@ export const Radio = ({
       disabled={disabled}
       className={clsx('pittorica-radio-root', className)}
       onClick={() => !disabled && onCheckedChange?.(!checked)}
-      ref={ref}
+      ref={ref as RefObject<HTMLButtonElement>}
       style={
         {
           '--pittorica-source-color': resolvedColor,
