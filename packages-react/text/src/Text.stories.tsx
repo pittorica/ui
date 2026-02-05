@@ -12,11 +12,6 @@ const meta: Meta<typeof Text> = {
       control: 'text',
       description: 'The HTML tag to render the text as. Defaults to "span".',
     },
-    size: {
-      control: 'select',
-      options: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      description: 'Defines the visual size of the text.',
-    },
     weight: {
       control: 'select',
       options: ['light', 'regular', 'medium', 'bold'],
@@ -66,7 +61,6 @@ export const Default: Story = {
 export const LargeText: Story = {
   args: {
     children: 'This is large text.',
-    size: '6',
   },
 };
 
