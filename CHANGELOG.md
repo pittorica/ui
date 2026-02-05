@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.22.3](https://github.com/pittorica/ui/compare/v0.22.2...v0.22.3) (2026-02-05)
+
+
+### Bug Fixes
+
+* remove size prop from text ([1656016](https://github.com/pittorica/ui/commit/1656016974634f32069bd8010dbdffb3b8555829))
+
 ## [0.22.2](https://github.com/pittorica/ui/compare/v0.22.1...v0.22.2) (2026-02-05)
 
 
