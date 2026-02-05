@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.22.2](https://github.com/pittorica/ui/compare/v0.22.1...v0.22.2) (2026-02-05)
+
+
+### Bug Fixes
+
+* remove size from text ([c48cae9](https://github.com/pittorica/ui/commit/c48cae9071a26645b62023629190372da104e9b4))
+
 ## [0.22.1](https://github.com/pittorica/ui/compare/v0.22.0...v0.22.1) (2026-02-05)
 
 
