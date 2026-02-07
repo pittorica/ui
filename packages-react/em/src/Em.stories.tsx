@@ -4,7 +4,7 @@ import { Em } from './Em';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Em> = {
-  title: 'Components/Em',
+  title: 'Typography/Em',
   component: Em,
   tags: ['autodocs'],
   argTypes: {},

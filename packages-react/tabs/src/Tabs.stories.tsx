@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from './Tabs';
 
 const meta: Meta<typeof Tabs.Root> = {
-  title: 'Components/Tabs',
+  title: 'Navigation/Tabs',
   component: Tabs.Root,
   tags: ['autodocs'],
 };

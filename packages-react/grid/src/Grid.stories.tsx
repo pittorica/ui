@@ -1,48 +1,34 @@
-import { Box } from '@pittorica/box-react/src/Box';
+import React from 'react';
+
+import { Box } from '@pittorica/box-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Grid } from './Grid';
+import { Grid } from './Grid.js';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+/**
+ * Grid component for complex two-dimensional layouts.
+ * Supports responsive configurations and fluid auto-wrapping (auto-fit).
+ */
 const meta: Meta<typeof Grid> = {
-  title: 'Components/Grid',
+  title: 'Layout/Grid',
   component: Grid,
   tags: ['autodocs'],
   argTypes: {
     columns: {
-      control: 'text',
-      description:
-        'Defines the columns of the grid. Can be a number (e.g., 3 for repeat(3, 1fr)) or a CSS grid-template-columns value.',
-    },
-    rows: {
-      control: 'text',
-      description:
-        'Defines the rows of the grid. Can be a number (e.g., 2 for repeat(2, 1fr)) or a CSS grid-template-rows value.',
+      control: 'object',
+      description: 'Fixed columns (1-12) or fluid (e.g., "auto-200px")',
     },
     gap: {
       control: 'select',
       options: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      description: 'Sets the gap between grid items.',
-    },
-    gapX: {
-      control: 'select',
-      options: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      description: 'Sets the horizontal gap between grid items.',
-    },
-    gapY: {
-      control: 'select',
-      options: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      description: 'Sets the vertical gap between grid items.',
     },
     flow: {
       control: 'select',
-      options: ['row', 'column', 'dense', 'row dense', 'column dense'],
-      description: 'Controls how auto-placed items are flowed into the grid.',
+      options: ['row', 'column', 'dense', 'row-dense', 'column-dense'],
     },
     align: {
       control: 'select',
       options: ['start', 'center', 'end', 'baseline', 'stretch'],
-      description: 'Aligns items along the cross axis within their grid area.',
     },
     justify: {
       control: 'select',
@@ -55,7 +41,6 @@ const meta: Meta<typeof Grid> = {
         'evenly',
         'stretch',
       ],
-      description: 'Aligns items along the main axis within their grid area.',
     },
   },
 };
@@ -63,116 +48,77 @@ const meta: Meta<typeof Grid> = {
 export default meta;
 type Story = StoryObj<typeof Grid>;
 
-const GridItem = ({ children }: { children: React.ReactNode }) => (
+const Item = ({
+  children,
+  color = 'var(--pittorica-indigo-9)',
+}: {
+  children: React.ReactNode;
+  color?: string;
+}) => (
   <Box
-    p="3"
     style={{
-      backgroundColor: 'var(--pittorica-red-3)',
-      border: '1px solid var(--pittorica-red-7)',
-      color: 'var(--pittorica-red-9)',
+      backgroundColor: color,
+      padding: '24px',
+      color: 'white',
+      borderRadius: '8px',
+      textAlign: 'center',
     }}
   >
     {children}
   </Box>
 );
 
-export const DefaultGrid: Story = {
+export const Default: Story = {
   args: {
-    children: (
-      <>
-        <GridItem>Item 1</GridItem>
-        <GridItem>Item 2</GridItem>
-        <GridItem>Item 3</GridItem>
-        <GridItem>Item 4</GridItem>
-      </>
-    ),
-    columns: 2,
+    columns: '3',
     gap: '4',
-    style: {
-      backgroundColor: 'var(--pittorica-slate-2)',
-      padding: 'var(--pittorica-space-4)',
-    },
+    children: (
+      <>
+        <Item>1</Item>
+        <Item color="var(--pittorica-crimson-9)">2</Item>
+        <Item color="var(--pittorica-teal-9)">3</Item>
+        <Item color="var(--pittorica-amber-9)">4</Item>
+      </>
+    ),
   },
 };
 
-export const ThreeColumns: Story = {
+/**
+ * Automatically adjusts the number of columns based on the available width.
+ * Each item will be at least 150px wide.
+ */
+export const FluidGrid: Story = {
   args: {
-    children: (
-      <>
-        <GridItem>Col 1</GridItem>
-        <GridItem>Col 2</GridItem>
-        <GridItem>Col 3</GridItem>
-        <GridItem>Col 4</GridItem>
-        <GridItem>Col 5</GridItem>
-        <GridItem>Col 6</GridItem>
-      </>
-    ),
-    columns: 3,
-    gap: '3',
-    style: {
-      backgroundColor: 'var(--pittorica-blue-1)',
-      padding: 'var(--pittorica-space-4)',
-    },
+    columns: 'auto-150px',
+    gap: '4',
+    children: Array.from({ length: 6 }).map((_, i) => (
+      <Item
+        // eslint-disable-next-line @eslint-react/no-array-index-key
+        key={i}
+        color={
+          i % 2 === 0 ? 'var(--pittorica-teal-9)' : 'var(--pittorica-indigo-9)'
+        }
+      >
+        Fluid {i + 1}
+      </Item>
+    )),
   },
 };
 
-export const CustomColumns: Story = {
+/**
+ * Changes layout structure at different breakpoints using object syntax.
+ */
+export const ResponsiveGrid: Story = {
   args: {
+    columns: { initial: '1', sm: '2', md: '3', lg: '4' },
+    gap: { initial: '2', md: '6' },
     children: (
       <>
-        <GridItem>100px</GridItem>
-        <GridItem>1fr</GridItem>
-        <GridItem>200px</GridItem>
+        <Item>Hero</Item>
+        <Item color="var(--pittorica-crimson-9)">Sidebar</Item>
+        <Item color="var(--pittorica-teal-9)">Content A</Item>
+        <Item color="var(--pittorica-amber-9)">Content B</Item>
       </>
     ),
-    columns: '100px 1fr 200px',
-    gap: '2',
-    style: {
-      backgroundColor: 'var(--pittorica-teal-1)',
-      padding: 'var(--pittorica-space-4)',
-    },
-  },
-};
-
-export const WithGapXAndGapY: Story = {
-  args: {
-    children: (
-      <>
-        <GridItem>A1</GridItem>
-        <GridItem>A2</GridItem>
-        <GridItem>B1</GridItem>
-        <GridItem>B2</GridItem>
-      </>
-    ),
-    columns: 2,
-    gapX: '5',
-    gapY: '2',
-    style: {
-      backgroundColor: 'var(--pittorica-amber-1)',
-      padding: 'var(--pittorica-space-4)',
-    },
-  },
-};
-
-export const FlowColumnDense: Story = {
-  args: {
-    children: (
-      <>
-        <GridItem>1</GridItem>
-        <GridItem>2</GridItem>
-        <GridItem>3</GridItem>
-        <GridItem>4</GridItem>
-        <GridItem>5</GridItem>
-        <GridItem>6</GridItem>
-      </>
-    ),
-    columns: 3,
-    flow: 'column dense',
-    gap: '1',
-    style: {
-      backgroundColor: 'var(--pittorica-crimson-1)',
-      padding: 'var(--pittorica-space-4)',
-      height: '200px',
-    },
   },
 };

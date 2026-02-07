@@ -6,10 +6,13 @@ import { Box, type BoxProps } from '@pittorica/box-react';
 import type { PittoricaColor } from '@pittorica/text-react';
 import { Text } from '@pittorica/text-react';
 
+type TextFieldSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
 interface TextFieldContextType {
   inputId: string;
   helperId: string;
   disabled?: boolean;
+  size: TextFieldSize;
 }
 
 const TextFieldContext = createContext<TextFieldContextType | null>(null);
@@ -30,8 +33,13 @@ export interface TextFieldRootProps extends BoxProps {
   error?: boolean;
   color?: PittoricaColor;
   disabled?: boolean;
+  /** @default 'sm' */
+  size?: TextFieldSize;
 }
 
+/**
+ * Root container for TextField. Orchestrates layout, context, and sizes.
+ */
 export const TextFieldRoot = ({
   children,
   label,
@@ -39,6 +47,7 @@ export const TextFieldRoot = ({
   error,
   color = 'indigo',
   disabled,
+  size = 'sm',
   className,
   style,
   ...props
@@ -51,10 +60,14 @@ export const TextFieldRoot = ({
   const resolvedColor = isSemantic ? `var(--pittorica-${color}-9)` : color;
 
   return (
-    <TextFieldContext value={{ inputId, helperId, disabled }}>
+    <TextFieldContext value={{ inputId, helperId, disabled, size }}>
       <Box
         {...props}
-        className={clsx('pittorica-text-field-root', className)}
+        className={clsx(
+          'pittorica-text-field-root',
+          `pittorica-text-field--${size}`,
+          className
+        )}
         data-error={error}
       >
         {label && (
@@ -62,8 +75,12 @@ export const TextFieldRoot = ({
             as="label"
             htmlFor={inputId}
             weight="medium"
-            mb="1"
-            style={{ paddingLeft: '4px' }}
+            style={{
+              paddingLeft: '4px',
+              fontSize: 'var(--pittorica-font-size-1)',
+              marginBottom: '4px',
+              display: 'inline-block',
+            }}
           >
             {label}
           </Text>
@@ -95,6 +112,9 @@ export const TextFieldRoot = ({
 /* --- Input --- */
 export type TextFieldInputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
+/**
+ * Native input element with semantic context and responsive sizing.
+ */
 export const TextFieldInput = ({
   className,
   ref,
@@ -115,6 +135,9 @@ export const TextFieldInput = ({
 };
 
 /* --- Slot --- */
+/**
+ * Visual slot for icons or interactive elements.
+ */
 export const TextFieldSlot = ({ children, className, ...props }: BoxProps) => (
   <div className={clsx('pittorica-text-field-slot', className)} {...props}>
     {children}

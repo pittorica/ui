@@ -5,7 +5,7 @@ import { Section } from './Section';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Section> = {
-  title: 'Components/Section',
+  title: 'Layout/Section',
   component: Section,
   tags: ['autodocs'],
   argTypes: {

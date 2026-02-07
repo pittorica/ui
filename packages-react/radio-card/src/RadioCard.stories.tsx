@@ -8,7 +8,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { RadioCard } from './RadioCard.js';
 
 const meta: Meta<typeof RadioCard.Root> = {
-  title: 'Components/RadioCard',
+  title: 'Composite/RadioCard',
   component: RadioCard.Root,
   tags: ['autodocs'],
 };

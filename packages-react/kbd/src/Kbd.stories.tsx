@@ -4,7 +4,7 @@ import { Kbd } from './Kbd';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Kbd> = {
-  title: 'Components/Kbd',
+  title: 'Typography/Kbd',
   component: Kbd,
   tags: ['autodocs'],
   argTypes: {},

@@ -28,9 +28,24 @@ describe('Button', () => {
     expect(container.firstChild).toHaveClass('pittorica-button--tonal');
   });
 
+  it('applies the correct size class', () => {
+    const { container } = render(<Button size="lg">Large</Button>);
+    expect(container.firstChild).toHaveClass('pittorica-button--lg');
+  });
+
   it('is disabled when the disabled prop is true', () => {
     render(<Button disabled>Disabled</Button>);
-    expect(screen.getByRole('button')).toBeDisabled();
+    const button = screen.getByRole('button');
+    expect(button).toBeDisabled();
+    expect(button).toHaveAttribute('aria-disabled', 'true');
+  });
+
+  it('injects dynamic color variables correctly', () => {
+    const { container } = render(<Button color="crimson">Colored</Button>);
+    const element = container.firstChild as HTMLElement;
+    expect(element.style.getPropertyValue('--pittorica-source-color')).toBe(
+      'var(--pittorica-crimson-9)'
+    );
   });
 
   it('spreads layout props to the DOM element', () => {
@@ -42,6 +57,7 @@ describe('Button', () => {
     const element = container.firstChild as HTMLElement;
 
     expect(element.id).toBe('custom-id');
+    // Layout props are handled by the underlying Box component
     expect(element).toHaveStyle({ marginTop: 'var(--pittorica-space-4)' });
   });
 });

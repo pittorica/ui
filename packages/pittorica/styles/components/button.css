@@ -1,18 +1,26 @@
 @layer pittorica-components {
   .pittorica-button {
+    /* --- Base Styles --- */
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     border-radius: var(--pittorica-radius-full);
     font-family: var(--pittorica-font-family);
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.1s ease,
+      opacity 0.2s ease;
     border: none;
+    outline: none;
+    user-select: none;
     gap: var(--pittorica-space-2);
-    padding: 0 var(--pittorica-space-5);
-    height: 40px;
+    white-space: nowrap;
 
+    /* Internal Colors Mapping */
     --_btn-color: var(--pittorica-button-color, var(--pittorica-source-color));
     --_btn-on-color: var(
       --pittorica-button-on-color,
@@ -20,61 +28,123 @@
     );
   }
 
-  .pittorica-button:hover {
+  /* --- Interaction Layer (State Overlay) --- */
+  .pittorica-button::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-color: currentColor;
+    opacity: 0;
+    transition: opacity 0.15s linear;
+  }
+
+  /* --- Interaction States Logic --- */
+
+  .pittorica-button:not(:disabled):hover {
+    box-shadow: var(--pittorica-shadow-4);
+    transform: scale(1.01);
+  }
+
+  .pittorica-button:focus-visible::before {
+    opacity: 0.12;
+  }
+  .pittorica-button:focus-visible {
+    outline: 2px solid var(--_btn-color);
+    outline-offset: 2px;
+  }
+
+  /* Active/Pressed */
+  .pittorica-button:not(:disabled):active {
+    transform: scale(0.97);
+    box-shadow: var(--pittorica-shadow-1);
+  }
+  .pittorica-button:not(:disabled):active::before {
+    opacity: 0.12;
+  }
+
+  /* Disabled */
+  .pittorica-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.38;
+    box-shadow: none !important;
+    pointer-events: none;
+  }
+
+  /* --- Button Sizes (MD3 Recommendations) --- */
+
+  .pittorica-button--xs {
+    height: 32px;
+    padding: 0 var(--pittorica-space-3);
+    font-size: 0.75rem;
+  }
+
+  .pittorica-button--sm {
+    height: 40px;
+    padding: 0 var(--pittorica-space-4); /* 16px recommended padding */
+    font-size: 0.875rem;
+  }
+
+  .pittorica-button--md {
+    height: 48px;
+    padding: 0 var(--pittorica-space-5);
+    font-size: 0.875rem;
+  }
+
+  .pittorica-button--lg {
+    height: 56px;
+    padding: 0 var(--pittorica-space-6);
+    font-size: 1rem;
+  }
+
+  .pittorica-button--xl {
+    height: 72px;
+    padding: 0 var(--pittorica-space-8);
+    font-size: 1.125rem;
+  }
+
+  /* --- Button Variants --- */
+
+  /* 1. Elevated: Base shadow-4, hover shadow-6 */
+  .pittorica-button--elevated {
+    background-color: var(--pittorica-slate-1);
+    color: var(--_btn-color);
     box-shadow: var(--pittorica-shadow-4);
   }
-
-  .pittorica-button:active {
-    box-shadow: none !important;
-    filter: brightness(1.15);
-    transform: translateY(1px);
+  .pittorica-button--elevated:not(:disabled):hover {
+    box-shadow: var(--pittorica-shadow-6);
   }
 
+  /* 2. Filled */
   .pittorica-button--filled {
     background-color: var(--_btn-color);
     color: var(--_btn-on-color);
   }
-  .pittorica-button--filled:hover {
-    filter: brightness(0.9);
-  }
 
+  /* 3. Tonal */
   .pittorica-button--tonal {
-    background-color: color-mix(in srgb, var(--_btn-color) 12%, transparent);
-    color: var(--_btn-color);
-  }
-  .pittorica-button--tonal:hover {
-    background-color: color-mix(in srgb, var(--_btn-color) 18%, transparent);
-  }
-  .pittorica-button--tonal:active {
-    background-color: color-mix(in srgb, var(--_btn-color) 25%, transparent);
-    filter: none;
+    background-color: color-mix(
+      in srgb,
+      var(--_btn-color) 12%,
+      var(--pittorica-slate-1)
+    );
+    color: color-mix(in srgb, var(--_btn-color) 80%, black);
   }
 
+  /* 4. Outlined */
   .pittorica-button--outlined {
     background-color: transparent;
     border: 1px solid var(--pittorica-slate-6);
     color: var(--_btn-color);
   }
-  .pittorica-button--outlined:hover {
-    background-color: color-mix(in srgb, var(--_btn-color) 8%, transparent);
+  .pittorica-button--outlined:not(:disabled):hover {
     border-color: var(--_btn-color);
   }
 
-  .pittorica-button--elevated {
-    background-color: var(--pittorica-source-color);
-    color: var(--pittorica-on-source-color);
-    box-shadow: var(--pittorica-shadow-4);
-  }
-
-  .pittorica-button--elevated:hover {
-    box-shadow: var(--pittorica-shadow-6);
-  }
-
+  /* 5. Text */
   .pittorica-button--text {
     background-color: transparent;
     color: var(--_btn-color);
-  }
-  .pittorica-button--text:hover {
-    background-color: color-mix(in srgb, var(--_btn-color) 8%, transparent);
+    padding: 0 var(--pittorica-space-3);
   }
 }

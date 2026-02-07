@@ -4,7 +4,7 @@ import { Blockquote } from './Blockquote';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Blockquote> = {
-  title: 'Components/Blockquote',
+  title: 'Typography/Blockquote',
   component: Blockquote,
   tags: ['autodocs'],
   argTypes: {},

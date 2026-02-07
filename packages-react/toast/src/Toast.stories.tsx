@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { toast, ToastProvider } from './Toast.js';
 
 const meta: Meta = {
-  title: 'Components/Toast',
+  title: 'Feedback/Toast',
   decorators: [
     (Story) => (
       <Box p="4">

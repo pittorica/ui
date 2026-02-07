@@ -11,7 +11,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { AlertDialog } from './AlertDialog.js';
 
 const meta: Meta<typeof AlertDialog> = {
-  title: 'Components/AlertDialog',
+  title: 'Feedback/AlertDialog',
   component: AlertDialog,
   parameters: {
     layout: 'centered',

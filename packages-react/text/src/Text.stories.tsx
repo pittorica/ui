@@ -4,7 +4,7 @@ import { Text } from './Text';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Text> = {
-  title: 'Components/Text',
+  title: 'Typography/Text',
   component: Text,
   tags: ['autodocs'],
   argTypes: {

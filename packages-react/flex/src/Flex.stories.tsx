@@ -1,39 +1,33 @@
-import { Box } from '@pittorica/box-react/src/Box';
+import { Box } from '@pittorica/box-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Flex } from './Flex';
+import { Flex } from './Flex.js';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+/**
+ * Flex component for building responsive and fluid layouts using CSS Cascade Layers.
+ * Supports responsive object syntax and auto-wrapping fluid basis.
+ */
 const meta: Meta<typeof Flex> = {
-  title: 'Components/Flex',
+  title: 'Layout/Flex',
   component: Flex,
   tags: ['autodocs'],
   argTypes: {
-    direction: {
+    direction: { control: 'object' },
+    justify: {
       control: 'select',
-      options: ['row', 'column', 'row-reverse', 'column-reverse'],
-      description: 'Defines the direction of the main axis.',
+      options: ['start', 'center', 'end', 'between', 'around', 'evenly'],
     },
     align: {
       control: 'select',
       options: ['start', 'center', 'end', 'baseline', 'stretch'],
-      description: 'Aligns items along the cross axis.',
-    },
-    justify: {
-      control: 'select',
-      options: ['start', 'center', 'end', 'between', 'around', 'evenly'],
-      description: 'Aligns items along the main axis.',
-    },
-    wrap: {
-      control: 'select',
-      options: ['nowrap', 'wrap', 'wrap-reverse'],
-      description:
-        'Controls whether flex items are forced onto a single line or can wrap onto multiple lines.',
     },
     gap: {
       control: 'select',
       options: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
-      description: 'Sets the gap between flex items.',
+    },
+    basis: {
+      control: 'text',
+      description: 'Fluid basis for children (e.g., "auto-200px")',
     },
   },
 };
@@ -41,109 +35,88 @@ const meta: Meta<typeof Flex> = {
 export default meta;
 type Story = StoryObj<typeof Flex>;
 
-const FlexItem = ({ children }: { children: React.ReactNode }) => (
+const Placeholder = ({
+  color = 'var(--pittorica-indigo-9)',
+  label,
+}: {
+  color?: string;
+  label?: string;
+}) => (
   <Box
-    p="3"
     style={{
-      backgroundColor: 'var(--pittorica-blue-3)',
-      border: '1px solid var(--pittorica-blue-7)',
-      color: 'var(--pittorica-blue-9)',
+      backgroundColor: color,
+      padding: '20px',
+      minHeight: '64px',
+      borderRadius: '8px',
+      color: 'white',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
     }}
   >
-    {children}
+    {label || 'Box'}
   </Box>
 );
 
-export const RowDirection: Story = {
+export const Default: Story = {
   args: {
-    children: (
-      <>
-        <FlexItem>Item 1</FlexItem>
-        <FlexItem>Item 2</FlexItem>
-        <FlexItem>Item 3</FlexItem>
-      </>
-    ),
-    direction: 'row',
-    gap: '3',
-    justify: 'start',
-    align: 'center',
-    style: {
-      backgroundColor: 'var(--pittorica-slate-2)',
-      padding: 'var(--pittorica-space-4)',
-    },
-  },
-};
-
-export const ColumnDirection: Story = {
-  args: {
-    children: (
-      <>
-        <FlexItem>Item A</FlexItem>
-        <FlexItem>Item B</FlexItem>
-        <FlexItem>Item C</FlexItem>
-      </>
-    ),
-    direction: 'column',
     gap: '4',
-    justify: 'center',
-    align: 'stretch',
-    style: {
-      backgroundColor: 'var(--pittorica-slate-2)',
-      padding: 'var(--pittorica-space-4)',
-      height: '200px',
-    },
+    children: (
+      <>
+        <Placeholder />
+        <Placeholder color="var(--pittorica-crimson-9)" />
+        <Placeholder color="var(--pittorica-teal-9)" />
+      </>
+    ),
   },
 };
 
-export const JustifyContent: Story = {
+/**
+ * Demonstrates fluid wrapping where items expand to fill space but maintain a minimum width.
+ */
+export const FluidLayout: Story = {
   args: {
+    basis: 'auto-200px',
+    gap: '4',
+    width: '100%',
     children: (
       <>
-        <FlexItem>Start</FlexItem>
-        <FlexItem>Center</FlexItem>
-        <FlexItem>End</FlexItem>
+        <Placeholder label="Item 1" />
+        <Placeholder color="var(--pittorica-crimson-9)" label="Item 2" />
+        <Placeholder color="var(--pittorica-teal-9)" label="Item 3" />
+        <Placeholder color="var(--pittorica-amber-9)" label="Item 4" />
       </>
     ),
+  },
+};
+
+/**
+ * Changes from column to row at MD breakpoint.
+ */
+export const ResponsiveLayout: Story = {
+  args: {
+    direction: { initial: 'column', md: 'row' },
+    gap: { initial: '2', md: '6' },
+    align: 'center',
+    children: (
+      <>
+        <Placeholder />
+        <Placeholder color="var(--pittorica-crimson-9)" />
+        <Placeholder color="var(--pittorica-teal-9)" />
+      </>
+    ),
+  },
+};
+
+export const JustifyBetween: Story = {
+  args: {
     justify: 'between',
-    gap: '2',
-    style: {
-      backgroundColor: 'var(--pittorica-slate-2)',
-      padding: 'var(--pittorica-space-4)',
-    },
-  },
-};
-
-export const AlignItems: Story = {
-  args: {
+    width: '100%',
     children: (
       <>
-        <FlexItem>Top</FlexItem>
-        <FlexItem>Middle with more content</FlexItem>
-        <FlexItem>Bottom</FlexItem>
+        <Placeholder />
+        <Placeholder color="var(--pittorica-teal-9)" />
       </>
     ),
-    align: 'end',
-    gap: '2',
-    style: {
-      backgroundColor: 'var(--pittorica-slate-2)',
-      padding: 'var(--pittorica-space-4)',
-      height: '150px',
-    },
-  },
-};
-
-export const WithWrap: Story = {
-  args: {
-    children: Array.from({ length: 10 }).map((_, index) => {
-      const key = `item-${index}`;
-      return <FlexItem key={key}>Item {index + 1}</FlexItem>;
-    }),
-    wrap: 'wrap',
-    gap: '2',
-    style: {
-      backgroundColor: 'var(--pittorica-slate-2)',
-      padding: 'var(--pittorica-space-4)',
-      width: '300px',
-    },
   },
 };

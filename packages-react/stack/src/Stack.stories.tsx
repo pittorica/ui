@@ -5,7 +5,7 @@ import { Stack } from './Stack';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta: Meta<typeof Stack> = {
-  title: 'Components/Stack',
+  title: 'Layout/Stack',
   component: Stack,
   tags: ['autodocs'],
   argTypes: {

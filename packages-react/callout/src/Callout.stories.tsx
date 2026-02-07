@@ -5,7 +5,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Callout } from './Callout';
 
 const meta: Meta<typeof Callout> = {
-  title: 'Components/Callout',
+  title: 'Feedback/Callout',
   component: Callout,
   tags: ['autodocs'],
   argTypes: {

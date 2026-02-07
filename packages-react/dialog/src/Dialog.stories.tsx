@@ -12,7 +12,7 @@ import {
 } from './Dialog';
 
 const meta: Meta<typeof Dialog> = {
-  title: 'Components/Dialog',
+  title: 'Feedback/Dialog',
   component: Dialog,
   parameters: {
     layout: 'centered',

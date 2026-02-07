@@ -8,7 +8,7 @@ import { Carousel } from './Carousel.js';
  * Features an entrance "slam" animation and dynamic width masking.
  */
 const meta: Meta<typeof Carousel.Root> = {
-  title: 'Components/Carousel',
+  title: 'Media/Carousel',
   tags: ['autodocs'],
   component: Carousel.Root,
   parameters: {

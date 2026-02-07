@@ -4,124 +4,224 @@
     box-sizing: border-box;
   }
 
-  /* Initial Utility Classes */
-  .pittorica-grid--columns-res {
-    grid-template-columns: var(--pittorica-grid-columns-initial);
+  /* Columns & Rows (1-12) */
+  .pittorica-grid--columns-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
-  .pittorica-grid--rows-res {
-    grid-template-rows: var(--pittorica-grid-rows-initial);
+  .pittorica-grid--columns-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .pittorica-grid--gap-res {
-    gap: var(--pittorica-grid-gap-initial);
+  .pittorica-grid--columns-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  .pittorica-grid--gapX-res {
-    column-gap: var(--pittorica-grid-gapX-initial);
+  .pittorica-grid--columns-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
-  .pittorica-grid--gapY-res {
-    row-gap: var(--pittorica-grid-gapY-initial);
+  .pittorica-grid--columns-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
-  .pittorica-grid--flow-res {
-    grid-auto-flow: var(--pittorica-grid-flow-initial);
+  .pittorica-grid--columns-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
-  .pittorica-grid--align-res {
-    align-items: var(--pittorica-grid-align-initial);
+  .pittorica-grid--columns-7 {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
   }
-  .pittorica-grid--justify-res {
-    justify-content: var(--pittorica-grid-justify-initial);
+  .pittorica-grid--columns-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+  }
+  .pittorica-grid--columns-9 {
+    grid-template-columns: repeat(9, minmax(0, 1fr));
+  }
+  .pittorica-grid--columns-10 {
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+  }
+  .pittorica-grid--columns-11 {
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+  }
+  .pittorica-grid--columns-12 {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+  .pittorica-grid--columns-none {
+    grid-template-columns: none;
   }
 
-  /* Breakpoint: XS (520px) */
+  .pittorica-grid--rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+  .pittorica-grid--rows-none {
+    grid-template-rows: none;
+  }
+
+  /* Gaps (0-9) */
+  .pittorica-grid--gap-0 {
+    gap: var(--pittorica-space-0);
+  }
+  .pittorica-grid--gap-1 {
+    gap: var(--pittorica-space-1);
+  }
+  .pittorica-grid--gap-2 {
+    gap: var(--pittorica-space-2);
+  }
+  .pittorica-grid--gap-3 {
+    gap: var(--pittorica-space-3);
+  }
+  .pittorica-grid--gap-4 {
+    gap: var(--pittorica-space-4);
+  }
+  .pittorica-grid--gap-5 {
+    gap: var(--pittorica-space-5);
+  }
+  .pittorica-grid--gap-6 {
+    gap: var(--pittorica-space-6);
+  }
+  .pittorica-grid--gap-7 {
+    gap: var(--pittorica-space-7);
+  }
+  .pittorica-grid--gap-8 {
+    gap: var(--pittorica-space-8);
+  }
+  .pittorica-grid--gap-9 {
+    gap: var(--pittorica-space-9);
+  }
+
+  /* GapX & GapY */
+  .pittorica-grid--gapX-4 {
+    column-gap: var(--pittorica-space-4);
+  }
+  .pittorica-grid--gapY-4 {
+    row-gap: var(--pittorica-space-4);
+  }
+
+  /* Flow, Align, Justify */
+  .pittorica-grid--flow-row {
+    grid-auto-flow: row;
+  }
+  .pittorica-grid--flow-column {
+    grid-auto-flow: column;
+  }
+  .pittorica-grid--flow-dense {
+    grid-auto-flow: dense;
+  }
+  .pittorica-grid--flow-row-dense {
+    grid-auto-flow: row dense;
+  }
+  .pittorica-grid--flow-column-dense {
+    grid-auto-flow: column dense;
+  }
+
+  .pittorica-grid--align-start {
+    align-items: flex-start;
+  }
+  .pittorica-grid--align-center {
+    align-items: center;
+  }
+  .pittorica-grid--align-end {
+    align-items: flex-end;
+  }
+  .pittorica-grid--align-baseline {
+    align-items: baseline;
+  }
+  .pittorica-grid--align-stretch {
+    align-items: stretch;
+  }
+
+  .pittorica-grid--justify-start {
+    justify-content: flex-start;
+  }
+  .pittorica-grid--justify-center {
+    justify-content: center;
+  }
+  .pittorica-grid--justify-end {
+    justify-content: flex-end;
+  }
+  .pittorica-grid--justify-between {
+    justify-content: space-between;
+  }
+  .pittorica-grid--justify-around {
+    justify-content: space-around;
+  }
+  .pittorica-grid--justify-evenly {
+    justify-content: space-evenly;
+  }
+  .pittorica-grid--justify-stretch {
+    justify-content: stretch;
+  }
+
+  /**
+   * Breakpoint: XS (520px)
+   */
   @media (min-width: 520px) {
-    .pittorica-grid--columns-res {
-      grid-template-columns: var(
-        --pittorica-grid-columns-xs,
-        var(--pittorica-grid-columns-initial)
-      );
+    .pittorica-grid--xs-columns-1 {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
     }
-    .pittorica-grid--gap-res {
-      gap: var(--pittorica-grid-gap-xs, var(--pittorica-grid-gap-initial));
+    .pittorica-grid--xs-columns-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .pittorica-grid--justify-res {
-      justify-content: var(
-        --pittorica-grid-justify-xs,
-        var(--pittorica-grid-justify-initial)
-      );
-    }
-    .pittorica-grid--align-res {
-      align-items: var(
-        --pittorica-grid-align-xs,
-        var(--pittorica-grid-align-initial)
-      );
+    .pittorica-grid--xs-gap-2 {
+      gap: var(--pittorica-space-2);
     }
   }
 
-  /* Breakpoint: SM (768px) */
+  /**
+   * Breakpoint: SM (768px)
+   */
   @media (min-width: 768px) {
-    .pittorica-grid--columns-res {
-      grid-template-columns: var(
-        --pittorica-grid-columns-sm,
-        var(--pittorica-grid-columns-xs, var(--pittorica-grid-columns-initial))
-      );
+    .pittorica-grid--sm-columns-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
-    .pittorica-grid--gap-res {
-      gap: var(
-        --pittorica-grid-gap-sm,
-        var(--pittorica-grid-gap-xs, var(--pittorica-grid-gap-initial))
-      );
+    .pittorica-grid--sm-columns-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .pittorica-grid--justify-res {
-      justify-content: var(
-        --pittorica-grid-justify-sm,
-        var(--pittorica-grid-justify-xs, var(--pittorica-grid-justify-initial))
-      );
+    .pittorica-grid--sm-gap-3 {
+      gap: var(--pittorica-space-3);
     }
   }
 
-  /* Breakpoint: MD (1024px) */
+  /**
+   * Breakpoint: MD (1024px)
+   */
   @media (min-width: 1024px) {
-    .pittorica-grid--columns-res {
-      grid-template-columns: var(
-        --pittorica-grid-columns-md,
-        var(--pittorica-grid-columns-sm, var(--pittorica-grid-columns-initial))
-      );
+    .pittorica-grid--md-columns-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-    .pittorica-grid--gap-res {
-      gap: var(
-        --pittorica-grid-gap-md,
-        var(--pittorica-grid-gap-sm, var(--pittorica-grid-gap-initial))
-      );
+    .pittorica-grid--md-columns-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .pittorica-grid--md-gap-4 {
+      gap: var(--pittorica-space-4);
+    }
+    .pittorica-grid--md-justify-start {
+      justify-content: flex-start;
     }
   }
 
-  /* Breakpoint: LG (1280px) */
+  /**
+   * Breakpoint: LG (1280px)
+   */
   @media (min-width: 1280px) {
-    .pittorica-grid--columns-res {
-      grid-template-columns: var(
-        --pittorica-grid-columns-lg,
-        var(--pittorica-grid-columns-md, var(--pittorica-grid-columns-initial))
-      );
+    .pittorica-grid--lg-columns-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
     }
-    .pittorica-grid--gap-res {
-      gap: var(
-        --pittorica-grid-gap-lg,
-        var(--pittorica-grid-gap-md, var(--pittorica-grid-gap-initial))
-      );
+    .pittorica-grid--lg-columns-6 {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+    .pittorica-grid--lg-gap-6 {
+      gap: var(--pittorica-space-6);
     }
   }
 
-  /* Breakpoint: XL (1640px) */
+  /**
+   * Breakpoint: XL (1640px)
+   */
   @media (min-width: 1640px) {
-    .pittorica-grid--columns-res {
-      grid-template-columns: var(
-        --pittorica-grid-columns-xl,
-        var(--pittorica-grid-columns-lg, var(--pittorica-grid-columns-initial))
-      );
+    .pittorica-grid--xl-columns-6 {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
     }
-    .pittorica-grid--gap-res {
-      gap: var(
-        --pittorica-grid-gap-xl,
-        var(--pittorica-grid-gap-lg, var(--pittorica-grid-gap-initial))
-      );
+    .pittorica-grid--xl-columns-12 {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+    .pittorica-grid--xl-gap-8 {
+      gap: var(--pittorica-space-8);
     }
   }
 }

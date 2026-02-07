@@ -8,11 +8,13 @@ import { Box, type BoxProps } from '@pittorica/box-react';
 import type { PittoricaColor } from '@pittorica/text-react';
 import { Text } from '@pittorica/text-react';
 
-/* --- Context --- */
+type SelectSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
 interface SelectContextType {
   inputId: string;
   helperId: string;
   disabled?: boolean;
+  size: SelectSize;
 }
 
 const SelectContext = createContext<SelectContextType | null>(null);
@@ -31,6 +33,8 @@ export interface SelectRootProps extends BoxProps {
   error?: boolean;
   color?: PittoricaColor;
   disabled?: boolean;
+  /** @default 'sm' */
+  size?: SelectSize;
 }
 
 export const SelectRoot = ({
@@ -40,6 +44,7 @@ export const SelectRoot = ({
   error,
   color = 'indigo',
   disabled,
+  size = 'sm',
   className,
   style,
   ...props
@@ -52,10 +57,14 @@ export const SelectRoot = ({
   const resolvedColor = isSemantic ? `var(--pittorica-${color}-9)` : color;
 
   return (
-    <SelectContext value={{ inputId, helperId, disabled }}>
+    <SelectContext value={{ inputId, helperId, disabled, size }}>
       <Box
         {...props}
-        className={clsx('pittorica-select-root', className)}
+        className={clsx(
+          'pittorica-select-root',
+          `pittorica-select--${size}`,
+          className
+        )}
         data-error={error}
       >
         {label && (
@@ -63,8 +72,12 @@ export const SelectRoot = ({
             as="label"
             htmlFor={inputId}
             weight="medium"
-            mb="1"
-            style={{ paddingLeft: '4px' }}
+            style={{
+              paddingLeft: '4px',
+              fontSize: 'var(--pittorica-font-size-1)',
+              marginBottom: '4px',
+              display: 'inline-block',
+            }}
           >
             {label}
           </Text>
@@ -72,6 +85,7 @@ export const SelectRoot = ({
 
         <div
           className="pittorica-select-wrapper"
+          data-disabled={disabled}
           style={
             {
               '--pittorica-source-color': resolvedColor,
@@ -81,7 +95,7 @@ export const SelectRoot = ({
         >
           {children}
           <div className="pittorica-select-chevron">
-            <IconChevronDown size={20} />
+            <IconChevronDown size={size === 'xs' ? 14 : 18} />
           </div>
         </div>
 

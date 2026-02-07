@@ -6,10 +6,10 @@ import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { TextArea } from './TextArea';
+import { TextArea } from './TextArea.js';
 
 describe('TextArea', () => {
-  it('links label and textarea correctly', () => {
+  it('links label and textarea correctly via generated IDs', () => {
     render(
       <TextArea.Root label="Comments">
         <TextArea.Content />
@@ -20,16 +20,26 @@ describe('TextArea', () => {
     const input = screen.getByRole('textbox');
 
     expect(label).toHaveAttribute('for', input.id);
+    expect(input).toHaveAttribute('id');
   });
 
-  it('applies error state attributes', () => {
-    render(
+  it('applies the correct size class to the root', () => {
+    const { container } = render(
+      <TextArea.Root size="lg">
+        <TextArea.Content />
+      </TextArea.Root>
+    );
+    expect(container.firstChild).toHaveClass('pittorica-textarea--lg');
+  });
+
+  it('applies error state attributes to root and coordinates styles', () => {
+    const { container } = render(
       <TextArea.Root error helperText="Invalid input">
         <TextArea.Content />
       </TextArea.Root>
     );
 
-    const root = screen.getByText('Invalid input').parentElement;
+    const root = container.firstChild;
     expect(root).toHaveAttribute('data-error', 'true');
   });
 
@@ -42,6 +52,7 @@ describe('TextArea', () => {
 
     const textarea = screen.getByRole('textbox') as HTMLTextAreaElement;
 
+    // Simulate scrollHeight change
     Object.defineProperty(textarea, 'scrollHeight', {
       configurable: true,
       value: 150,
@@ -52,13 +63,15 @@ describe('TextArea', () => {
     expect(textarea.style.height).toBe('150px');
   });
 
-  it('disables the textarea when root is disabled', () => {
+  it('disables the textarea and applies data-disabled attribute to wrapper', () => {
     render(
       <TextArea.Root disabled>
         <TextArea.Content />
       </TextArea.Root>
     );
 
-    expect(screen.getByRole('textbox')).toBeDisabled();
+    const textarea = screen.getByRole('textbox');
+    expect(textarea).toBeDisabled();
+    expect(textarea.parentElement).toHaveAttribute('data-disabled', 'true');
   });
 });

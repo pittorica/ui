@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { CheckboxCard } from './CheckboxCard';
 
 const meta: Meta<typeof CheckboxCard> = {
-  title: 'Components/CheckboxCard',
+  title: 'Composite/CheckboxCard',
   component: CheckboxCard,
   tags: ['autodocs'],
 };

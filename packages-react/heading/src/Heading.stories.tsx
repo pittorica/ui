@@ -7,7 +7,7 @@ import { Heading } from './Heading';
  * Supports Radix-like responsive size scaling via CSS media queries.
  */
 const meta: Meta<typeof Heading> = {
-  title: 'Components/Heading',
+  title: 'Typography/Heading',
   component: Heading,
   tags: ['autodocs'],
   argTypes: {

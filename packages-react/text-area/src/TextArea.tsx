@@ -13,10 +13,13 @@ import { Box, type BoxProps } from '@pittorica/box-react';
 import type { PittoricaColor } from '@pittorica/text-react';
 import { Text } from '@pittorica/text-react';
 
+type TextAreaSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+
 interface TextAreaContextType {
   inputId: string;
   helperId: string;
   disabled?: boolean;
+  size: TextAreaSize;
 }
 
 const TextAreaContext = createContext<TextAreaContextType | null>(null);
@@ -35,10 +38,12 @@ export interface TextAreaRootProps extends BoxProps {
   error?: boolean;
   color?: PittoricaColor;
   disabled?: boolean;
+  /** @default 'sm' */
+  size?: TextAreaSize;
 }
 
 /**
- * MD3 Filled TextArea Root.
+ * Radix-like Outlined TextArea Root with support for multiple sizes.
  */
 export const TextAreaRoot = ({
   children,
@@ -47,6 +52,7 @@ export const TextAreaRoot = ({
   error,
   color = 'indigo',
   disabled,
+  size = 'sm',
   className,
   style,
   ...props
@@ -59,10 +65,14 @@ export const TextAreaRoot = ({
   const resolvedColor = isSemantic ? `var(--pittorica-${color}-9)` : color;
 
   return (
-    <TextAreaContext value={{ inputId, helperId, disabled }}>
+    <TextAreaContext value={{ inputId, helperId, disabled, size }}>
       <Box
         {...props}
-        className={clsx('pittorica-textarea-root', className)}
+        className={clsx(
+          'pittorica-textarea-root',
+          `pittorica-textarea--${size}`,
+          className
+        )}
         data-error={error}
       >
         {label && (
@@ -70,8 +80,12 @@ export const TextAreaRoot = ({
             as="label"
             htmlFor={inputId}
             weight="medium"
-            mb="1"
-            style={{ paddingLeft: '4px' }}
+            style={{
+              paddingLeft: '4px',
+              fontSize: 'var(--pittorica-font-size-1)',
+              marginBottom: '4px',
+              display: 'inline-block',
+            }}
           >
             {label}
           </Text>
@@ -79,6 +93,7 @@ export const TextAreaRoot = ({
 
         <div
           className="pittorica-textarea-wrapper"
+          data-disabled={disabled}
           style={
             {
               '--pittorica-source-color': resolvedColor,
@@ -106,7 +121,7 @@ export interface TextAreaContentProps extends React.TextareaHTMLAttributes<HTMLT
 }
 
 /**
- * Optimized for SSR/React Router v7 environments.
+ * Textarea element optimized for SSR and fluid interactions.
  */
 export const TextAreaContent = ({
   className,
@@ -120,15 +135,12 @@ export const TextAreaContent = ({
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const adjustHeight = () => {
-    // Check if we are in a browser environment to avoid SSR errors
     if (globalThis.window === undefined) return;
 
     const el = textareaRef.current;
     if (!el || !autoResize) return;
 
-    // Reset height to calculate scrollHeight correctly
     el.style.height = 'auto';
-    // Set new height based on scrollHeight
     el.style.height = `${el.scrollHeight}px`;
   };
 
@@ -156,7 +168,6 @@ export const TextAreaContent = ({
       aria-describedby={helperId}
       onChange={handleChange}
       className={clsx('pittorica-textarea-input', className)}
-      /* overflow: hidden prevents scrollbar flicker during resize */
       style={{
         overflow: autoResize ? 'hidden' : undefined,
         ...props.style,

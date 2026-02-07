@@ -6,7 +6,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Inset } from './Inset';
 
 const meta: Meta<typeof Inset> = {
-  title: 'Components/Inset',
+  title: 'Layout/Inset',
   component: Inset,
   tags: ['autodocs'],
   decorators: [

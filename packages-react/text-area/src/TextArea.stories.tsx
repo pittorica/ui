@@ -4,33 +4,45 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { TextArea } from './TextArea.js';
 
 /**
- * Storybook configuration for MD3 TextArea.
+ * Storybook configuration for Outlined TextArea.
+ * Supports 5 compact sizes and auto-resizing logic.
  */
 const meta: Meta<typeof TextArea.Root> = {
-  title: 'Components/TextArea',
+  title: 'Interactive/TextArea',
   component: TextArea.Root,
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
   },
   argTypes: {
+    size: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+      description: 'Compact sizes scaling from 48px to 160px min-height',
+    },
     color: {
       control: 'select',
-      options: ['indigo', 'cyan', 'orange', 'crimson'],
+      options: ['indigo', 'crimson', 'teal', 'amber', 'red', 'slate'],
+    },
+    disabled: {
+      control: 'boolean',
+      description: 'Disabled state with 60% opacity',
+    },
+    error: {
+      control: 'boolean',
+      description: 'Visual error state with red border',
     },
   },
 };
 
 export default meta;
 
-/**
- * Standard MD3 Filled TextArea.
- */
 export const Basic: StoryObj<typeof TextArea.Root> = {
   args: {
     label: 'Description',
     helperText: 'Write a brief overview of your project.',
     color: 'indigo',
+    size: 'sm',
   },
   render: (args) => (
     <Flex direction="column" style={{ width: '400px' }}>
@@ -42,8 +54,30 @@ export const Basic: StoryObj<typeof TextArea.Root> = {
 };
 
 /**
- * Auto-expanding field story.
+ * Visualization of the 5 sizes scaling min-height and typography.
  */
+export const AllSizes: StoryObj<typeof TextArea.Root> = {
+  render: () => (
+    <Flex direction="column" gap="6" style={{ width: '450px' }}>
+      <TextArea.Root size="xs" label="Extra Small (48px)">
+        <TextArea.Content placeholder="XS content..." />
+      </TextArea.Root>
+      <TextArea.Root size="sm" label="Small (64px - Default)">
+        <TextArea.Content placeholder="Small content..." />
+      </TextArea.Root>
+      <TextArea.Root size="md" label="Medium (80px)">
+        <TextArea.Content placeholder="Medium content..." />
+      </TextArea.Root>
+      <TextArea.Root size="lg" label="Large (112px)">
+        <TextArea.Content placeholder="Large content..." />
+      </TextArea.Root>
+      <TextArea.Root size="xl" label="Extra Large (160px)">
+        <TextArea.Content placeholder="XL content..." />
+      </TextArea.Root>
+    </Flex>
+  ),
+};
+
 export const AutoResizing: StoryObj<typeof TextArea.Root> = {
   args: {
     label: 'Auto-expanding field',
@@ -62,13 +96,11 @@ export const AutoResizing: StoryObj<typeof TextArea.Root> = {
   ),
 };
 
-/**
- * Visual verification of different states using Flex for spacing.
- */
 export const States: StoryObj<typeof TextArea.Root> = {
-  render: () => (
+  render: (args) => (
     <Flex direction="column" gap="6" style={{ width: '400px' }}>
       <TextArea.Root
+        {...args}
         label="Error State"
         error
         helperText="Please enter a valid description."
@@ -77,6 +109,7 @@ export const States: StoryObj<typeof TextArea.Root> = {
       </TextArea.Root>
 
       <TextArea.Root
+        {...args}
         label="Disabled State"
         disabled
         helperText="This field is currently locked."

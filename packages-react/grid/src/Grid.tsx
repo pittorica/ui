@@ -5,7 +5,7 @@ import { clsx } from 'clsx';
 import { Box, type BoxProps } from '@pittorica/box-react';
 
 type Spacing = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
-type GridFlow = 'row' | 'column' | 'dense' | 'row dense' | 'column dense';
+type GridFlow = 'row' | 'column' | 'dense' | 'row-dense' | 'column-dense';
 type GridAlign = 'start' | 'center' | 'end' | 'baseline' | 'stretch';
 type GridJustify =
   | 'start'
@@ -15,6 +15,21 @@ type GridJustify =
   | 'around'
   | 'evenly'
   | 'stretch';
+type GridRepeat =
+  | '1'
+  | '2'
+  | '3'
+  | '4'
+  | '5'
+  | '6'
+  | '7'
+  | '8'
+  | '9'
+  | '10'
+  | '11'
+  | '12'
+  | 'none'
+  | (string & {});
 
 interface ResponsiveObject<T> {
   initial?: T;
@@ -27,9 +42,9 @@ interface ResponsiveObject<T> {
 
 type Responsive<T> = T | ResponsiveObject<T>;
 
-export interface GridProps extends Omit<BoxProps, 'gap' | 'display'> {
-  columns?: Responsive<string | number>;
-  rows?: Responsive<string | number>;
+export interface GridProps extends Omit<BoxProps, 'display'> {
+  columns?: Responsive<GridRepeat>;
+  rows?: Responsive<GridRepeat>;
   gap?: Responsive<Spacing>;
   gapX?: Responsive<Spacing>;
   gapY?: Responsive<Spacing>;
@@ -39,50 +54,36 @@ export interface GridProps extends Omit<BoxProps, 'gap' | 'display'> {
 }
 
 /**
- * Maps gap values to spacing tokens.
+ * Checks if a value is a fluid grid instruction (e.g., 'auto-200px').
  * Moved to outer scope to satisfy unicorn/consistent-function-scoping.
  */
-const processGapVars = (vars: Record<string, string>) => {
-  const newVars: Record<string, string> = {};
-  for (const [key, val] of Object.entries(vars)) {
-    newVars[key] = `var(--pittorica-space-${val})`;
-  }
-  return newVars;
-};
+const isFluid = (val: unknown): val is string =>
+  typeof val === 'string' && val.startsWith('auto-');
 
 /**
- * Handles transformation of responsive props into CSS variables and classes.
- * Uses function overloading or explicit types to avoid 'any'.
+ * Utility to transform responsive props into CSS classes.
  */
-function getResponsiveData(
+function getGridResponsiveClasses<T extends string>(
   propName: string,
-  value: Responsive<string | number> | undefined
-): { classes: string[]; vars: Record<string, string> } {
-  if (value === undefined) return { classes: [], vars: {} };
+  value: Responsive<T> | undefined
+): string[] {
+  if (!value || isFluid(value)) return [];
 
-  const classes = [`pittorica-grid--${propName}-res`];
-  const vars: Record<string, string> = {};
-
-  if (typeof value !== 'object') {
-    const formatted =
-      typeof value === 'number' ? `repeat(${value}, minmax(0, 1fr))` : value;
-    vars[`--pittorica-grid-${propName}-initial`] = String(formatted);
-    return { classes, vars };
+  if (typeof value === 'string') {
+    return [`pittorica-grid--${propName}-${value}`];
   }
 
-  for (const [bp, val] of Object.entries(value)) {
-    if (val !== undefined) {
-      const formatted =
-        typeof val === 'number' ? `repeat(${val}, minmax(0, 1fr))` : val;
-      vars[`--pittorica-grid-${propName}-${bp}`] = String(formatted);
-    }
-  }
-
-  return { classes, vars };
+  return Object.entries(value)
+    .filter(([, val]) => val !== undefined && !isFluid(val))
+    .map(([bp, val]) =>
+      bp === 'initial'
+        ? `pittorica-grid--${propName}-${val}`
+        : `pittorica-grid--${bp}-${propName}-${val}`
+    );
 }
 
 /**
- * Grid component with Radix-like responsive support.
+ * Grid component supporting both fixed responsive columns and fluid auto-wrapping.
  */
 export const Grid = ({
   children,
@@ -94,46 +95,35 @@ export const Grid = ({
   flow,
   align,
   justify,
-  style,
   className,
+  style,
   ...props
 }: GridProps) => {
-  const cols = getResponsiveData('columns', columns);
-  const rws = getResponsiveData('rows', rows);
-  const g = getResponsiveData('gap', gap);
-  const gx = getResponsiveData('gapX', gapX);
-  const gy = getResponsiveData('gapY', gapY);
-  const flw = getResponsiveData('flow', flow);
-  const algn = getResponsiveData('align', align);
-  const jst = getResponsiveData('justify', justify);
+  const responsiveClasses = [
+    ...getGridResponsiveClasses('columns', columns),
+    ...getGridResponsiveClasses('rows', rows),
+    ...getGridResponsiveClasses('gap', gap),
+    ...getGridResponsiveClasses('gapX', gapX),
+    ...getGridResponsiveClasses('gapY', gapY),
+    ...getGridResponsiveClasses('flow', flow),
+    ...getGridResponsiveClasses('align', align),
+    ...getGridResponsiveClasses('justify', justify),
+  ];
 
-  const gridStyles: React.CSSProperties = {
-    ...style,
-    ...cols.vars,
-    ...rws.vars,
-    ...processGapVars(g.vars),
-    ...processGapVars(gx.vars),
-    ...processGapVars(gy.vars),
-    ...flw.vars,
-    ...algn.vars,
-    ...jst.vars,
-  } as React.CSSProperties;
+  const fluidStyles: React.CSSProperties = {};
+
+  if (isFluid(columns)) {
+    fluidStyles.gridTemplateColumns = `repeat(auto-fit, minmax(${columns.split('-')[1]}, 1fr))`;
+  }
+
+  if (isFluid(rows)) {
+    fluidStyles.gridTemplateRows = `repeat(auto-fit, minmax(${rows.split('-')[1]}, 1fr))`;
+  }
 
   return (
     <Box
-      className={clsx(
-        'pittorica-grid',
-        cols.classes,
-        rws.classes,
-        g.classes,
-        gx.classes,
-        gy.classes,
-        flw.classes,
-        algn.classes,
-        jst.classes,
-        className
-      )}
-      style={gridStyles}
+      className={clsx('pittorica-grid', responsiveClasses, className)}
+      style={{ ...style, ...fluidStyles }}
       {...props}
     >
       {children}
