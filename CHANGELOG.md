@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.23.0](https://github.com/pittorica/ui/compare/v0.22.4...v0.23.0) (2026-02-07)
+
+
+### Features
+
+* make components more responsive and more expressive ([8f0e213](https://github.com/pittorica/ui/commit/8f0e213b65b0aebc47df2be85f2136246593af1b))
+
 ## [0.22.4](https://github.com/pittorica/ui/compare/v0.22.3...v0.22.4) (2026-02-06)
 
 
