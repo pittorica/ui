@@ -1,1 +1,1 @@
-export type { CalloutRootProps } from './Callout.js';
+export * from './Callout.js';
