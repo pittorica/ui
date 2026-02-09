@@ -1,6 +1,6 @@
 {
   "name": "@pittorica/em-react",
-  "version": "0.23.1",
+  "version": "0.23.2",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",

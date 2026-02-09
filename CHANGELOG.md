@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.23.2](https://github.com/pittorica/ui/compare/v0.23.1...v0.23.2) (2026-02-09)
+
+
+### Bug Fixes
+
+* add prop name ([11028c3](https://github.com/pittorica/ui/commit/11028c3977aafdf80996852e0777acabb37e5db0))
+
 ## [0.23.1](https://github.com/pittorica/ui/compare/v0.23.0...v0.23.1) (2026-02-08)
 
 
