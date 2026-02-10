@@ -1,5 +1,12 @@
 # Changelog
 
+# [0.24.0](https://github.com/pittorica/ui/compare/v0.23.2...v0.24.0) (2026-02-10)
+
+
+### Features
+
+* **carousel:** add fullscreen preview ([a2a958c](https://github.com/pittorica/ui/commit/a2a958c2f915dff80352d850c02cec748c4a3559))
+
 ## [0.23.2](https://github.com/pittorica/ui/compare/v0.23.1...v0.23.2) (2026-02-09)
 
 
