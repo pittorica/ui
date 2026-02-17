@@ -13,23 +13,27 @@ export interface SheetProps extends BoxProps {
   isOpen: boolean;
   onClose: () => void;
   children: ReactNode;
-  side?: 'side' | 'bottom';
+  /**
+   * Direction from which the sheet appears.
+   * @default 'right'
+   */
+  side?: 'top' | 'right' | 'bottom' | 'left';
   title?: string;
 }
 
 /**
- * Sheet component following MD3 guidelines for Side and Bottom sheets.
+ * Sheet component following MD3 guidelines for modal panels.
+ * Supports positioning from all four viewport edges.
  */
 export const Sheet = ({
   isOpen,
   onClose,
   children,
-  side = 'side',
+  side = 'right',
   title,
   className,
   ...props
 }: SheetProps) => {
-  // Lock scroll when open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => {
@@ -46,13 +50,15 @@ export const Sheet = ({
         {...props}
         className={clsx(
           'pittorica-sheet-content',
-          side === 'side' ? 'pittorica-sheet-side' : 'pittorica-sheet-bottom',
+          `pittorica-sheet--${side}`,
           className
         )}
         role="dialog"
         aria-modal="true"
       >
-        {side === 'bottom' && <div className="pittorica-sheet-handle" />}
+        {(side === 'bottom' || side === 'top') && (
+          <div className="pittorica-sheet-handle" />
+        )}
 
         <Box
           p="4"

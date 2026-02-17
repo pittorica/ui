@@ -26,6 +26,9 @@
       --pittorica-button-on-color,
       var(--pittorica-on-source-color)
     );
+
+    --_btn-soft-bg: var(--pittorica-button-soft-bg);
+    --_btn-soft-text: var(--pittorica-button-soft-text);
   }
 
   /* --- Interaction Layer (State Overlay) --- */
@@ -43,7 +46,7 @@
 
   .pittorica-button:not(:disabled):hover {
     box-shadow: var(--pittorica-shadow-4);
-    transform: scale(1.01);
+    transform: translateY(-1px) scale(1.02);
   }
 
   .pittorica-button:focus-visible::before {
@@ -71,7 +74,7 @@
     pointer-events: none;
   }
 
-  /* --- Button Sizes (MD3 Recommendations) --- */
+  /* --- Button Sizes --- */
 
   .pittorica-button--xs {
     height: 32px;
@@ -81,7 +84,7 @@
 
   .pittorica-button--sm {
     height: 40px;
-    padding: 0 var(--pittorica-space-4); /* 16px recommended padding */
+    padding: 0 var(--pittorica-space-4);
     font-size: 0.875rem;
   }
 
@@ -103,42 +106,37 @@
     font-size: 1.125rem;
   }
 
-  /* --- Button Variants --- */
+  /* --- Button Variants Fixate --- */
 
-  /* 1. Elevated: Base shadow-4, hover shadow-6 */
   .pittorica-button--elevated {
-    background-color: var(--pittorica-slate-1);
+    background-color: var(--pittorica-surface-1);
     color: var(--_btn-color);
     box-shadow: var(--pittorica-shadow-4);
   }
+
   .pittorica-button--elevated:not(:disabled):hover {
+    background-color: var(--pittorica-surface-2);
     box-shadow: var(--pittorica-shadow-6);
   }
 
-  /* 2. Filled */
   .pittorica-button--filled {
     background-color: var(--_btn-color);
     color: var(--_btn-on-color);
   }
 
-  /* 3. Tonal */
   .pittorica-button--tonal {
-    background-color: color-mix(
-      in srgb,
-      var(--_btn-color) 12%,
-      var(--pittorica-slate-1)
-    );
-    color: color-mix(in srgb, var(--_btn-color) 80%, black);
+    background-color: var(--_btn-soft-bg);
+    color: var(--_btn-soft-text);
   }
 
-  /* 4. Outlined */
   .pittorica-button--outlined {
     background-color: transparent;
-    border: 1px solid var(--pittorica-slate-6);
+    border: 1px solid var(--_btn-color);
     color: var(--_btn-color);
   }
   .pittorica-button--outlined:not(:disabled):hover {
     border-color: var(--_btn-color);
+    background-color: var(--pittorica-slate-1);
   }
 
   /* 5. Text */
@@ -146,5 +144,11 @@
     background-color: transparent;
     color: var(--_btn-color);
     padding: 0 var(--pittorica-space-3);
+  }
+
+  /* --- Dark Mode Refinements per Elevated --- */
+  .pittorica-theme[data-appearance='dark'] .pittorica-button--elevated {
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--pittorica-surface-2);
   }
 }

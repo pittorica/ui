@@ -6,27 +6,19 @@ import { Box, type BoxProps } from '@pittorica/box-react';
 import type { PittoricaColor } from '@pittorica/text-react';
 
 export interface ButtonProps extends BoxProps {
-  /** * The visual style of the button.
-   * @default 'filled'
-   */
+  /** @default 'filled' */
   variant?: 'filled' | 'tonal' | 'outlined' | 'elevated' | 'text';
-  /** * The height and padding of the button.
-   * @default 'sm'
-   */
+  /** @default 'sm' */
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  /** * The primary color of the button.
-   * @default 'indigo'
-   */
+  /** @default 'indigo' */
   color?: PittoricaColor;
-  /** * Whether the button is interactive.
-   * @default false
-   */
+  /** @default false */
   disabled?: boolean;
 }
 
 /**
- * Button component following Material Design 3 guidelines.
- * Supports 5 variants, 5 sizes, and interactive state layers.
+ * Button component integrated with Pittorica Dynamic Tokens.
+ * Supports automated contrast mapping and tonal scales.
  */
 export const Button = ({
   children,
@@ -41,6 +33,26 @@ export const Button = ({
   const isSemantic =
     color !== 'inherit' && !color?.startsWith('#') && !color?.startsWith('rgb');
 
+  // Logic: Map semantic tokens or fallback to raw color value
+  const buttonVariables = {
+    '--pittorica-button-color': isSemantic
+      ? `var(--pittorica-${color}-9)`
+      : color,
+    '--pittorica-button-on-color': isSemantic
+      ? `var(--pittorica-on-${color}-9)`
+      : 'var(--pittorica-white)',
+
+    // Tonal Scales: Uses Step 3 and Step 11 calculated tokens
+    '--pittorica-button-soft-bg': isSemantic
+      ? `var(--pittorica-${color}-3)`
+      : `color-mix(in srgb, ${color} 15%, var(--pittorica-white))`,
+    '--pittorica-button-soft-text': isSemantic
+      ? `var(--pittorica-${color}-11)`
+      : `color-mix(in srgb, ${color} 80%, var(--pittorica-black))`,
+
+    ...style,
+  } as React.CSSProperties;
+
   return (
     <Box
       as={props.href ? 'a' : 'button'}
@@ -53,15 +65,7 @@ export const Button = ({
         `pittorica-button--${size}`,
         className
       )}
-      style={
-        {
-          ...style,
-          '--pittorica-source-color': isSemantic
-            ? `var(--pittorica-${color}-9)`
-            : color,
-          '--pittorica-on-source-color': '#ffffff',
-        } as React.CSSProperties
-      }
+      style={buttonVariables}
     >
       {children}
     </Box>

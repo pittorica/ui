@@ -19,6 +19,7 @@ export interface SkeletonProps extends BoxProps {
 
 /**
  * Skeleton placeholder for loading states.
+ * Fully hides children content including text nodes to avoid bleed-through.
  */
 export const Skeleton = ({
   children,
@@ -29,6 +30,7 @@ export const Skeleton = ({
   ref,
   ...props
 }: SkeletonProps & { ref?: Ref<HTMLElement> }) => {
+  // Return children directly if not loading
   if (!loading) return <>{children}</>;
 
   return (
@@ -41,13 +43,13 @@ export const Skeleton = ({
         {
           'pittorica-skeleton--hiding-children': !!children,
           'pittorica-skeleton--circle': variant === 'circle',
+          'pittorica-skeleton--text': variant === 'text',
         },
         className
       )}
       style={{
-        borderRadius:
-          variant === 'circle' ? 'var(--pittorica-radius-full)' : undefined,
         height: variant === 'text' && !props.height ? '0.8em' : props.height,
+        width: variant === 'text' && !props.width ? '100%' : props.width,
         ...style,
       }}
     >

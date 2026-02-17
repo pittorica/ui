@@ -1,0 +1,48 @@
+:root {
+  --font-inter: 'Inter Variable', Inter, system-ui, -apple-system, sans-serif;
+  --font-funnel-display: 'Funnel Display Variable', sans-serif;
+  --font-space-mono: 'Space Mono', monospace;
+  --font-alice: Alice, sans-serif;
+
+  --pittorica-font-family: var(--font-inter);
+  --pittorica-font-heading: var(--font-funnel-display);
+  --pittorica-font-code: var(--font-space-mono);
+  --pittorica-font-strong: inherit;
+  --pittorica-font-em: inherit;
+  --pittorica-font-quote: var(--font-alice);
+}
+
+.pittorica-theme {
+  --pittorica-source-color: #29294b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 56px;
+}
+
+/* AppBar */
+.pittorica-app-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-radius: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  height: var(--pittorica-app-bar-height, 64px);
+}
+
+.pittorica-app-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0 var(--pittorica-space-4);
+  margin: 0 auto;
+}

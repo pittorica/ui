@@ -1,7 +1,9 @@
 body.pittorica-theme {
-  background-color: var(--pittorica-surface-3);
-  color: var(--pittorica-on-surface-3);
   margin: 0;
+
   font-family: var(--pittorica-font-family);
   -webkit-font-smoothing: antialiased;
+
+  background-color: var(--pittorica-surface-0);
+  color: var(--pittorica-on-surface-0);
 }

@@ -6,22 +6,18 @@ import { Box, type BoxProps } from '@pittorica/box-react';
 import type { PittoricaColor } from '@pittorica/text-react';
 
 export interface ChipProps extends BoxProps {
-  /** @default 'solid' */
   variant?: 'solid' | 'soft' | 'outline';
-  /** @default '3' */
   size?: '1' | '2' | '3';
-  /** @default 'indigo' */
   color?: PittoricaColor;
-  /** Icon or element at the start of the chip */
   startDecorator?: React.ReactNode;
-  /** Icon or element at the end of the chip */
   endDecorator?: React.ReactNode;
-  /** Callback fired when the delete icon is clicked */
   onDelete?: () => void;
-  /** Custom delete icon */
   deleteIcon?: React.ReactNode;
 }
 
+/**
+ * Chip component with semantic alias support.
+ */
 export const Chip = ({
   children,
   variant = 'soft',
@@ -38,30 +34,16 @@ export const Chip = ({
   const isSemantic =
     color !== 'inherit' && !color?.startsWith('#') && !color?.startsWith('rgb');
 
-  const chipStyles: React.CSSProperties = {
-    ...style,
+  const chipVariables = {
+    /* Mappa i token -9, -3, -11 e on-9 generati nel CSS */
     '--chip-base': isSemantic ? `var(--pittorica-${color}-9)` : color,
-    '--chip-bg': isSemantic ? `var(--pittorica-${color}-3)` : color,
-    '--chip-text': isSemantic ? `var(--pittorica-${color}-11)` : 'white',
+    '--chip-soft-bg': isSemantic
+      ? `var(--pittorica-${color}-3)`
+      : 'transparent',
+    '--chip-soft-text': isSemantic ? `var(--pittorica-${color}-11)` : 'inherit',
+    '--chip-on-base': isSemantic ? `var(--pittorica-on-${color}-9)` : 'white',
+    ...style,
   } as React.CSSProperties;
-
-  const variantStyles = {
-    solid: {
-      backgroundColor: 'var(--chip-base)',
-      color: 'white',
-      borderColor: 'var(--chip-base)',
-    },
-    soft: {
-      backgroundColor: 'var(--chip-bg)',
-      color: 'var(--chip-text)',
-      borderColor: 'transparent',
-    },
-    outline: {
-      backgroundColor: 'transparent',
-      color: 'var(--chip-text)',
-      borderColor: 'var(--chip-base)',
-    },
-  };
 
   return (
     <Box
@@ -71,15 +53,14 @@ export const Chip = ({
         `pittorica-chip--size-${size}`,
         className
       )}
-      style={{ ...variantStyles[variant], ...chipStyles }}
+      data-variant={variant}
+      style={chipVariables}
       {...props}
     >
       {startDecorator && (
         <span className="pittorica-chip-decorator">{startDecorator}</span>
       )}
-
       <span className="pittorica-chip-content">{children}</span>
-
       {endDecorator && (
         <span className="pittorica-chip-decorator">{endDecorator}</span>
       )}
@@ -87,7 +68,6 @@ export const Chip = ({
       {onDelete && (
         <button
           type="button"
-          aria-label="Delete"
           className="pittorica-chip-delete"
           onClick={(e) => {
             e.stopPropagation();
@@ -95,7 +75,7 @@ export const Chip = ({
           }}
         >
           {deleteIcon || (
-            <span style={{ fontSize: '1.2em', lineHeight: 0 }}>×</span>
+            <span style={{ fontSize: '1.2em', lineHeight: 0 }}>x</span>
           )}
         </button>
       )}

@@ -2,14 +2,19 @@
   .pittorica-sheet-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: color-mix(
+      in srgb,
+      var(--pittorica-black) 40%,
+      transparent
+    );
     z-index: 1000;
     animation: pittorica-fade-in 0.2s ease-out;
+    backdrop-filter: blur(4px);
   }
 
   .pittorica-sheet-content {
     position: fixed;
-    background-color: var(--pittorica-panel-background, white);
+    background-color: var(--pittorica-surface-1);
     z-index: 1001;
     box-shadow: var(--pittorica-shadow-5);
     display: flex;
@@ -17,30 +22,48 @@
     transition: transform 0.3s cubic-bezier(0.05, 0.7, 0.1, 1);
   }
 
-  .pittorica-sheet-side {
+  .pittorica-sheet--right {
     top: 0;
     right: 0;
     bottom: 0;
     width: 100%;
     max-width: 400px;
-    border-left: 1px solid var(--pittorica-slate-4);
-    border-radius: var(--pittorica-radius-5) 0 0 var(--pittorica-radius-5);
-    transform: translateX(0);
+    border-left: 1px solid var(--pittorica-slate-3);
+    border-radius: var(--pittorica-radius-4) 0 0 var(--pittorica-radius-4);
   }
 
-  .pittorica-sheet-bottom {
+  .pittorica-sheet--left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: 400px;
+    border-right: 1px solid var(--pittorica-slate-3);
+    border-radius: 0 var(--pittorica-radius-4) var(--pittorica-radius-4) 0;
+  }
+
+  .pittorica-sheet--top {
+    top: 0;
+    left: 0;
+    right: 0;
+    max-height: 50vh;
+    border-bottom: 1px solid var(--pittorica-slate-3);
+    border-radius: 0 0 var(--pittorica-radius-4) var(--pittorica-radius-4);
+  }
+
+  .pittorica-sheet--bottom {
     left: 0;
     right: 0;
     bottom: 0;
     max-height: 90vh;
-    border-radius: var(--pittorica-radius-5) var(--pittorica-radius-5) 0 0;
-    transform: translateY(0);
+    border-top: 1px solid var(--pittorica-slate-3);
+    border-radius: var(--pittorica-radius-4) var(--pittorica-radius-4) 0 0;
   }
 
   .pittorica-sheet-handle {
     width: 32px;
     height: 4px;
-    background-color: var(--pittorica-slate-6);
+    background-color: var(--pittorica-slate-4);
     border-radius: var(--pittorica-radius-full);
     margin: var(--pittorica-space-3) auto;
   }
