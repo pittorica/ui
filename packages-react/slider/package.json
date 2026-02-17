@@ -13,7 +13,6 @@
     "build:js": "vite build",
     "build:types": "tsc -p tsconfig.json",
     "clean": "rm -rf dist",
-    "dev": "vite",
     "test": "vitest run",
     "test:watch": "vitest"
   },
