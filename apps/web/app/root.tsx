@@ -17,26 +17,36 @@ import {
 } from 'react-router';
 
 import {
+  IconBrandGithub,
   IconBulb,
   IconBulbOff,
   IconLayoutSidebarLeftExpand,
 } from '@tabler/icons-react';
 
 import {
+  Avatar,
   Box,
   Button,
   Card,
+  Container,
+  Divider,
   Flex,
+  Grid,
   Heading,
   IconButton,
+  Link,
   PittoricaTheme,
+  Stack,
   Text,
 } from '@pittorica/react';
 
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
 import './app.css';
 
 import type { Route } from './+types/root';
+import { CookieConsentInit } from './components/CookieConsentInit';
 import { Sidebar } from './components/Sidebar';
+import { consentConfig } from './configs/cookie-consent';
 
 export const links: Route.LinksFunction = () => [
   {
@@ -57,6 +67,14 @@ export const meta: Route.MetaFunction = () => [
     name: 'description',
     content: 'Pittorica starter kit.',
   },
+  { property: 'og:title', content: 'Pittorica' },
+  { property: 'og:description', content: 'Pittorica starter kit.' },
+  { property: 'og:image', content: '/banner.png' },
+  { property: 'og:type', content: 'website' },
+  { name: 'twitter:card', content: 'summary_large_image' },
+  { name: 'twitter:title', content: 'Pittorica' },
+  { name: 'twitter:description', content: 'Pittorica starter kit.' },
+  { name: 'twitter:image', content: '/banner.png' },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -98,27 +116,134 @@ export function Layout({ children }: { children: React.ReactNode }) {
                 <IconLayoutSidebarLeftExpand />
               </IconButton>
 
-              <IconButton
-                variant="text"
-                color="inherit"
-                onClick={toggleAppearance}
-                aria-label="Toggle theme"
-              >
-                {appearance === 'dark' ? (
-                  <IconBulbOff size={20} />
-                ) : (
-                  <IconBulb size={20} />
-                )}
-              </IconButton>
+              <Flex gap="2">
+                <IconButton
+                  variant="text"
+                  color="inherit"
+                  as="a"
+                  href="https://dcdavidev.me"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="dcdavidev.me"
+                >
+                  <Avatar size="1" src="/dcdavidev.jpg" fallback="DC" />
+                </IconButton>
+
+                <IconButton
+                  variant="text"
+                  color="inherit"
+                  as="a"
+                  href="https://github.com/pittorica/ui"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub Repository"
+                >
+                  <IconBrandGithub size={20} />
+                </IconButton>
+
+                <IconButton
+                  variant="text"
+                  color="inherit"
+                  onClick={toggleAppearance}
+                  aria-label="Toggle theme"
+                >
+                  {appearance === 'dark' ? (
+                    <IconBulbOff size={20} />
+                  ) : (
+                    <IconBulb size={20} />
+                  )}
+                </IconButton>
+              </Flex>
             </Box>
           </Card>
 
           <Box
             id="top"
-            style={{ paddingTop: 'var(--pittorica-app-bar-height, 64px)' }}
+            style={{
+              paddingTop: 'var(--pittorica-app-bar-height, 64px)',
+              minHeight: '100vh',
+              display: 'flex',
+              flexDirection: 'column',
+            }}
           >
-            {children}
+            <Box style={{ flexGrow: 1 }}>{children}</Box>
+
+            <Box as="footer" pt="9" pb="6" mt="9">
+              <Container maxWidth="lg">
+                <Flex direction="column" gap="6">
+                  <Grid columns={{ initial: '1', sm: '2' }} gap="6">
+                    <Stack gap="4">
+                      <Flex align="center" gap="3">
+                        <Avatar
+                          size="3"
+                          src="/assets/logo/logo.png"
+                          fallback="P"
+                        />
+                        <Heading size="6">Pittorica</Heading>
+                      </Flex>
+                      <Text
+                        color="slate"
+                        size="2"
+                        style={{ maxWidth: '300px' }}
+                      >
+                        A painterly, CSS-first UI framework that brings elegant,
+                        lightweight structure to modern interfaces.
+                      </Text>
+                    </Stack>
+
+                    <Flex
+                      justify={{ initial: 'start', sm: 'end' }}
+                      align="start"
+                      gap="8"
+                    >
+                      <Stack gap="3">
+                        <Heading size="3">Legal</Heading>
+                        <Link href="/privacy" size="2" color="slate">
+                          Privacy Policy
+                        </Link>
+                        <Link href="/terms" size="2" color="slate">
+                          Terms & Conditions
+                        </Link>
+                      </Stack>
+                      <Stack gap="3">
+                        <Heading size="3">Community</Heading>
+                        <Link
+                          href="https://github.com/pittorica/ui"
+                          size="2"
+                          color="slate"
+                        >
+                          <Flex align="center" gap="1">
+                            <IconBrandGithub size={16} />
+                            GitHub
+                          </Flex>
+                        </Link>
+                      </Stack>
+                    </Flex>
+                  </Grid>
+
+                  <Divider />
+
+                  <Flex
+                    direction={{ initial: 'column', sm: 'row' }}
+                    justify="between"
+                    align={{ initial: 'start', sm: 'center' }}
+                    gap="4"
+                  >
+                    <Text size="1" color="slate">
+                      © {new Date().getFullYear()} Pittorica UI Framework.
+                    </Text>
+                    <Text size="1" color="slate">
+                      Built with passion by{' '}
+                      <Link href="https:/dcdavidev.me" size="1" weight="medium">
+                        dcdavidev
+                      </Link>
+                    </Text>
+                  </Flex>
+                </Flex>
+              </Container>
+            </Box>
           </Box>
+          <CookieConsentInit config={consentConfig} />
         </PittoricaTheme>
         <ScrollRestoration />
         <Scripts />
