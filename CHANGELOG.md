@@ -1,5 +1,23 @@
 # Changelog
 
+# [0.25.0](https://github.com/pittorica/ui/compare/v0.24.0...v0.25.0) (2026-02-18)
+
+
+### Bug Fixes
+
+* **workspace:** fix box type prop ([2b3052c](https://github.com/pittorica/ui/commit/2b3052c88708dd29f69f96fe8dc32cc26785051a))
+
+
+### Features
+
+* **code:** delete theme prop, create header ([29b69bf](https://github.com/pittorica/ui/commit/29b69bf21c742c09b123e7a78e6ce12f30bf6afc))
+* **web:** add alert-dialog route ([67a7d85](https://github.com/pittorica/ui/commit/67a7d85598333a0c2cf170fadf948b6125d05824))
+* **web:** add aspect-ratio route ([ef968cd](https://github.com/pittorica/ui/commit/ef968cd1878fd2d451a7097403cf86559bdc967e))
+* **web:** add footer ([1d6c7d7](https://github.com/pittorica/ui/commit/1d6c7d7a78b30926739982a1987836002c8fb794))
+* **web:** improve api section ([6d8819e](https://github.com/pittorica/ui/commit/6d8819e373eb5a072c49eb77712db30e663e39d0))
+* **web:** init components ([663f009](https://github.com/pittorica/ui/commit/663f00963e6a2823e83bb1f52be16a221af5a470))
+* **web:** init landing page ([6da65c2](https://github.com/pittorica/ui/commit/6da65c2d1a98325b51ff6eed9effc2a4c60d0900))
+
 # [0.24.0](https://github.com/pittorica/ui/compare/v0.23.2...v0.24.0) (2026-02-10)
 
 ### Features

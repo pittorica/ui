@@ -1,6 +1,6 @@
 {
   "name": "pittorica",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "private": false,
   "description": "Core CSS design tokens and modern reset for the Pittorica UI library, inspired by Material Design 3 Expressive and Radix UI.",
   "keywords": [
