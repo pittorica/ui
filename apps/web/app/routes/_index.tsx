@@ -42,7 +42,12 @@ export default function Route() {
             </Callout>
 
             <Card translucent p="4">
-              <Flex direction={'column'} justify={'center'} align={'stretch'}>
+              <Flex
+                direction={'column'}
+                justify={'center'}
+                align={'stretch'}
+                gap={'2'}
+              >
                 <Code
                   showLineNumbers
                   language="bash"
@@ -65,7 +70,7 @@ export default function Route () {
               </Flex>
             </Card>
 
-            <Button variant="elevated" size="lg">
+            <Button variant="elevated" size="lg" as="a" href="/components">
               Browse Components
             </Button>
           </Flex>

@@ -19,6 +19,7 @@
     user-select: none;
     gap: var(--pittorica-space-2);
     white-space: nowrap;
+    text-decoration: none !important;
 
     /* Internal Colors Mapping */
     --_btn-color: var(--pittorica-button-color, var(--pittorica-source-color));
