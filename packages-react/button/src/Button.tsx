@@ -14,6 +14,10 @@ export type ButtonProps<E extends ElementType = 'button'> = BoxProps<E> & {
   color?: PittoricaColor;
   /** @default false */
   disabled?: boolean;
+  /**
+   * The theme appearance of the popover content.
+   */
+  appearance?: 'light' | 'dark' | 'inherit';
 };
 
 /**
@@ -26,6 +30,7 @@ export const Button = <E extends ElementType = 'button'>({
   size = 'sm',
   color = 'indigo',
   disabled = false,
+  appearance,
   className,
   style,
   as,
@@ -69,6 +74,7 @@ export const Button = <E extends ElementType = 'button'>({
         className
       )}
       style={buttonVariables}
+      data-appearance={appearance}
     >
       {children}
     </Box>

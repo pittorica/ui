@@ -554,6 +554,9 @@ importers:
         specifier: '>=19'
         version: 19.2.4(react@19.2.4)
     devDependencies:
+      '@pittorica/react':
+        specifier: ^0.25.0
+        version: 0.25.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@pittorica/theme-react':
         specifier: workspace:*
         version: link:../theme
@@ -5444,10 +5447,190 @@ packages:
       }
     engines: { node: ^20.9.0 || >=22.0.0, npm: '>=10.8.2' }
 
+  '@pittorica/alert-dialog-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-rk4cm2gyWIhh+gTEgfRHqs/KZKprF+5LL0/sHWEajJydzSPosFuTJWEWhmh//ELUBBSEdGC3xrHbJNKXGNVnuQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/aspect-ratio-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-e+e3AWjSxw5iLkMsjcI4Qkpc3ejaxW+9tFkjCqjN+6msANFIpzeVVNPXG1+sZNaIgcBXdGiTJ0y1Li48I+XhWA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/avatar-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-k1rJnYYUlFmOolu+1bdAVK7Wopq1tOiRD0ri321m5ZSkWyxPtSoa3fWR2f2mDra7tRbpvQTSQJxcrhBypNlFDg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/badge-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-5fVvubshppZixR2Gvr550iJA5mspwsK1ESPoyw6U/iIpalg97DnLBumxKt36+4x46LFzH2V6UVNor+0v1BrflQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/blockquote-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-SxT1w4vidouU4AZZc8Bt8NsK+RhlNtE9aWvHUV3UO8oHpQeiiVPSrUOeCOS9cTLi8qlAcnHVAr92xOA6CyCK1g==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
   '@pittorica/box-react@0.25.0':
     resolution:
       {
         integrity: sha512-MDyA3SmvLEOM91BN2PJrvo7/WOFGYBEpVWfo3Gjw5aIiKQ+F8UPUJjs5sQl4esmzsq2xwnXcthO2jMIGWkgjpA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/button-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-/ZS9O8mGfGzc9ktoUldwRicCB6xdTaAh54l76eYgdobNDne8443OjIbxXqyS2vaDN8lbNPAFqEScgaUSOGDlXw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/callout-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-bQ99jZ6rpfr+fU2g6C7jFEPBHwFTtq02uQpWt7BSsBXu7bBqf5g9+Cw6csqKYU8OmIFkTAXCPl3PZWVy/WLeYA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/card-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-l8GbLunzTm0gjIqvnkwJgry9wEANXluyEYtXu4jUt0j+1WGbVBZ6z1FOHQlNNdU6kc2QJ3g8PrnSFd/0FmK6GQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/carousel-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-lDxHzKB+jD0NWMwXPJ1mx6fzW/nfFdKHMpDga0HNMpr+KJ/kOh3ZTD4rxlWVbmufG/0KBJp9eAZM3QSsEYoUEg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/checkbox-card-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-p6mLNPw3dkdlUgkhUCipKatmSQhkPjzpGWBZ28X9tO0u3oyDDNq4jpbiAeemkYnZVcaozCvnlIw22lFjsKtnyg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/checkbox-group-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-6bSfcuB8fvsH+hUFakjbeQKsBOGKtYKohUefjyF6kGUnTiQlm467DOv+zTmIyqYFaMsRnUu25MaZY4OsSY6bAg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/checkbox-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-WAMZAtvDG8jWgWOkiUv3nidep3ZA3r9XDWanco2GsO4C8SO6eDNdbrM0u6HvODN88ipzBaYJXZs4nPu2EP08+w==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/chip-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-U4YoM3im+dLd5tDZwpCzUGC1kPtw/bkAZ5q6mKYgOX32F1ZlpbOutpxXl7UuO5ghj/PdnjgSgHjwT5hDLJHSuw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/code-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-pAX/EhGWXTCZXyAgNfbjkM7ulq0sHj+MFQHGbaWCW13MQzDv3mFnKE2wgxBl/qjSaPFap80WaDrI/3eyw2u8Pg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/container-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-rxXmR88s6awjUt9R44pBPR72h/Im73CtvrUI3KVGDMSBRAWxgNx+T0jjW/TRmPFFFHmol3jlX1Z+3zwgMkvWTg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/context-menu-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-CHO7oRa6CTI1rEqBkyCWBASJuSCCg+JQHmH7Voe4yCTFAPV99E1QVk/Ywn7IJ9NmbWtGVcYQtnVn6ZDXym7IIg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/data-list-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-FJovNgFqtOJC5qZNW60lCAJUQjGo5B98k8FVs650H8xElsGLwxM1LkpGrDS/5nX9PNfhTTUsgKpNQltd/yTjVw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/dialog-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-pmT7lLTwSzHeTmq8QLy2uEmBwqViV80lsxzDDs14dbCNXWX9A8KK08oMdAHowEbzgb2tkh971laLbLa4lEBvSQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/divider-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-fTtR3Rfi0YRxWAoEHJq5VjZMiCfE/f5oKMVAHYIV+aYm7Hv7qIXWH+K+tL6mYTTUeWJdWJCr46EiUISp9fvpyA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/dropdown-menu-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-TEuBylFYtmQ+Lvl0X0NjKszovd088u/hG/vt7Wvbbbae6Ij5dd0qo4dvE20kkc4FlJAGEob5Jk4uBAOm0hKpbA==,
       }
     peerDependencies:
       react: '>=19'
@@ -5471,6 +5654,51 @@ packages:
       react: '>=19'
       react-dom: '>=19'
 
+  '@pittorica/grid-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-kwGHIqkJgMMVzVpwL8LxoXhcFdJ/LrvjEdtYrcNwWVgAOEG6BqQBb6oxLC7shMODz5UkTw2b5wj2FD5FnSW7Mw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/heading-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-+hlxPpKJsssPu/W21dWSLR2zawHoFr4NdoHb8byPCv+/vsD2dqsj25goh+GE9CFUvFzRK2Dh18QsyML5GKyoGg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/hover-card-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-ploF6X04Uga5sMSIiYLhFSCf/PTBVCNsKCcFZ9Yahxrh7VHEyPL1iYMGwGXqmqdHlU/9WK1kwjaA2VMQviSs1A==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/icon-button-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-m4hXLX4N0aDvBpWoJIDvQksReSam4b3E06syqc7ZH4j0QCbcDAxN7AbJCOWNNCMLQfSz5jf5fp4U/EQoOuWqUQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/inset-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-s41Z0EHdMAhq+Crer2Fq0neWljU6TXoUO71xoq3xpJxE7OheUZ2VS6fM8ue4sL8Is3Jz0qIDnQPFgNWGMwl/fg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
   '@pittorica/kbd-react@0.25.0':
     resolution:
       {
@@ -5489,10 +5717,127 @@ packages:
       react: '>=19'
       react-dom: '>=19'
 
+  '@pittorica/popover-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-4h1XWvj/AUEVVyJIwGDN0B7C15DB9xM8CdBWQ3IrHdTB2fKwRl3KdWz+/ZXBY1xPNqtYmiDiTpvWmrHEvQdhqw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/progress-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-O81OTSPCabHNbkpiT+DXMOizIkWAFy0luLxXAppVtiUUb0urXOk7BiV4fqG3rkmtCsqSxogoiGF+bmtEcRO5zQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
   '@pittorica/quote-react@0.25.0':
     resolution:
       {
         integrity: sha512-LJe2mWXF3f0RTliEjgYijt4KWqd6ugqOQss+pMQizVXvGZfSSgEYGA4wX/QNDh21/7FwN4xpBCuaQove5C4sAw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/radio-card-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-dOoL1Le705pxUll7VfT5cJOKNO+uI+R+7y4wYSUQ11LDPmLtXvcSQcVUr/oXiz0iCUQBpY3Vxjv4+0rSA1eRiw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/radio-group-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-RKOGw2FzP5DLF0LU7Z3PD4c7NXLjgVkHiaNq+nwNHinPHAnSLrHl8BfRfxMYes8NccGKnJ2m7GPqheBDqfkaCA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/radio-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-QuPzVaKACfNZEMkdFdAbvqlKGxiiXJXeekBcDFqeGLBykg6TiHtQu77Evq7ByuOtHhyGUjoQrgne1+7vLRfiJw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-lo6UfcdFkkLeFT55VhNQYNy8+4lb2DWECW6Tp7/fwoz2v8zfQR+qrhBHaeUWdcJ2lF8ZQlqKRWaHtrNKrpiBpg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/section-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-wXuYKlZae/CR399MPs77ehIpCjNP7Jd22CWRITrZBANksUJ43P2Sw6ziIREq0QhXiKHoAe+64nAeVA2m+vw50w==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/segmented-control-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-Ins3CiPKz4aCIjilpRfMkNWv/9AGB9CaeEVnbTbySgNI74CFsozCp0oWc9O5PsDoSMQS1Yk7R+tCYOsYAbkfIg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/select-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-/4iF6fCHgZIM00YDVesfPOGdxHBsMCN2qCfBJE3JDBZJN6TZJI29/EdmjuroQQ7sI1sHDwvJw0wlWlkBXz+UnQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/sheet-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-Il9Ba5wVy6tAJhFpsL99TRSrMA5kaiyA6FcReSaFZXoFe6nTjh6OSOvkEnOQbvEm2xsh5Z9wgZs9AuQ1fjSGRQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/skeleton-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-RmO1wgattY41yPc8XKsDwCo5YxijBOgd/9fA51FMXoERkSlBnfcE3YrR9E+DJcGqnphE7x/Fcw9G5gH4mt0Lug==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/slider-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-BeoPQasF+AsOTYqum9ovEpME33Dlf16Y68z5YxdAdCOiWijit7L3riwUJUtTV7vW1dPz8jOaUAmpVefPINipaA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/stack-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-U9ZmR4LDSw4TnHDhBzt2o/XdB6FBdXCKBmS30y/3y9Ht0OwpdwjObkjhT5VTNdh3E9GVL32zBP95TYV1hlnHeg==,
       }
     peerDependencies:
       react: '>=19'
@@ -5507,10 +5852,82 @@ packages:
       react: '>=19'
       react-dom: '>=19'
 
+  '@pittorica/switch-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-Y0mlqiMCtqw5pgwYbF41XmJaATUVdEsOgeYLhScWlvCLPi1Zd4TZ+xd8UBtGJbudiHzGphaxLNtWBHNOAJe9hw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/table-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-e2WGXaWCfCA9EoRZHbaFzsI02a4meNUwLHnLew7NJIxh++ELMBhAIeAxw/okQu3H41ocviPDoAZar84W3Ja6Pg==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/tabs-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-OAy3u01TLbHocJEkG1Za700//A6XApUNLJxwXsiHLOUNvIp6o9V/+/2Et4xGV7Ezz2+whlNI9Ru3Dwo0byBe5A==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/text-area-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-4MulyQSxvw+BeDILjQTcG/1S8dyBYRW4SzrCHu7kGJylmQRKURMPr/ibEO4hT+EJJqMd6Fj+WJVU23PxM++1dA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/text-field-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-mlRaQZottOzht7t62rRhOg7sqUvmrDdMd2QmJv4mZs15nWw9qqBzBBpMKI7IcrkqujxfTJKo5N6JZ7t1YGjRCA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
   '@pittorica/text-react@0.25.0':
     resolution:
       {
         integrity: sha512-D6tg/LwPX5XeZPIWX7pBDdCMRq/14QX5tQm61GNDzBOqe2KK+I1A6bT+hplXvu/WXVOSj35KtMS//kwRgksM6Q==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/theme-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-rc0S7jsyruzk5Mu/dCmEAuahbdAdykO9nkRy2X2bkPnxfBarK5g2fYKEsh1TY+PVL9Rz10ZHZdb6D17vQpWKxw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/toast-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-u1jXFVu7GqemP8hsyxPPq8/aNErbsaSw3hRisul1JB8TF6//9J8mHYlNGDh5I9/OA2iR3bLwNdQzzM0EwZunGw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/tooltip-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-WMx9d2siaSw7ymo7RQDb8FX0iEgKwveiGiSf4InJMueCiOtQ73pAjRZPP4UGRhlPYINIye7d3lDeJbFcyMBKSg==,
       }
     peerDependencies:
       react: '>=19'
@@ -15577,8 +15994,174 @@ snapshots:
 
   '@phun-ky/typeof@2.0.3': {}
 
+  '@pittorica/alert-dialog-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/aspect-ratio-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/avatar-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/badge-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/blockquote-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
   '@pittorica/box-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/button-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/callout-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/card-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/carousel-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/flex-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/icon-button-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      motion: 12.30.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+    transitivePeerDependencies:
+      - '@emotion/is-prop-valid'
+
+  '@pittorica/checkbox-card-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/card-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/flex-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/checkbox-group-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/checkbox-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/checkbox-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/chip-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/code-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/flex-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      react-syntax-highlighter: 16.1.0(react@19.2.4)
+
+  '@pittorica/container-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/context-menu-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/data-list-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/flex-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/dialog-react@0.25.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/heading-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      react-focus-lock: 2.13.7(@types/react@19.2.10)(react@19.2.4)
+    transitivePeerDependencies:
+      - '@types/react'
+
+  '@pittorica/divider-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/dropdown-menu-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
       clsx: 2.1.1
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
@@ -15591,6 +16174,42 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
 
   '@pittorica/flex-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/grid-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/heading-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/hover-card-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/icon-button-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/inset-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       clsx: 2.1.1
@@ -15611,10 +16230,168 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
+  '@pittorica/popover-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@floating-ui/react': 0.27.17(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/progress-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
   '@pittorica/quote-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/radio-card-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/radio-group-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/radio-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/radio-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/react@0.25.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/alert-dialog-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/aspect-ratio-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/avatar-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/badge-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/blockquote-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/button-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/callout-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/card-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/carousel-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/checkbox-card-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/checkbox-group-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/checkbox-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/chip-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/code-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/container-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/context-menu-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/data-list-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/dialog-react': 0.25.0(@types/react@19.2.10)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/divider-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/dropdown-menu-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/em-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/flex-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/grid-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/heading-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/hover-card-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/icon-button-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/inset-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/kbd-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/link-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/popover-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/progress-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/quote-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/radio-card-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/radio-group-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/radio-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/section-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/segmented-control-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/select-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/sheet-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/skeleton-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/slider-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/stack-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/strong-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/switch-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/table-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/tabs-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-area-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-field-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/theme-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/toast-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/tooltip-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+    transitivePeerDependencies:
+      - '@emotion/is-prop-valid'
+      - '@types/react'
+
+  '@pittorica/section-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/segmented-control-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/select-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/sheet-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/icon-button-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/skeleton-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/slider-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/stack-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/flex-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
@@ -15625,7 +16402,69 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
+  '@pittorica/switch-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/table-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/tabs-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/text-area-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/text-field-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
   '@pittorica/text-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/theme-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/toast-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/icon-button-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tabler/icons-react': 3.36.1(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/tooltip-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       clsx: 2.1.1
@@ -16352,7 +17191,7 @@ snapshots:
       magic-string: 0.30.21
       sirv: 3.0.2
       tinyrainbow: 2.0.0
-      vitest: 3.2.4(@types/debug@4.1.12)(@types/node@25.0.10)(@vitest/browser@3.2.4)(jiti@2.6.1)(jsdom@27.4.0)(lightningcss@1.31.1)(msw@2.12.7(@types/node@25.0.10)(typescript@5.9.3))(yaml@2.8.2)
+      vitest: 3.2.4(@types/debug@4.1.12)(@types/node@25.0.10)(@vitest/browser@3.2.4)(jiti@2.6.1)(jsdom@22.1.0)(lightningcss@1.31.1)(msw@2.12.7(@types/node@25.0.10)(typescript@5.9.3))(yaml@2.8.2)
       ws: 8.19.0
     optionalDependencies:
       playwright: 1.58.1

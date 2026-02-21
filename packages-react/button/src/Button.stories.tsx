@@ -1,4 +1,4 @@
-import { Box } from '@pittorica/box-react';
+import { Box, Flex, PittoricaTheme } from '@pittorica/react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, userEvent, within } from '@storybook/test';
 
@@ -74,6 +74,37 @@ export const VariantsGallery: Story = {
         Text
       </Button>
     </Box>
+  ),
+};
+
+export const DarkMode: Story = {
+  render: () => (
+    <PittoricaTheme
+      appearance="dark"
+      style={{
+        padding: '2rem',
+        background: 'var(--pittorica-surface-0)',
+        borderRadius: '8px',
+      }}
+    >
+      <Flex gap="4" wrap="wrap">
+        <Button variant="elevated" color="indigo">
+          Elevated
+        </Button>
+        <Button variant="filled" color="teal">
+          Filled
+        </Button>
+        <Button variant="tonal" color="orange">
+          Tonal
+        </Button>
+        <Button variant="outlined" color="crimson">
+          Outlined
+        </Button>
+        <Button variant="text" color="slate">
+          Text
+        </Button>
+      </Flex>
+    </PittoricaTheme>
   ),
 };
 

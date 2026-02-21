@@ -12,7 +12,14 @@ npm install @pittorica/button-react
 
 ```jsx
 import { Button } from '@pittorica/button-react';
-// TODO: Add usage example
+
+function MyComponent() {
+  return (
+    <Button variant="filled" color="indigo" onClick={() => alert('Clicked!')}>
+      Click Me
+    </Button>
+  );
+}
 ```
 
 ## License

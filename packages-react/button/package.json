@@ -23,6 +23,7 @@
     "clsx": "^2.1.1"
   },
   "devDependencies": {
+    "@pittorica/react": "^0.25.0",
     "@pittorica/theme-react": "workspace:*",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^14.0.0",
