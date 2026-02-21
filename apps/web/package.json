@@ -2,6 +2,7 @@
   "name": "@pittorica/web",
   "version": "0.25.0",
   "private": true,
+  "homepage": "https://pittorica.dcdavidev.me",
   "type": "module",
   "scripts": {
     "build": "react-router build",

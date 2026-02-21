@@ -2,6 +2,7 @@
   "name": "root",
   "version": "0.25.0",
   "private": true,
+  "homepage": "https://pittorica.dcdavidev.me",
   "license": "MIT",
   "author": {
     "name": "Davide Di Criscito"

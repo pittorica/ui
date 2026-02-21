@@ -2,6 +2,7 @@
   "name": "@repo/typescript-config",
   "version": "0.25.0",
   "private": true,
+  "homepage": "https://pittorica.dcdavidev.me",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
