@@ -49,6 +49,12 @@
       var(--pittorica-white)
     );
 
+    --pittorica-slate-11: color-mix(
+      in srgb,
+      var(--pittorica-slate-9) 85%,
+      var(--pittorica-black)
+    );
+
     /* Contrast Logic Light */
     --pittorica-on-slate-1: var(--pittorica-black);
     --pittorica-on-slate-3: var(--pittorica-black);
@@ -96,6 +102,12 @@
       in srgb,
       var(--pittorica-slate-9) 95%,
       var(--pittorica-black)
+    );
+
+    --pittorica-slate-11: color-mix(
+      in srgb,
+      var(--pittorica-slate-9) 40%,
+      var(--pittorica-white)
     );
 
     /* Contrast Logic Dark */

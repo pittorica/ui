@@ -8,17 +8,19 @@ import {
 
 import { createPortal } from 'react-dom';
 
-import { IconSquareRoundedXFilled } from '@tabler/icons-react';
+import { IconX } from '@tabler/icons-react';
 
 import { Box } from '@pittorica/box-react';
 import { IconButton } from '@pittorica/icon-button-react';
-import { Text } from '@pittorica/text-react';
+import { type PittoricaColor, Text } from '@pittorica/text-react';
+import { PittoricaTheme } from '@pittorica/theme-react';
 
 export interface ToastData {
   id: string;
   title: ReactNode;
   description?: ReactNode;
   duration?: number;
+  color?: PittoricaColor;
 }
 
 const TOAST_EVENT = 'pittorica-toast';
@@ -30,6 +32,84 @@ export const toast = (data: Omit<ToastData, 'id'>) => {
   const id = Math.random().toString(36).slice(2, 9);
   const event = new CustomEvent(TOAST_EVENT, { detail: { ...data, id } });
   globalThis.dispatchEvent(event);
+};
+
+/**
+ * Individual Toast Item with its own lifecycle and progress bar.
+ */
+const ToastItem = ({
+  t,
+  onRemove,
+}: {
+  t: ToastData;
+  onRemove: (id: string) => void;
+}) => {
+  const color = t.color || 'slate';
+  const isSemantic =
+    color !== 'inherit' && !color?.startsWith('#') && !color?.startsWith('rgb');
+
+  const resolvedBg = isSemantic
+    ? `var(--pittorica-${color}-3)`
+    : `color-mix(in srgb, ${color} 12%, var(--pittorica-white))`;
+
+  const resolvedText = isSemantic
+    ? `var(--pittorica-${color}-11)`
+    : `color-mix(in srgb, ${color} 80%, var(--pittorica-black))`;
+
+  const resolvedBorder = isSemantic
+    ? `var(--pittorica-${color}-6)`
+    : `color-mix(in srgb, ${color} 20%, transparent)`;
+
+  const duration = t.duration || 3000;
+
+  return (
+    <Box
+      className="pittorica-toast-root"
+      role="status"
+      aria-live="polite"
+      style={
+        {
+          '--_toast-bg': resolvedBg,
+          '--_toast-text': resolvedText,
+          '--_toast-border': resolvedBorder,
+        } as React.CSSProperties
+      }
+    >
+      {/* Progress Bar */}
+      {duration > 0 && (
+        <div
+          className="pittorica-toast-progress"
+          style={{
+            animation: `pittorica-toast-progress-shrink ${duration}ms linear forwards`,
+          }}
+        />
+      )}
+
+      <Box className="pittorica-toast-content">
+        <Text weight="bold" style={{ display: 'block' }}>
+          {t.title}
+        </Text>
+        {t.description && (
+          <Text
+            color="inherit"
+            size="2"
+            style={{ display: 'block', opacity: 0.8 }}
+          >
+            {t.description}
+          </Text>
+        )}
+      </Box>
+      <IconButton
+        variant="text"
+        color="inherit"
+        size="1"
+        onClick={() => onRemove(t.id)}
+        aria-label="Close"
+      >
+        <IconX size={18} />
+      </IconButton>
+    </Box>
+  );
 };
 
 /**
@@ -69,40 +149,22 @@ export const ToastProvider = () => {
 
   if (typeof document === 'undefined') return null;
 
+  // Attempt to inherit appearance from the body/html theme if present
+  const appearance = (document.documentElement.dataset.appearance ||
+    document.body.dataset.appearance ||
+    'light') as 'light' | 'dark';
+
   return createPortal(
     <Box
       className="pittorica-toast-viewport"
       role="region"
       aria-label="Notifications"
     >
-      {toasts.map((t) => (
-        <Box
-          key={t.id}
-          className="pittorica-toast-root"
-          role="status"
-          aria-live="polite"
-        >
-          <Box className="pittorica-toast-content">
-            <Text weight="bold" style={{ display: 'block' }}>
-              {t.title}
-            </Text>
-            {t.description && (
-              <Text color="slate" style={{ display: 'block' }}>
-                {t.description}
-              </Text>
-            )}
-          </Box>
-          <IconButton
-            variant="text"
-            color="slate"
-            size="1"
-            onClick={() => removeToast(t.id)}
-            aria-label="Close"
-          >
-            <IconSquareRoundedXFilled size={18} />
-          </IconButton>
-        </Box>
-      ))}
+      <PittoricaTheme appearance={appearance}>
+        {toasts.map((t) => (
+          <ToastItem key={t.id} t={t} onRemove={removeToast} />
+        ))}
+      </PittoricaTheme>
     </Box>,
     document.body
   );

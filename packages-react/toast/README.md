@@ -11,8 +11,26 @@ npm install @pittorica/toast-react
 ## Usage
 
 ```jsx
-import { Toast } from '@pittorica/toast-react';
-// TODO: Add usage example
+import { toast, ToastProvider } from '@pittorica/toast-react';
+
+function MyApp() {
+  return (
+    <>
+      <ToastProvider />
+      <button
+        onClick={() =>
+          toast({
+            title: 'Success!',
+            description: 'Action completed.',
+            color: 'teal',
+          })
+        }
+      >
+        Show Toast
+      </button>
+    </>
+  );
+}
 ```
 
 ## License

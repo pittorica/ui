@@ -180,6 +180,22 @@ export const Example = () => {
                       <Text size="2">Time in ms before auto-dismiss.</Text>
                     </Table.Cell>
                   </Table.Row>
+                  <Table.Row>
+                    <Table.Cell>
+                      <Code>color</Code>
+                    </Table.Cell>
+                    <Table.Cell>
+                      <Text size="2">PittoricaColor</Text>
+                    </Table.Cell>
+                    <Table.Cell>
+                      <Text size="2">'slate'</Text>
+                    </Table.Cell>
+                    <Table.Cell>
+                      <Text size="2">
+                        The semantic color of the notification.
+                      </Text>
+                    </Table.Cell>
+                  </Table.Row>
                 </Table.Body>
               </Table.Root>
             </Box>

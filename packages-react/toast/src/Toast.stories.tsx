@@ -39,12 +39,47 @@ export const Interactive: StoryObj = {
         onClick={() =>
           toast({
             title: 'Connection Error',
+            color: 'red',
             description: 'Could not reach the server. Please try again.',
             duration: 5000,
           })
         }
       >
         Show Error Toast
+      </Button>
+    </Flex>
+  ),
+};
+
+export const AllColors: StoryObj = {
+  render: () => (
+    <Flex direction="column" gap="2">
+      <Button onClick={() => toast({ title: 'Default', color: 'slate' })}>
+        Slate
+      </Button>
+      <Button
+        color="indigo"
+        onClick={() => toast({ title: 'Primary', color: 'indigo' })}
+      >
+        Indigo
+      </Button>
+      <Button
+        color="teal"
+        onClick={() => toast({ title: 'Success', color: 'teal' })}
+      >
+        Teal
+      </Button>
+      <Button
+        color="orange"
+        onClick={() => toast({ title: 'Warning', color: 'orange' })}
+      >
+        Orange
+      </Button>
+      <Button
+        color="red"
+        onClick={() => toast({ title: 'Danger', color: 'red' })}
+      >
+        Red
       </Button>
     </Flex>
   ),
