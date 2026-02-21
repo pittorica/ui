@@ -9,19 +9,23 @@ import {
 
 import { Button } from '@pittorica/button-react';
 import { Flex } from '@pittorica/flex-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { DropdownMenu, DropdownMenuItem } from './DropdownMenu.js';
 
-const meta: Meta<typeof DropdownMenu> = {
+const meta = {
   title: 'Navigation/DropdownMenu',
+  args: { onClick: fn() },
   component: DropdownMenu,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof DropdownMenu>;
 
 export default meta;
 
-export const Basic: StoryObj<typeof DropdownMenu> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   render: () => (
     <Flex align="center" justify="center" style={{ height: '200px' }}>
       <DropdownMenu
@@ -54,7 +58,7 @@ export const Basic: StoryObj<typeof DropdownMenu> = {
   ),
 };
 
-export const Subtitles: StoryObj<typeof DropdownMenu> = {
+export const Subtitles: Story = {
   render: () => (
     <Flex align="center" justify="center" style={{ height: '200px' }}>
       <DropdownMenu
@@ -84,4 +88,20 @@ export const Subtitles: StoryObj<typeof DropdownMenu> = {
       </DropdownMenu>
     </Flex>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

@@ -45,7 +45,7 @@
     );
     --pittorica-slate-8: color-mix(
       in srgb,
-      var(--pittorica-slate-9) 80%,
+      var(--pittorica-slate-9) 85%,
       var(--pittorica-white)
     );
 

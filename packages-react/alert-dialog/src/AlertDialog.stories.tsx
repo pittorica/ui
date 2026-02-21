@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
 import { Button } from '@pittorica/button-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import {
   AlertDialog,
@@ -10,7 +11,7 @@ import {
   AlertDialogTitle,
 } from './AlertDialog.js';
 
-const meta: Meta<typeof AlertDialog> = {
+const meta = {
   title: 'Feedback/AlertDialog',
   component: AlertDialog,
   parameters: {
@@ -23,10 +24,11 @@ const meta: Meta<typeof AlertDialog> = {
     closeOnOverlayClick: { control: 'boolean' },
     closeOnEsc: { control: 'boolean' },
   },
-};
+} satisfies Meta<typeof AlertDialog>;
 
 export default meta;
-type Story = StoryObj<typeof AlertDialog>;
+
+type Story = StoryObj<typeof meta>;
 
 export const Destructive: Story = {
   render: (args) => {
@@ -67,6 +69,7 @@ export const Destructive: Story = {
 
 export const ForcedInteraction: Story = {
   args: {
+    onClick: fn(),
     closeOnOverlayClick: false,
     closeOnEsc: false,
   },
@@ -98,5 +101,21 @@ export const ForcedInteraction: Story = {
         </AlertDialog>
       </>
     );
+  },
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
   },
 };

@@ -4,19 +4,21 @@ import { Box } from '@pittorica/box-react';
 import { Flex } from '@pittorica/flex-react';
 import { Heading } from '@pittorica/heading-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { HoverCard } from './HoverCard.js';
 
-const meta: Meta<typeof HoverCard> = {
+const meta = {
   title: 'Composite/HoverCard',
   component: HoverCard,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof HoverCard>;
 
 export default meta;
 
-export const UserProfile: StoryObj<typeof HoverCard> = {
+type Story = StoryObj<typeof meta>;
+
+export const UserProfile: Story = {
   render: () => (
     <Box p="8">
       <Text>

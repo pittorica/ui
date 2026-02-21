@@ -1,5 +1,6 @@
 import { Flex } from '@pittorica/flex-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { TextArea } from './TextArea.js';
 
@@ -33,12 +34,15 @@ const meta: Meta<typeof TextArea.Root> = {
       description: 'Visual error state with red border',
     },
   },
-};
+} satisfies Meta<typeof TextArea>;
 
 export default meta;
 
+type Story = StoryObj<typeof meta>;
+
 export const Basic: StoryObj<typeof TextArea.Root> = {
   args: {
+    onClick: fn(),
     label: 'Description',
     helperText: 'Write a brief overview of your project.',
     color: 'indigo',
@@ -118,4 +122,20 @@ export const States: StoryObj<typeof TextArea.Root> = {
       </TextArea.Root>
     </Flex>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

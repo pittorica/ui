@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 import { Button } from '@pittorica/button-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Sheet } from './Sheet';
 
-const meta: Meta<typeof Sheet> = {
+const meta = {
   title: 'Feedback/Sheet',
   component: Sheet,
-};
+} satisfies Meta<typeof Sheet>;
 
 export default meta;
 

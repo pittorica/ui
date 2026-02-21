@@ -1,9 +1,9 @@
 import { Box } from '@pittorica/box-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { AspectRatio } from './AspectRatio.js';
 
-const meta: Meta<typeof AspectRatio> = {
+const meta = {
   title: 'Media/AspectRatio',
   component: AspectRatio,
   tags: ['autodocs'],
@@ -13,11 +13,13 @@ const meta: Meta<typeof AspectRatio> = {
       description: 'The desired aspect ratio (e.g., 16/9, 4/3, 1)',
     },
   },
-};
+} satisfies Meta<typeof AspectRatio>;
 
 export default meta;
 
-export const ImageExample: StoryObj<typeof AspectRatio> = {
+type Story = StoryObj<typeof meta>;
+
+export const ImageExample: Story = {
   render: (args) => (
     <Box style={{ width: '400px' }}>
       <AspectRatio {...args} ratio={16 / 9}>
@@ -30,7 +32,7 @@ export const ImageExample: StoryObj<typeof AspectRatio> = {
   ),
 };
 
-export const Square: StoryObj<typeof AspectRatio> = {
+export const Square: Story = {
   args: {
     ratio: 1,
     children: (

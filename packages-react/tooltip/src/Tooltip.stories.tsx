@@ -2,14 +2,14 @@ import { IconInfoCircle } from '@tabler/icons-react';
 
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Tooltip } from './Tooltip';
 
-const meta: Meta<typeof Tooltip> = {
+const meta = {
   title: 'Feedback/Tooltip',
   component: Tooltip,
-};
+} satisfies Meta<typeof Tooltip>;
 
 export default meta;
 

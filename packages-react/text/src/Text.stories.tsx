@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Text } from './Text';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Text> = {
+const meta = {
   title: 'Typography/Text',
   component: Text,
   tags: ['autodocs'],
@@ -47,10 +47,11 @@ const meta: Meta<typeof Text> = {
         'Sets the color of the text. Can be a semantic token or a custom value.',
     },
   },
-};
+} satisfies Meta<typeof Text>;
 
 export default meta;
-type Story = StoryObj<typeof Text>;
+
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {

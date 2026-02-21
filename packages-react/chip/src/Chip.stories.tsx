@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Chip } from './Chip';
 
-const meta: Meta<typeof Chip> = {
+const meta = {
   title: 'Media/Chip',
   component: Chip,
   tags: ['autodocs'],
@@ -14,15 +14,17 @@ const meta: Meta<typeof Chip> = {
     variant: { control: 'radio', options: ['solid', 'soft', 'outline'] },
     size: { control: 'radio', options: ['1', '2', '3'] },
   },
-};
+} satisfies Meta<typeof Chip>;
 
 export default meta;
 
-export const Basic: StoryObj<typeof Chip> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   args: { children: 'Chip Content', variant: 'soft', color: 'indigo' },
 };
 
-export const Deletable: StoryObj<typeof Chip> = {
+export const Deletable: Story = {
   args: {
     children: 'Deletable Tag',
     onDelete: () => alert('Deleted!'),

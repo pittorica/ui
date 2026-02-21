@@ -1,18 +1,20 @@
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { RadioGroup, RadioGroupItem } from './RadioGroup.js';
 
-const meta: Meta<typeof RadioGroup> = {
+const meta = {
   title: 'Composite/RadioGroup',
   component: RadioGroup,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof RadioGroup>;
 
 export default meta;
 
-export const Basic: StoryObj<typeof RadioGroup> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   render: () => (
     <RadioGroup defaultValue="compact">
       <Flex direction="column" gap="3">
@@ -39,7 +41,7 @@ export const Basic: StoryObj<typeof RadioGroup> = {
   ),
 };
 
-export const Colored: StoryObj<typeof RadioGroup> = {
+export const Colored: Story = {
   args: {
     color: 'crimson',
     defaultValue: '2',
@@ -64,7 +66,7 @@ export const Colored: StoryObj<typeof RadioGroup> = {
   ),
 };
 
-export const DisabledGroup: StoryObj<typeof RadioGroup> = {
+export const DisabledGroup: Story = {
   render: () => (
     <RadioGroup disabled defaultValue="1">
       <Flex direction="column" gap="2">

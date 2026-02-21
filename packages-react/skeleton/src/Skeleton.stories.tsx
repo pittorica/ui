@@ -1,15 +1,15 @@
 import { Box } from '@pittorica/box-react';
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Skeleton } from './Skeleton';
 
-const meta: Meta<typeof Skeleton> = {
+const meta = {
   title: 'Feedback/Skeleton',
   component: Skeleton,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof Skeleton>;
 
 export default meta;
 

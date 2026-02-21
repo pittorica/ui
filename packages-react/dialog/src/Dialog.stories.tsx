@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { Button } from '@pittorica/button-react';
 import { PittoricaTheme } from '@pittorica/theme-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import {
   Dialog,
@@ -11,8 +12,9 @@ import {
   DialogTitle,
 } from './Dialog';
 
-const meta: Meta<typeof Dialog> = {
+const meta = {
   title: 'Feedback/Dialog',
+  args: { onClick: fn() },
   component: Dialog,
   parameters: {
     layout: 'centered',
@@ -25,10 +27,11 @@ const meta: Meta<typeof Dialog> = {
     },
     onClose: { action: 'closed' },
   },
-};
+} satisfies Meta<typeof Dialog>;
 
 export default meta;
-type Story = StoryObj<typeof Dialog>;
+
+type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
   render: (args) => {
@@ -102,5 +105,21 @@ export const Dark: Story = {
         </Dialog>
       </PittoricaTheme>
     );
+  },
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
   },
 };

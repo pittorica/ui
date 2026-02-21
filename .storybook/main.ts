@@ -13,6 +13,7 @@ const config: StorybookConfig = {
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-onboarding'),
+    getAbsolutePath('@storybook/addon-vitest'),
   ],
   framework: {
     name: getAbsolutePath('@storybook/react-vite'),

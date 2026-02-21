@@ -46,7 +46,7 @@
     );
     --pittorica-success-11: color-mix(
       in srgb,
-      var(--pittorica-success-9) 80%,
+      var(--pittorica-success-9) 85%,
       var(--pittorica-black)
     );
 

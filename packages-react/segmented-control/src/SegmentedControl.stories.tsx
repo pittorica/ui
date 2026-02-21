@@ -1,16 +1,22 @@
 import { IconDeviceDesktop, IconMoon, IconSun } from '@tabler/icons-react';
 
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { SegmentedControl } from './SegmentedControl';
 
 const meta: Meta<typeof SegmentedControl.Root> = {
   title: 'Navigation/SegmentedControl',
+  args: {
+    onClick: fn(),
+  },
   component: SegmentedControl.Root,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof SegmentedControl>;
 
 export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Basic: StoryObj = {
   render: () => (
@@ -35,4 +41,20 @@ export const ThemeSwitch: StoryObj = {
       </SegmentedControl.Item>
     </SegmentedControl.Root>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

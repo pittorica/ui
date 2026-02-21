@@ -5,17 +5,21 @@ import { Button } from '@pittorica/button-react';
 import { Flex } from '@pittorica/flex-react';
 import { IconButton } from '@pittorica/icon-button-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { Popover, PopoverContent, PopoverTrigger } from './Popover';
 
-const meta: Meta<typeof Popover> = {
+const meta = {
   title: 'Feedback/Popover',
+  args: { onClick: fn() },
   component: Popover,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof Popover>;
 
 export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Basic: StoryObj = {
   render: () => (
@@ -90,4 +94,20 @@ export const SettingsMenu: StoryObj = {
       </PopoverContent>
     </Popover>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

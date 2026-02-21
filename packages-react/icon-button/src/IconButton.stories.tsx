@@ -1,19 +1,23 @@
 import { IconPlus, IconSettings, IconTrash } from '@tabler/icons-react';
 
 import { Flex } from '@pittorica/flex-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { IconButton } from './IconButton';
 
-const meta: Meta<typeof IconButton> = {
+const meta = {
   title: 'Interactive/IconButton',
+  args: { onClick: fn() },
   component: IconButton,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof IconButton>;
 
 export default meta;
 
-export const Variants: StoryObj<typeof IconButton> = {
+type Story = StoryObj<typeof meta>;
+
+export const Variants: Story = {
   render: () => (
     <Flex gap="3">
       <IconButton variant="filled">
@@ -32,7 +36,7 @@ export const Variants: StoryObj<typeof IconButton> = {
   ),
 };
 
-export const Colors: StoryObj<typeof IconButton> = {
+export const Colors: Story = {
   render: () => (
     <Flex gap="3">
       <IconButton color="red">
@@ -46,4 +50,20 @@ export const Colors: StoryObj<typeof IconButton> = {
       </IconButton>
     </Flex>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

@@ -1,19 +1,21 @@
 import { Flex } from '@pittorica/flex-react';
 import { Heading } from '@pittorica/heading-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { CheckboxCard } from './CheckboxCard';
 
-const meta: Meta<typeof CheckboxCard> = {
+const meta = {
   title: 'Composite/CheckboxCard',
   component: CheckboxCard,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof CheckboxCard>;
 
 export default meta;
 
-export const Grid: StoryObj<typeof CheckboxCard> = {
+type Story = StoryObj<typeof meta>;
+
+export const Grid: Story = {
   render: (args) => (
     <CheckboxCard {...args} orientation="horizontal" defaultValue={['1']}>
       <CheckboxCard.Item value="1" style={{ width: '200px' }}>
@@ -32,7 +34,7 @@ export const Grid: StoryObj<typeof CheckboxCard> = {
   ),
 };
 
-export const Translucent: StoryObj<typeof CheckboxCard> = {
+export const Translucent: Story = {
   render: (args) => (
     <Flex
       p="6"

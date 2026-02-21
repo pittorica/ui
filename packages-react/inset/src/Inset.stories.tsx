@@ -1,11 +1,11 @@
 import { Box } from '@pittorica/box-react';
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Inset } from './Inset';
 
-const meta: Meta<typeof Inset> = {
+const meta = {
   title: 'Layout/Inset',
   component: Inset,
   tags: ['autodocs'],
@@ -24,10 +24,11 @@ const meta: Meta<typeof Inset> = {
       </Box>
     ),
   ],
-};
+} satisfies Meta<typeof Inset>;
 
 export default meta;
-type Story = StoryObj<typeof Inset>;
+
+type Story = StoryObj<typeof meta>;
 
 export const ImageInset: Story = {
   args: {

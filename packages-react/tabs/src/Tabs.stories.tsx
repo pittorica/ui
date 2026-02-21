@@ -1,6 +1,6 @@
 import { Box } from '@pittorica/box-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Tabs } from './Tabs';
 
@@ -8,7 +8,7 @@ const meta: Meta<typeof Tabs.Root> = {
   title: 'Navigation/Tabs',
   component: Tabs.Root,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof Tabs>;
 
 export default meta;
 

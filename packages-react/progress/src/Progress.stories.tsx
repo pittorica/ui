@@ -3,26 +3,28 @@ import { useEffect, useState } from 'react';
 import { Box } from '@pittorica/box-react';
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Progress } from './Progress.js';
 
-const meta: Meta<typeof Progress> = {
+const meta = {
   title: 'Feedback/Progress',
   component: Progress,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof Progress>;
 
 export default meta;
 
-export const Basic: StoryObj<typeof Progress> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   args: {
     value: 40,
     color: 'indigo',
   },
 };
 
-export const FunkyWave: StoryObj<typeof Progress> = {
+export const FunkyWave: Story = {
   args: {
     value: 65,
     variant: 'wave',

@@ -1,19 +1,23 @@
 import { Box } from '@pittorica/box-react';
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { ContextMenu, ContextMenuItem, ContextMenuSub } from './ContextMenu';
 
-const meta: Meta<typeof ContextMenu> = {
+const meta = {
   title: 'Navigation/ContextMenu',
+  args: { onClick: fn() },
   component: ContextMenu,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof ContextMenu>;
 
 export default meta;
 
-export const Basic: StoryObj<typeof ContextMenu> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   render: () => (
     <Flex align="center" justify="center" style={{ height: '300px' }}>
       <ContextMenu
@@ -49,7 +53,7 @@ export const Basic: StoryObj<typeof ContextMenu> = {
   ),
 };
 
-export const Nested: StoryObj<typeof ContextMenu> = {
+export const Nested: Story = {
   render: () => (
     <Flex align="center" justify="center" style={{ height: '400px' }}>
       <ContextMenu
@@ -80,4 +84,20 @@ export const Nested: StoryObj<typeof ContextMenu> = {
       </ContextMenu>
     </Flex>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

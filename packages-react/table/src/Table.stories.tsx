@@ -1,6 +1,6 @@
 import { Chip } from '@pittorica/chip-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Table } from './Table';
 
@@ -8,7 +8,7 @@ const meta: Meta<typeof Table.Root> = {
   title: 'Data/Table',
   tags: ['autodocs'],
   component: Table.Root,
-};
+} satisfies Meta<typeof Table>;
 
 export default meta;
 

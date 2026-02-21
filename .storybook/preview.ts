@@ -1,10 +1,9 @@
 import 'pittorica';
 
-// @ts-expect-error react is correctly installed
 import React from 'react';
 
 import { PittoricaTheme } from '@pittorica/theme-react';
-import type { Preview } from '@storybook/react-vite';
+import type { Preview } from '@storybook/react';
 
 const preview: Preview = {
   parameters: {

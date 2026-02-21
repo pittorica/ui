@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from './Avatar';
 
-const meta: Meta<typeof Avatar> = {
+const meta = {
   title: 'Media/Avatar',
   component: Avatar,
   tags: ['autodocs'],
@@ -26,10 +26,11 @@ const meta: Meta<typeof Avatar> = {
       description: 'Content to render when image is missing or fails',
     },
   },
-};
+} satisfies Meta<typeof Avatar>;
 
 export default meta;
-type Story = StoryObj<typeof Avatar>;
+
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {

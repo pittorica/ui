@@ -1,16 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { DataList } from './DataList';
 
-const meta: Meta<typeof DataList> = {
+const meta = {
   title: 'Data/DataList',
   component: DataList,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof DataList>;
 
 export default meta;
 
-export const Basic: StoryObj<typeof DataList> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   render: (args) => (
     <DataList {...args}>
       <DataList.Item>

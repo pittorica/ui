@@ -1,16 +1,18 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { CheckboxGroup } from './CheckboxGroup';
 
-const meta: Meta<typeof CheckboxGroup> = {
+const meta = {
   title: 'Composite/CheckboxGroup',
   component: CheckboxGroup,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof CheckboxGroup>;
 
 export default meta;
 
-export const Vertical: StoryObj<typeof CheckboxGroup> = {
+type Story = StoryObj<typeof meta>;
+
+export const Vertical: Story = {
   render: (args) => (
     <CheckboxGroup {...args} defaultValue={['apple']}>
       <CheckboxGroup.Item value="apple" label="Apple" />
@@ -20,7 +22,7 @@ export const Vertical: StoryObj<typeof CheckboxGroup> = {
   ),
 };
 
-export const Horizontal: StoryObj<typeof CheckboxGroup> = {
+export const Horizontal: Story = {
   args: { orientation: 'horizontal' },
   render: (args) => (
     <CheckboxGroup {...args}>

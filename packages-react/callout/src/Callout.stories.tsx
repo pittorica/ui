@@ -1,10 +1,10 @@
 import { IconAlertTriangle, IconInfoCircle } from '@tabler/icons-react';
 
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Callout } from './Callout';
 
-const meta: Meta<typeof Callout> = {
+const meta = {
   title: 'Feedback/Callout',
   component: Callout,
   tags: ['autodocs'],
@@ -15,11 +15,13 @@ const meta: Meta<typeof Callout> = {
     },
     variant: { control: 'radio', options: ['soft', 'outline'] },
   },
-};
+} satisfies Meta<typeof Callout>;
 
 export default meta;
 
-export const Info: StoryObj<typeof Callout> = {
+type Story = StoryObj<typeof meta>;
+
+export const Info: Story = {
   render: (args) => (
     <Callout {...args} color="indigo">
       <Callout.Icon>
@@ -32,7 +34,7 @@ export const Info: StoryObj<typeof Callout> = {
   ),
 };
 
-export const Warning: StoryObj<typeof Callout> = {
+export const Warning: Story = {
   args: {
     color: 'amber',
     children: (

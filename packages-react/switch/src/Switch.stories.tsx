@@ -1,18 +1,22 @@
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { Switch } from './Switch.js';
 
-const meta: Meta<typeof Switch> = {
+const meta = {
   title: 'Interactive/Switch',
+  args: { onClick: fn() },
   component: Switch,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof Switch>;
 
 export default meta;
 
-export const Basic: StoryObj<typeof Switch> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   render: () => (
     <Flex align="center" gap="3">
       <Switch id="s1" />
@@ -23,7 +27,7 @@ export const Basic: StoryObj<typeof Switch> = {
   ),
 };
 
-export const Colors: StoryObj<typeof Switch> = {
+export const Colors: Story = {
   render: () => (
     <Flex gap="4">
       <Switch defaultChecked color="red" />
@@ -31,4 +35,20 @@ export const Colors: StoryObj<typeof Switch> = {
       <Switch defaultChecked color="amber" />
     </Flex>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

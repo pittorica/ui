@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Code } from './Code';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
-const meta: Meta<typeof Code> = {
+const meta = {
   title: 'Typography/Code',
   component: Code,
   tags: ['autodocs'],
@@ -23,10 +23,11 @@ const meta: Meta<typeof Code> = {
       description: 'Theme for syntax highlighting.',
     },
   },
-};
+} satisfies Meta<typeof Code>;
 
 export default meta;
-type Story = StoryObj<typeof Code>;
+
+type Story = StoryObj<typeof meta>;
 
 export const InlineCode: Story = {
   args: {

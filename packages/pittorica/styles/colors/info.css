@@ -46,7 +46,7 @@
     );
     --pittorica-info-11: color-mix(
       in srgb,
-      var(--pittorica-info-9) 80%,
+      var(--pittorica-info-9) 85%,
       var(--pittorica-black)
     );
 

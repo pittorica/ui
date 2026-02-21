@@ -1,10 +1,10 @@
 import { Avatar } from '@pittorica/avatar-react';
 import { Box } from '@pittorica/box-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Badge } from './Badge.js';
 
-const meta: Meta<typeof Badge> = {
+const meta = {
   title: 'Feedback/Badge',
   component: Badge,
   parameters: {
@@ -30,10 +30,11 @@ const meta: Meta<typeof Badge> = {
     },
     invisible: { control: 'boolean' },
   },
-};
+} satisfies Meta<typeof Badge>;
 
 export default meta;
-type Story = StoryObj<typeof Badge>;
+
+type Story = StoryObj<typeof meta>;
 
 export const Basic: Story = {
   args: {

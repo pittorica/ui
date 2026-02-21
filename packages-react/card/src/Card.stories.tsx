@@ -4,11 +4,11 @@ import { Box } from '@pittorica/box-react';
 import { Flex } from '@pittorica/flex-react';
 import { Heading } from '@pittorica/heading-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Card } from './Card.js';
 
-const meta: Meta<typeof Card> = {
+const meta = {
   title: 'Data/Card',
   component: Card,
   tags: ['autodocs'],
@@ -16,11 +16,13 @@ const meta: Meta<typeof Card> = {
     variant: { control: 'radio', options: ['surface', 'outlined', 'ghost'] },
     translucent: { control: 'boolean' },
   },
-};
+} satisfies Meta<typeof Card>;
 
 export default meta;
 
-export const GlassCard: StoryObj<typeof Card> = {
+type Story = StoryObj<typeof meta>;
+
+export const GlassCard: Story = {
   render: (args) => (
     <Flex
       p="9"
@@ -48,7 +50,7 @@ export const GlassCard: StoryObj<typeof Card> = {
   ),
 };
 
-export const WithImage: StoryObj<typeof Card> = {
+export const WithImage: Story = {
   render: (args) => (
     <Card {...args} style={{ width: '300px' }}>
       <AspectRatio ratio={16 / 9}>

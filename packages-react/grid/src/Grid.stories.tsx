@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Box } from '@pittorica/box-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Grid } from './Grid.js';
 
@@ -9,7 +9,7 @@ import { Grid } from './Grid.js';
  * Grid component for complex two-dimensional layouts.
  * Supports responsive configurations and fluid auto-wrapping (auto-fit).
  */
-const meta: Meta<typeof Grid> = {
+const meta = {
   title: 'Layout/Grid',
   component: Grid,
   tags: ['autodocs'],
@@ -43,10 +43,11 @@ const meta: Meta<typeof Grid> = {
       ],
     },
   },
-};
+} satisfies Meta<typeof Grid>;
 
 export default meta;
-type Story = StoryObj<typeof Grid>;
+
+type Story = StoryObj<typeof meta>;
 
 const Item = ({
   children,

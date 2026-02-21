@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Heading } from './Heading';
 
@@ -6,7 +6,7 @@ import { Heading } from './Heading';
  * Heading component for titles.
  * Supports Radix-like responsive size scaling via CSS media queries.
  */
-const meta: Meta<typeof Heading> = {
+const meta = {
   title: 'Typography/Heading',
   component: Heading,
   tags: ['autodocs'],
@@ -48,10 +48,11 @@ const meta: Meta<typeof Heading> = {
       description: 'Sets the color of the heading using semantic tokens.',
     },
   },
-};
+} satisfies Meta<typeof Heading>;
 
 export default meta;
-type Story = StoryObj<typeof Heading>;
+
+type Story = StoryObj<typeof meta>;
 
 // Default Stories match the current visual styles
 export const H1Default: Story = {

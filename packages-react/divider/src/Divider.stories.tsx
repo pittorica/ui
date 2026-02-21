@@ -1,9 +1,9 @@
 import { Box } from '@pittorica/box-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Divider } from './Divider.js';
 
-const meta: Meta<typeof Divider> = {
+const meta = {
   title: 'Data/Divider',
   component: Divider,
   tags: ['autodocs'],
@@ -13,11 +13,13 @@ const meta: Meta<typeof Divider> = {
       options: ['solid', 'double', 'dots', 'wave', 'scallop'],
     },
   },
-};
+} satisfies Meta<typeof Divider>;
 
 export default meta;
 
-export const AllVariants: StoryObj<typeof Divider> = {
+type Story = StoryObj<typeof meta>;
+
+export const AllVariants: Story = {
   render: () => (
     <Box
       style={{

@@ -2,7 +2,8 @@ import { IconLock, IconMail, IconSearch } from '@tabler/icons-react';
 
 import { Box } from '@pittorica/box-react';
 import { Flex } from '@pittorica/flex-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { TextField } from './TextField.js';
 
@@ -12,6 +13,9 @@ import { TextField } from './TextField.js';
  */
 const meta: Meta<typeof TextField.Root> = {
   title: 'Interactive/TextField',
+  args: {
+    onClick: fn(),
+  },
   component: TextField.Root,
   tags: ['autodocs'],
   argTypes: {
@@ -27,9 +31,11 @@ const meta: Meta<typeof TextField.Root> = {
     disabled: { control: 'boolean' },
     error: { control: 'boolean' },
   },
-};
+} satisfies Meta<typeof TextField>;
 
 export default meta;
+
+type Story = StoryObj<typeof meta>;
 
 export const Basic: StoryObj = {
   render: (args) => (
@@ -114,4 +120,20 @@ export const Search: StoryObj = {
       </TextField.Slot>
     </TextField.Root>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

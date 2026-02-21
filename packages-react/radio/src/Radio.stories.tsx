@@ -2,19 +2,23 @@ import { useState } from 'react';
 
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { Radio } from './Radio.js';
 
-const meta: Meta<typeof Radio> = {
+const meta = {
   title: 'Interactive/Radio',
+  args: { onClick: fn() },
   component: Radio,
   tags: ['autodocs'],
-};
+} satisfies Meta<typeof Radio>;
 
 export default meta;
 
-export const Basic: StoryObj<typeof Radio> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   render: () => {
     const [checked, setChecked] = useState(false);
     return (
@@ -28,7 +32,7 @@ export const Basic: StoryObj<typeof Radio> = {
   },
 };
 
-export const Colors: StoryObj<typeof Radio> = {
+export const Colors: Story = {
   render: () => (
     <Flex gap="4">
       <Radio checked color="indigo" />
@@ -39,7 +43,7 @@ export const Colors: StoryObj<typeof Radio> = {
   ),
 };
 
-export const States: StoryObj<typeof Radio> = {
+export const States: Story = {
   render: () => (
     <Flex gap="4" align="center">
       <Flex direction="column" align="center" gap="1">
@@ -56,4 +60,20 @@ export const States: StoryObj<typeof Radio> = {
       </Flex>
     </Flex>
   ),
+};
+
+export const Interactive: Story = {
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const element =
+      canvas.queryByRole('button') ||
+      canvas.queryByRole('checkbox') ||
+      canvas.queryByRole('radio');
+    if (element) {
+      await userEvent.click(element);
+      if (args.onClick) {
+        await expect(args.onClick).toHaveBeenCalled();
+      }
+    }
+  },
 };

@@ -47,7 +47,7 @@
 
     --pittorica-teal-11: color-mix(
       in srgb,
-      var(--pittorica-teal-9) 80%,
+      var(--pittorica-teal-9) 85%,
       var(--pittorica-black)
     );
 

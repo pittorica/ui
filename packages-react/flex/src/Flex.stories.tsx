@@ -1,5 +1,5 @@
 import { Box } from '@pittorica/box-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Flex } from './Flex.js';
 
@@ -7,7 +7,7 @@ import { Flex } from './Flex.js';
  * Flex component for building responsive and fluid layouts using CSS Cascade Layers.
  * Supports responsive object syntax and auto-wrapping fluid basis.
  */
-const meta: Meta<typeof Flex> = {
+const meta = {
   title: 'Layout/Flex',
   component: Flex,
   tags: ['autodocs'],
@@ -30,10 +30,11 @@ const meta: Meta<typeof Flex> = {
       description: 'Fluid basis for children (e.g., "auto-200px")',
     },
   },
-};
+} satisfies Meta<typeof Flex>;
 
 export default meta;
-type Story = StoryObj<typeof Flex>;
+
+type Story = StoryObj<typeof meta>;
 
 const Placeholder = ({
   color = 'var(--pittorica-indigo-9)',

@@ -1,6 +1,6 @@
 import { Box } from '@pittorica/box-react';
 import { Button } from '@pittorica/button-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Carousel } from './Carousel.js';
 
@@ -15,7 +15,7 @@ const meta: Meta<typeof Carousel.Root> = {
   parameters: {
     layout: 'fullscreen',
   },
-};
+} satisfies Meta<typeof Carousel>;
 
 export default meta;
 

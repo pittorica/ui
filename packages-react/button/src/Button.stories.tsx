@@ -1,5 +1,6 @@
 import { Box } from '@pittorica/box-react';
-import type { Meta, StoryObj } from '@storybook/react-vite';
+import type { Meta, StoryObj } from '@storybook/react';
+import { expect, fn, userEvent, within } from '@storybook/test';
 
 import { Button } from './Button.js';
 
@@ -7,10 +8,13 @@ import { Button } from './Button.js';
  * Material Design 3 Button component.
  * Supports 5 variants, 5 sizes, and interactive states.
  */
-const meta: Meta<typeof Button> = {
+const meta = {
   title: 'Interactive/Button',
   component: Button,
   tags: ['autodocs'],
+  args: {
+    onClick: fn(),
+  },
   argTypes: {
     variant: {
       control: 'select',
@@ -32,16 +36,19 @@ const meta: Meta<typeof Button> = {
       description: 'Disabled state layer with 38% opacity',
     },
   },
-};
+} satisfies Meta<typeof Button>;
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+
+type Story = StoryObj<typeof meta>;
 
 /**
  * Matrix of all 5 MD3 variants.
- * All buttons apply elevation on hover state.
  */
 export const VariantsGallery: Story = {
+  args: {
+    children: 'Button',
+  },
   render: (args) => (
     <Box
       style={{
@@ -70,79 +77,15 @@ export const VariantsGallery: Story = {
   ),
 };
 
-/**
- * Visualization of the 5 MD3 size recommendations.
- * Small is the default existing size with 16dp recommended padding.
- */
-export const AllSizes: Story = {
-  render: (args) => (
-    <Box
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '16px',
-        alignItems: 'center',
-      }}
-    >
-      <Button {...args} size="xs">
-        Extra small
-      </Button>
-      <Button {...args} size="sm">
-        Small
-      </Button>
-      <Button {...args} size="md">
-        Medium
-      </Button>
-      <Button {...args} size="lg">
-        Large
-      </Button>
-      <Button {...args} size="xl">
-        Extra large
-      </Button>
-    </Box>
-  ),
-};
-
-/**
- * Functional states including Enabled, Disabled, and Hovered (simulated by props).
- */
-export const States: Story = {
-  render: () => (
-    <Box style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-      <Box style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-        <Button variant="filled">Enabled</Button>
-        <Button variant="filled" disabled>
-          Disabled
-        </Button>
-      </Box>
-      <Box style={{ display: 'flex', gap: '16px', alignItems: 'center' }}>
-        <Button variant="elevated">Elevated Enabled</Button>
-        <Button variant="elevated" disabled>
-          Elevated Disabled
-        </Button>
-      </Box>
-    </Box>
-  ),
-};
-
-export const SemanticColors: Story = {
-  render: () => (
-    <Box style={{ display: 'flex', gap: '16px' }}>
-      <Button color="indigo">Primary</Button>
-      <Button color="crimson" variant="tonal">
-        Secondary
-      </Button>
-      <Button color="red" variant="outlined">
-        Danger
-      </Button>
-    </Box>
-  ),
-};
-
-export const AsLink: Story = {
+export const Interactive: Story = {
   args: {
-    children: 'Go to Documentation',
-    href: '#',
-    variant: 'outlined',
+    children: 'Interactive Button',
+  },
+  render: (args) => <Button {...args} />,
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole('button', { name: /Interactive Button/i });
+    await userEvent.click(button);
+    await expect(args.onClick).toHaveBeenCalled();
   },
 };

@@ -46,7 +46,7 @@
     );
     --pittorica-danger-11: color-mix(
       in srgb,
-      var(--pittorica-danger-9) 80%,
+      var(--pittorica-danger-9) 85%,
       var(--pittorica-black)
     );
 
