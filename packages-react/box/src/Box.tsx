@@ -36,6 +36,7 @@ interface BoxOwnProps<E extends ElementType> {
   height?: string;
   position?: 'static' | 'relative' | 'absolute' | 'fixed' | 'sticky';
   disabled?: boolean;
+  required?: boolean;
 }
 
 export type BoxProps<E extends ElementType> = BoxOwnProps<E> &
@@ -65,6 +66,7 @@ export const Box = <E extends ElementType = 'div'>({
   style,
   className,
   disabled,
+  required,
   ...props
 }: BoxProps<E>) => {
   const Tag = as || 'div';
@@ -120,6 +122,7 @@ export const Box = <E extends ElementType = 'div'>({
       className={clsx('pittorica-box', className)}
       style={finalStyles}
       disabled={disabled}
+      required={required}
       {...props}
     >
       {children}

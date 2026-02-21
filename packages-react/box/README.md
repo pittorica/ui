@@ -12,7 +12,17 @@ npm install @pittorica/box-react
 
 ```jsx
 import { Box } from '@pittorica/box-react';
-// TODO: Add usage example
+
+function MyForm() {
+  return (
+    <Box as="form">
+      <Box as="input" required placeholder="Required field" />
+      <Box as="button" type="submit">
+        Submit
+      </Box>
+    </Box>
+  );
+}
 ```
 
 ## License

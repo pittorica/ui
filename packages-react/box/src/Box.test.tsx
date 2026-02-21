@@ -30,4 +30,10 @@ describe('Box', () => {
     const element = container.firstChild as HTMLElement;
     expect(element.classList.contains('active')).toBe(false);
   });
+
+  it('should apply the required attribute when the required prop is true', () => {
+    const { container } = render(<Box as="input" required />);
+    const element = container.firstChild as HTMLInputElement;
+    expect(element.required).toBe(true);
+  });
 });

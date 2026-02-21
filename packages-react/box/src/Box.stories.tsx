@@ -91,6 +91,10 @@ const meta = {
       options: ['static', 'relative', 'absolute', 'fixed', 'sticky'],
       description: 'Sets the CSS position property.',
     },
+    required: {
+      control: 'boolean',
+      description: 'Sets the native HTML required attribute.',
+    },
   },
 } satisfies Meta<typeof Box>;
 
