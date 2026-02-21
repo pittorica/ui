@@ -1,7 +1,7 @@
 @layer pittorica-components {
   .pittorica-inset {
     box-sizing: border-box;
-
+    /* Default assumes parent padding is space-4 */
     --_inset-margin: calc(var(--pittorica-space-4) * -1);
   }
 
@@ -20,11 +20,13 @@
     margin-top: var(--_inset-margin);
     margin-left: var(--_inset-margin);
     margin-right: var(--_inset-margin);
+    margin-bottom: 0;
   }
   .pittorica-inset--bottom {
     margin-bottom: var(--_inset-margin);
     margin-left: var(--_inset-margin);
     margin-right: var(--_inset-margin);
+    margin-top: 0;
   }
 
   .pittorica-inset > img,
@@ -33,5 +35,10 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+
+  /* Ensure border radius consistency if clipped */
+  .pittorica-inset[style*='overflow: hidden'] {
+    border-radius: inherit;
   }
 }

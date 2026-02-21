@@ -11,8 +11,18 @@ npm install @pittorica/inset-react
 ## Usage
 
 ```jsx
-import { Inset } from '@pittorica/inset-react';
-// TODO: Add usage example
+import { Inset, Box, Text } from '@pittorica/react';
+
+function MyCard() {
+  return (
+    <Box p="4" style={{ border: '1px solid var(--pittorica-slate-4)' }}>
+      <Inset side="top">
+        <img src="header.jpg" alt="Header" />
+      </Inset>
+      <Text mt="3">Card Content</Text>
+    </Box>
+  );
+}
 ```
 
 ## License

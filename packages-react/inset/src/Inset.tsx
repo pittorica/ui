@@ -37,7 +37,6 @@ export const Inset = <E extends ElementType = 'div'>({
 
   return (
     <Box
-      /* Explicitly link Tag and Generic E for type safety */
       as={Tag as ElementType}
       className={clsx('pittorica-inset', `pittorica-inset--${side}`, className)}
       style={{
