@@ -34,17 +34,6 @@ describe('Progress', () => {
     expect(indicatorMax).toHaveStyle({ width: '100%' });
   });
 
-  it('renders SVG wave pattern only when variant is wave', () => {
-    const { container: defaultContainer } = render(<Progress value={30} />);
-    expect(defaultContainer.querySelector('svg')).not.toBeInTheDocument();
-
-    const { container: waveContainer } = render(
-      <Progress value={30} variant="wave" />
-    );
-    expect(waveContainer.querySelector('svg')).toBeInTheDocument();
-    expect(waveContainer.querySelector('pattern')).toBeInTheDocument();
-  });
-
   it('applies custom semantic colors via CSS variables', () => {
     const { container } = render(<Progress value={50} color="orange" />);
     const root = container.firstChild as HTMLElement;

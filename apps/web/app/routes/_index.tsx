@@ -394,7 +394,7 @@ export default function Route () {
               </Flex>
             </RadioGroup>
 
-            <Progress value={75} variant="wave" style={{ width: 200 }} />
+            <Progress value={75} style={{ width: 200 }} />
 
             <RadioCard.Root columns="2" style={{ width: 300 }}>
               <RadioCard.Item value="1">

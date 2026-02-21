@@ -12,7 +12,16 @@ npm install @pittorica/progress-react
 
 ```jsx
 import { Progress } from '@pittorica/progress-react';
-// TODO: Add usage example
+
+function MyComponent() {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+      <Progress value={45} color="indigo" />
+      <Progress value={100} color="success" />
+      <Progress value={15} color="danger" />
+    </div>
+  );
+}
 ```
 
 ## License

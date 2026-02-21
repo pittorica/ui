@@ -18,8 +18,8 @@ import { Progress, Flex } from '@pittorica/react';
 export const Example = () => {
   return (
     <Flex direction="column" gap="4">
-      <Progress value={45} />
-      <Progress value={70} variant="wave" color="teal" />
+      <Progress value={45} color="indigo" />
+      <Progress value={70} color="teal" />
     </Flex>
   );
 };`;
@@ -31,8 +31,7 @@ export const Example = () => {
         <Flex direction="column" gap="4">
           <Heading size="8">Progress</Heading>
           <Text size="4" color="gray" mb="6">
-            Displays an indicator of the status of a task or process. Features a
-            unique "wave" variant with animated SVG patterns.
+            Displays an indicator of the status of a task or process.
           </Text>
 
           <Flex direction="row" gap="2" basis="auto-300px">
@@ -71,22 +70,11 @@ export const Example = () => {
 
             <Box>
               <Text weight="bold" mb="2">
-                Wave Variant
-              </Text>
-              <Progress
-                value={65}
-                variant="wave"
-                color="teal"
-                style={{ height: 20 }}
-              />
-            </Box>
-
-            <Box>
-              <Text weight="bold" mb="2">
                 Semantic States
               </Text>
               <Flex direction="column" gap="3">
                 <Progress value={100} color="success" />
+                <Progress value={65} color="teal" />
                 <Progress value={15} color="danger" />
               </Flex>
             </Box>
@@ -149,20 +137,6 @@ export const Example = () => {
                   </Table.Cell>
                   <Table.Cell>
                     <Text size="2">The maximum progress value.</Text>
-                  </Table.Cell>
-                </Table.Row>
-                <Table.Row>
-                  <Table.Cell>
-                    <Code>variant</Code>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Text size="2">'default' | 'wave'</Text>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Text size="2">'default'</Text>
-                  </Table.Cell>
-                  <Table.Cell>
-                    <Text size="2">The visual variant of the bar.</Text>
                   </Table.Cell>
                 </Table.Row>
                 <Table.Row>

@@ -11,6 +11,22 @@ const meta = {
   title: 'Feedback/Progress',
   component: Progress,
   tags: ['autodocs'],
+  argTypes: {
+    color: {
+      control: 'select',
+      options: [
+        'indigo',
+        'red',
+        'teal',
+        'amber',
+        'slate',
+        'orange',
+        'purple',
+        'pink',
+        'gray',
+      ],
+    },
+  },
 } satisfies Meta<typeof Progress>;
 
 export default meta;
@@ -24,19 +40,10 @@ export const Basic: Story = {
   },
 };
 
-export const FunkyWave: Story = {
-  args: {
-    value: 65,
-    variant: 'wave',
-    color: 'teal',
-    style: { height: '20px' },
-  },
-};
-
 /**
  * A story that demonstrates the progress bar moving dynamically.
  */
-export const AnimatedShowcase = {
+export const AnimatedShowcase: Story = {
   render: () => {
     const [progress, setProgress] = useState(0);
 
@@ -51,21 +58,23 @@ export const AnimatedShowcase = {
       <Flex direction="column" gap="6" width="400px">
         <Box>
           <Text mb="2" weight="bold">
-            System Upload ({progress}%)
+            Standard Progress ({progress}%)
           </Text>
           <Progress value={progress} color="indigo" />
         </Box>
 
         <Box>
           <Text mb="2" weight="bold">
-            Funky Wave Download
+            Success State
           </Text>
-          <Progress
-            value={progress}
-            variant="wave"
-            color="orange"
-            style={{ height: '24px' }}
-          />
+          <Progress value={progress} color="teal" />
+        </Box>
+
+        <Box>
+          <Text mb="2" weight="bold">
+            Warning State
+          </Text>
+          <Progress value={progress} color="orange" />
         </Box>
 
         <Box>
