@@ -8,6 +8,13 @@
     padding-right: var(--pittorica-space-4);
   }
 
+  .pittorica-container--disable-gutters {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* --- Fixed Logic --- */
+  /* Adapts max-width to the current breakpoint */
   .pittorica-container[data-fixed='true'] {
     max-width: 100%;
   }
@@ -30,6 +37,11 @@
   @media (min-width: 1280px) {
     .pittorica-container[data-fixed='true'] {
       max-width: var(--pittorica-bp-lg);
+    }
+  }
+  @media (min-width: 1640px) {
+    .pittorica-container[data-fixed='true'] {
+      max-width: var(--pittorica-bp-xl);
     }
   }
 }

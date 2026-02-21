@@ -11,15 +11,18 @@ export type ContainerProps<E extends ElementType = 'div'> = BoxProps<E> & {
   /**
    * Determine the maximum width of the container.
    * Corresponds to the design system breakpoints.
+   * @default 'lg'
    */
   maxWidth?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | false;
   /**
    * If true, the container will adapt its max-width to the current breakpoint
    * instead of being fluid.
+   * @default false
    */
   fixed?: boolean;
   /**
    * Removes the default left and right padding.
+   * @default false
    */
   disableGutters?: boolean;
 };
@@ -41,19 +44,22 @@ export const Container = <E extends ElementType = 'div'>({
   const Tag = as || 'div';
 
   const containerStyles: React.CSSProperties = {
-    ...style,
-    // Logic: Map maxWidth to breakpoint token or set to 100% if false
+    // Logic: Map maxWidth to breakpoint token if not in 'fixed' mode
     maxWidth:
       maxWidth && !fixed ? `var(--pittorica-bp-${maxWidth})` : undefined,
-    paddingLeft: disableGutters ? '0px' : undefined,
-    paddingRight: disableGutters ? '0px' : undefined,
+    ...style,
   };
 
   return (
     <Box
-      /* Explicitly link Tag and Generic E for type safety */
       as={Tag as ElementType}
-      className={clsx('pittorica-container', className)}
+      className={clsx(
+        'pittorica-container',
+        {
+          'pittorica-container--disable-gutters': disableGutters,
+        },
+        className
+      )}
       data-fixed={fixed}
       style={containerStyles}
       {...(props as BoxProps<E>)}

@@ -21,12 +21,10 @@ describe('Container', () => {
     expect(element.dataset.fixed).toBe('true');
   });
 
-  it('should disable gutters when prop is true', () => {
+  it('should apply the disable-gutters class when prop is true', () => {
     const { container } = render(<Container disableGutters>Content</Container>);
     const element = container.firstChild as HTMLElement;
-    const styleString = element.getAttribute('style') || '';
 
-    expect(styleString).toContain('padding-left: 0px');
-    expect(styleString).toContain('padding-right: 0px');
+    expect(element).toHaveClass('pittorica-container--disable-gutters');
   });
 });
