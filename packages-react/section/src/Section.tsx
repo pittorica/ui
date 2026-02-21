@@ -10,12 +10,12 @@ export type SectionProps<E extends ElementType = 'section'> = BoxProps<E> & {
    * Maps to responsive padding values in CSS.
    * @default '3'
    */
-  size?: '1' | '2' | '3';
+  size?: '1' | '2' | '3' | '4';
 };
 
 /**
  * Section component for high-level page layout.
- * Fully polymorphic and agnostic.
+ * Fully polymorphic and agnostic foundation.
  */
 export const Section = <E extends ElementType = 'section'>({
   children,
@@ -28,7 +28,6 @@ export const Section = <E extends ElementType = 'section'>({
 
   return (
     <Box
-      /* Explicitly link Tag and Generic E for type safety */
       as={Tag as ElementType}
       className={clsx('pittorica-section', className)}
       data-size={size}

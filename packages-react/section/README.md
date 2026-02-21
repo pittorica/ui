@@ -11,8 +11,16 @@ npm install @pittorica/section-react
 ## Usage
 
 ```jsx
-import { Section } from '@pittorica/section-react';
-// TODO: Add usage example
+import { Section, Heading, Text } from '@pittorica/react';
+
+function MyPage() {
+  return (
+    <Section size="3">
+      <Heading>About Us</Heading>
+      <Text>Modular and accessible design system.</Text>
+    </Section>
+  );
+}
 ```
 
 ## License
