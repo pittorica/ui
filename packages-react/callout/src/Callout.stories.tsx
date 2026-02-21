@@ -11,9 +11,31 @@ const meta = {
   argTypes: {
     color: {
       control: 'select',
-      options: ['indigo', 'red', 'amber', 'teal', 'slate'],
+      options: [
+        'indigo',
+        'red',
+        'amber',
+        'teal',
+        'slate',
+        'orange',
+        'purple',
+        'pink',
+        'gray',
+      ],
     },
     variant: { control: 'radio', options: ['soft', 'outline'] },
+    size: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg', 'xl'],
+    },
+    direction: {
+      control: 'radio',
+      options: ['row', 'column'],
+    },
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
   },
 } satisfies Meta<typeof Callout>;
 
@@ -34,9 +56,29 @@ export const Info: Story = {
   ),
 };
 
+export const CenteredColumn: Story = {
+  args: {
+    color: 'teal',
+    direction: 'column',
+    align: 'center',
+    children: (
+      <>
+        <Callout.Icon>
+          <IconInfoCircle size={32} />
+        </Callout.Icon>
+        <Callout.Text>
+          Your account has been successfully upgraded to the Pro plan. Explore
+          the new features now.
+        </Callout.Text>
+      </>
+    ),
+  },
+};
+
 export const Warning: Story = {
   args: {
     color: 'amber',
+    size: 'lg',
     children: (
       <>
         <Callout.Icon>

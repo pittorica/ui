@@ -13,12 +13,21 @@ export type CalloutRootProps<E extends ElementType = 'div'> = BoxProps<E> & {
   variant?: 'soft' | 'outline';
   /** @default 'indigo' */
   color?: PittoricaColor;
+  /** @default 'md' */
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  /** @default 'row' */
+  direction?: 'row' | 'column';
+  /** @default 'start' */
+  align?: 'start' | 'center' | 'end';
   children: React.ReactNode;
 };
 
 const CalloutRoot = <E extends ElementType = 'div'>({
   variant = 'soft',
   color = 'indigo',
+  size = 'md',
+  direction = 'row',
+  align = 'start',
   children,
   className,
   style,
@@ -27,7 +36,18 @@ const CalloutRoot = <E extends ElementType = 'div'>({
 }: CalloutRootProps<E>) => {
   const isSemantic =
     color !== 'inherit' && !color?.startsWith('#') && !color?.startsWith('rgb');
-  const resolvedColor = isSemantic ? `var(--pittorica-${color}-9)` : color;
+
+  const resolvedBg = isSemantic
+    ? `var(--pittorica-${color}-3)`
+    : `color-mix(in srgb, ${color} 12%, var(--pittorica-white))`;
+
+  const resolvedText = isSemantic
+    ? `var(--pittorica-${color}-11)`
+    : `color-mix(in srgb, ${color} 80%, var(--pittorica-black))`;
+
+  const resolvedBorder = isSemantic
+    ? `var(--pittorica-${color}-6)`
+    : `color-mix(in srgb, ${color} 20%, transparent)`;
 
   const Tag = as || 'div';
 
@@ -37,10 +57,18 @@ const CalloutRoot = <E extends ElementType = 'div'>({
       className={clsx(
         'pittorica-callout',
         `pittorica-callout--${variant}`,
+        `pittorica-callout--${size}`,
+        `pittorica-callout--dir-${direction}`,
+        `pittorica-callout--align-${align}`,
         className
       )}
       style={
-        { '--_callout-color': resolvedColor, ...style } as React.CSSProperties
+        {
+          '--_callout-bg': resolvedBg,
+          '--_callout-text': resolvedText,
+          '--_callout-border': resolvedBorder,
+          ...style,
+        } as React.CSSProperties
       }
       {...(props as BoxProps<E>)}
     >
