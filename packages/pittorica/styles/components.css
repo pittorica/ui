@@ -9,6 +9,7 @@
 /* Typography - Text must load before Heading to ensure correct inheritance */
 @import './components/text.css';
 @import './components/heading.css';
+@import './components/blockquote.css';
 @import './components/kbd.css';
 
 /* Interactive Elements */

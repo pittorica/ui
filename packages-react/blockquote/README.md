@@ -12,7 +12,15 @@ npm install @pittorica/blockquote-react
 
 ```jsx
 import { Blockquote } from '@pittorica/blockquote-react';
-// TODO: Add usage example
+
+function MyComponent() {
+  return (
+    <Blockquote variant="soft" color="indigo">
+      Design is not just what it looks like and feels like. Design is how it
+      works.
+    </Blockquote>
+  );
+}
 ```
 
 ## License
