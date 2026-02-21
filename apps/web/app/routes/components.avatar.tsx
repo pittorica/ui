@@ -127,6 +127,35 @@ export const Example = () => {
           </Card>
         </Section>
 
+        {/* Dark Mode Preview */}
+        <Section>
+          <Heading size="4" mb="4">
+            Dark Mode Preview
+          </Heading>
+          <PittoricaTheme appearance="dark">
+            <Card
+              variant="outlined"
+              p="9"
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                backgroundColor: 'var(--pittorica-black)',
+                color: 'var(--pittorica-white)',
+              }}
+            >
+              <Flex gap="4" align="center">
+                <Avatar fallback="D" color="indigo" />
+                <Avatar fallback="M" color="teal" />
+                <Avatar fallback="P" color="orange" />
+                <Avatar
+                  src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?w=128&h=128&dpr=2&q=80"
+                  alt="Dark Image"
+                />
+              </Flex>
+            </Card>
+          </PittoricaTheme>
+        </Section>
+
         {/* Implementation Code */}
         <Box mb="9">
           <Heading size="4" mb="4">
@@ -199,6 +228,20 @@ export const Example = () => {
                     <Text size="2">
                       Content to render when image fails to load.
                     </Text>
+                  </Table.Cell>
+                </Table.Row>
+                <Table.Row>
+                  <Table.Cell>
+                    <Code>color</Code>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Text size="2">PittoricaColor</Text>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Text size="2">'indigo'</Text>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Text size="2">The semantic color of the fallback.</Text>
                   </Table.Cell>
                 </Table.Row>
                 <Table.Row>

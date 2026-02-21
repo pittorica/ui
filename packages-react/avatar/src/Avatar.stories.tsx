@@ -1,3 +1,4 @@
+import { Flex } from '@pittorica/flex-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Avatar } from './Avatar';
@@ -16,6 +17,21 @@ const meta = {
       control: 'select',
       options: ['none', 'small', 'medium', 'large', 'full'],
       description: 'The border radius of the avatar',
+    },
+    color: {
+      control: 'select',
+      options: [
+        'indigo',
+        'red',
+        'teal',
+        'amber',
+        'slate',
+        'orange',
+        'purple',
+        'pink',
+        'gray',
+      ],
+      description: 'The semantic color of the fallback',
     },
     src: {
       control: 'text',
@@ -48,18 +64,18 @@ export const WithFallbackInitials: Story = {
   },
 };
 
-export const AutomaticFallback: Story = {
-  args: {
-    alt: 'John Doe',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          'If no fallback is provided, the first letter of the alt text is used.',
-      },
-    },
-  },
+export const AllColors: Story = {
+  render: (args) => (
+    <Flex gap="4" align="center">
+      <Avatar {...args} color="indigo" fallback="I" />
+      <Avatar {...args} color="crimson" fallback="C" />
+      <Avatar {...args} color="teal" fallback="T" />
+      <Avatar {...args} color="orange" fallback="O" />
+      <Avatar {...args} color="purple" fallback="P" />
+      <Avatar {...args} color="pink" fallback="P" />
+      <Avatar {...args} color="gray" fallback="G" />
+    </Flex>
+  ),
 };
 
 export const Sizes: Story = {
@@ -91,12 +107,5 @@ export const BrokenImage: Story = {
     src: 'https://broken.link/image.jpg',
     alt: 'Broken Image',
     fallback: 'BI',
-  },
-  parameters: {
-    docs: {
-      description: {
-        story: 'Demonstrates behavior when the image source fails to load.',
-      },
-    },
   },
 };

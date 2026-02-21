@@ -3,6 +3,7 @@ import React, { type ElementType, useEffect, useState } from 'react';
 import { clsx } from 'clsx';
 
 import { Box, type BoxProps } from '@pittorica/box-react';
+import type { PittoricaColor } from '@pittorica/text-react';
 
 export type AvatarProps<E extends ElementType = 'div'> = BoxProps<E> & {
   src?: string;
@@ -12,6 +13,8 @@ export type AvatarProps<E extends ElementType = 'div'> = BoxProps<E> & {
   size?: '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
   /** @default 'full' */
   radius?: 'none' | 'small' | 'medium' | 'large' | 'full';
+  /** @default 'indigo' */
+  color?: PittoricaColor;
 };
 
 /**
@@ -24,6 +27,7 @@ export const Avatar = <E extends ElementType = 'div'>({
   fallback,
   size = '3',
   radius = 'full',
+  color = 'indigo',
   className,
   style,
   as,
@@ -62,22 +66,31 @@ export const Avatar = <E extends ElementType = 'div'>({
     '9': '160px',
   };
 
+  const isSemantic =
+    color !== 'inherit' && !color?.startsWith('#') && !color?.startsWith('rgb');
+
+  const resolvedBg = isSemantic ? `var(--pittorica-${color}-3)` : color;
+  const resolvedText = isSemantic ? `var(--pittorica-${color}-11)` : 'inherit';
+
   const finalSize = sizeMap[size];
   const Tag = as || 'div';
 
   return (
     <Box
-      /* Explicitly pass the polymorphic tag to Box */
       as={Tag as ElementType}
       className={clsx('pittorica-avatar', className)}
-      style={{
-        width: finalSize,
-        height: finalSize,
-        borderRadius:
-          radius === 'full' ? '50%' : `var(--pittorica-radius-${radius})`,
-        fontSize: `calc(${finalSize} / 2.5)`,
-        ...style,
-      }}
+      style={
+        {
+          width: finalSize,
+          height: finalSize,
+          borderRadius:
+            radius === 'full' ? '50%' : `var(--pittorica-radius-${radius})`,
+          fontSize: `calc(${finalSize} / 2.5)`,
+          '--_avatar-bg': resolvedBg,
+          '--_avatar-text': resolvedText,
+          ...style,
+        } as React.CSSProperties
+      }
       {...(props as BoxProps<E>)}
     >
       {status === 'loaded' && src ? (
