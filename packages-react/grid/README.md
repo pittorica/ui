@@ -11,8 +11,18 @@ npm install @pittorica/grid-react
 ## Usage
 
 ```jsx
-import { Grid } from '@pittorica/grid-react';
-// TODO: Add usage example
+import { Grid, Box } from '@pittorica/grid-react';
+
+function MyDashboard() {
+  return (
+    <Grid columns={{ initial: '1', md: '2', lg: '4' }} gap="4">
+      <Box>Widget 1</Box>
+      <Box>Widget 2</Box>
+      <Box>Widget 3</Box>
+      <Box>Widget 4</Box>
+    </Grid>
+  );
+}
 ```
 
 ## License
