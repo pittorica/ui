@@ -10,6 +10,7 @@ export default defineConfig([
     '**/.react-router/**',
     '**/*.hbs',
     'CHANGELOG.md',
+    '+++/.storybook/**',
   ]),
   spellbookx.configs.recommended,
 ]);
