@@ -1,8 +1,12 @@
+import { Em } from '@pittorica/em-react';
+import { Kbd } from '@pittorica/kbd-react';
+import { Link } from '@pittorica/link-react';
+import { Quote } from '@pittorica/quote-react';
+import { Strong } from '@pittorica/strong-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Text } from './Text';
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
   title: 'Typography/Text',
   component: Text,
@@ -59,8 +63,20 @@ export const Default: Story = {
   },
 };
 
+export const MixedTypography: Story = {
+  render: () => (
+    <Text as="p">
+      This is a paragraph with <Strong>strong text</Strong>, some{' '}
+      <Em>emphasized words</Em>, and an <Link href="#">inline link</Link>. You
+      can also include <Kbd>⌘ + K</Kbd> for shortcuts and a short{' '}
+      <Quote>inline quote</Quote> to highlight important snippets.
+    </Text>
+  ),
+};
+
 export const LargeText: Story = {
   args: {
+    size: '6',
     children: 'This is large text.',
   },
 };
@@ -76,7 +92,7 @@ export const CenteredText: Story = {
   args: {
     children: 'This text is centered.',
     align: 'center',
-    style: { width: '100%' }, // Ensure it has a width to center within
+    style: { width: '100%' },
   },
 };
 
@@ -93,12 +109,5 @@ export const ColoredText: Story = {
   args: {
     children: 'This text is red.',
     color: 'red',
-  },
-};
-
-export const CustomElementText: Story = {
-  args: {
-    children: 'This is text rendered as a paragraph.',
-    as: 'p',
   },
 };

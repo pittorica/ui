@@ -12,7 +12,14 @@ npm install @pittorica/kbd-react
 
 ```jsx
 import { Kbd } from '@pittorica/kbd-react';
-// TODO: Add usage example
+
+function ShortCuts() {
+  return (
+    <p>
+      Press <Kbd>⌘ + K</Kbd> to open the search bar.
+    </p>
+  );
+}
 ```
 
 ## License

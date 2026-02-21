@@ -6,6 +6,7 @@ import { Text, type TextProps } from '@pittorica/text-react';
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 type HeadingSize = '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9';
+export type HeadingVariant = 'classic' | 'soft' | 'outline';
 
 interface ResponsiveObject<T> {
   initial?: T;
@@ -31,6 +32,11 @@ export type HeadingProps<E extends ElementType = HeadingTag> = Omit<
    * @default '6'
    */
   size?: Responsive<HeadingSize>;
+  /**
+   * The visual style of the heading.
+   * @default 'classic'
+   */
+  variant?: HeadingVariant;
 };
 
 const getResponsiveClasses = (
@@ -59,20 +65,42 @@ export const Heading = <E extends ElementType = 'h1'>({
   as,
   size = '6',
   weight = 'bold',
+  variant = 'classic',
+  color,
   className,
+  style,
   ...rest
 }: HeadingProps<E>) => {
   const sizeClasses = getResponsiveClasses('size', size);
   const Tag = as || 'h1';
 
+  const isSemantic =
+    color &&
+    color !== 'inherit' &&
+    !color.startsWith('#') &&
+    !color.startsWith('rgb');
+
+  const headingVariables = {
+    ...(variant === 'soft' &&
+      isSemantic && {
+        '--pittorica-source-3': `var(--pittorica-${color}-3)`,
+        '--pittorica-source-11': `var(--pittorica-${color}-11)`,
+      }),
+    ...(variant === 'outline' &&
+      isSemantic && {
+        '--pittorica-source-9': `var(--pittorica-${color}-9)`,
+      }),
+    ...style,
+  } as React.CSSProperties;
+
   return (
     <Text
-      /* Logic: Explicitly cast 'as' to ElementType to align the generic E
-         of Heading with the generic E of Text. This resolves the Ref mismatch.
-      */
       as={Tag as ElementType}
       weight={weight}
       className={clsx('pittorica-heading', sizeClasses, className)}
+      data-variant={variant}
+      style={headingVariables}
+      color={color}
       {...(rest as TextProps<E>)}
     >
       {children}

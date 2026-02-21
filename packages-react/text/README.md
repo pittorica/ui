@@ -12,7 +12,14 @@ npm install @pittorica/text-react
 
 ```jsx
 import { Text } from '@pittorica/text-react';
-// TODO: Add usage example
+
+function MyComponent() {
+  return (
+    <Text size="3" weight="bold" color="indigo">
+      Hello World
+    </Text>
+  );
+}
 ```
 
 ## License

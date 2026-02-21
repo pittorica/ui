@@ -12,7 +12,19 @@ npm install @pittorica/heading-react
 
 ```jsx
 import { Heading } from '@pittorica/heading-react';
-// TODO: Add usage example
+
+function MyPage() {
+  return (
+    <>
+      <Heading as="h1" size="9">
+        Main Title
+      </Heading>
+      <Heading as="h2" size="7">
+        Subtitle
+      </Heading>
+    </>
+  );
+}
 ```
 
 ## License

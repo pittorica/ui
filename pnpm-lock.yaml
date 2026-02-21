@@ -2808,6 +2808,21 @@ importers:
         specifier: '>=19'
         version: 19.2.4(react@19.2.4)
     devDependencies:
+      '@pittorica/em-react':
+        specifier: ^0.25.0
+        version: 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/kbd-react':
+        specifier: ^0.25.0
+        version: 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/link-react':
+        specifier: ^0.25.0
+        version: 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/quote-react':
+        specifier: ^0.25.0
+        version: 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/strong-react':
+        specifier: ^0.25.0
+        version: 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@pittorica/theme-react':
         specifier: workspace:*
         version: link:../theme
@@ -5416,10 +5431,55 @@ packages:
       react: '>=19'
       react-dom: '>=19'
 
+  '@pittorica/em-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-eIDWVc4MGmH9hhXk3D7oFt55y+9tu47V9hb1mU9iiIXqgH5ERzX6Muhz/gvDVfTPqur/w4elFczm5JRg61XQfQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
   '@pittorica/flex-react@0.25.0':
     resolution:
       {
         integrity: sha512-Q747Q2OSL2AlZ/EFG2p99t9clJNmX1kZQg59L+nHQlb5wI+IoTRe2wTfh86Hl3hc9847UKCHeH0fxeVssNV8BQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/kbd-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-LkMf89QmLp7sWKtLPFzRFabA9x7+Jwd1qGBt7TfFnto+VCqpdi4A98Ih+WE3Wp1X89lWgP3qX9K/5fzGDZ7B7w==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/link-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-Ar2bnjzT88ifUu3Ml+7eihRMKRh/BiXacp1Iv70bpnGILsJKAOf8LArW4hwBJ+DlxdWuXJBB4KF+xR0Oq6LFlA==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/quote-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-LJe2mWXF3f0RTliEjgYijt4KWqd6ugqOQss+pMQizVXvGZfSSgEYGA4wX/QNDh21/7FwN4xpBCuaQove5C4sAw==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/strong-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-Ey4fmrXAgMegMJWMIK7vlmS3ZUWT5H0zPbUQixRdC2zqgv2g1mqkfxyxJ0Ooi9k/aZlM1XPERcfz84K2l7G/Vg==,
       }
     peerDependencies:
       react: '>=19'
@@ -15497,9 +15557,44 @@ snapshots:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
+  '@pittorica/em-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
   '@pittorica/flex-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/kbd-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/link-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/quote-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/strong-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/text-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       clsx: 2.1.1
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)

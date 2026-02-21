@@ -1,11 +1,8 @@
+import { PittoricaTheme } from '@pittorica/theme-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Heading } from './Heading';
 
-/**
- * Heading component for titles.
- * Supports Radix-like responsive size scaling via CSS media queries.
- */
 const meta = {
   title: 'Typography/Heading',
   component: Heading,
@@ -18,7 +15,7 @@ const meta = {
       table: { defaultValue: { summary: 'h1' } },
     },
     size: {
-      control: 'object', // Changed to object to support responsive syntax
+      control: 'object',
       description:
         'Responsive size from 1 to 9. Can be a string or a breakpoint object.',
       table: { defaultValue: { summary: '6' } },
@@ -54,11 +51,10 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-// Default Stories match the current visual styles
 export const H1Default: Story = {
   args: {
     as: 'h1',
-    size: '9', // Explicitly setting the largest size for H1
+    size: '9',
     children: 'Heading Level 1 (H1)',
   },
 };
@@ -79,7 +75,6 @@ export const H3Default: Story = {
   },
 };
 
-// New Responsive Example
 export const ResponsiveSize: Story = {
   args: {
     as: 'h1',
@@ -99,7 +94,25 @@ export const CustomWeight: Story = {
 export const ColoredHeading: Story = {
   args: {
     as: 'h3',
-    color: 'crimson', // Using one of the specific semantic colors
+    color: 'crimson',
     children: 'Crimson H3 Heading',
   },
+};
+
+export const DarkMode: Story = {
+  render: () => (
+    <PittoricaTheme
+      appearance="dark"
+      style={{
+        padding: '2rem',
+        background: 'var(--pittorica-surface-0)',
+        borderRadius: '8px',
+      }}
+    >
+      <Heading size="9">Dark Mode Heading</Heading>
+      <Heading size="6" color="teal">
+        Teal Dark Heading
+      </Heading>
+    </PittoricaTheme>
+  ),
 };

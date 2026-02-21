@@ -16,7 +16,7 @@ export const Link = <E extends ElementType = 'a'>({
   underline = 'hover',
   className,
   style,
-  color = 'indigo',
+  color, // Default handled by CSS or inherited if not provided
   as,
   ...props
 }: LinkProps<E>) => {
@@ -24,7 +24,6 @@ export const Link = <E extends ElementType = 'a'>({
 
   return (
     <Text
-      /* Pass the polymorphic tag and cast props for type alignment */
       as={Tag as ElementType}
       className={clsx(
         'pittorica-link',
@@ -32,11 +31,7 @@ export const Link = <E extends ElementType = 'a'>({
         className
       )}
       color={color}
-      style={{
-        textDecoration: underline === 'always' ? 'underline' : 'none',
-        cursor: 'pointer',
-        ...style,
-      }}
+      style={style}
       {...(props as TextProps<E>)}
     />
   );

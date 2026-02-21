@@ -8,6 +8,21 @@
     color: inherit;
   }
 
+  /* --- Variants --- */
+
+  .pittorica-heading[data-variant='soft'] {
+    color: var(--pittorica-source-11);
+    background-color: var(--pittorica-source-3);
+    padding: var(--pittorica-space-1) var(--pittorica-space-3);
+    border-radius: var(--pittorica-radius-2);
+    display: inline-block;
+  }
+
+  .pittorica-heading[data-variant='outline'] {
+    -webkit-text-stroke: 1px var(--pittorica-source-9);
+    color: transparent;
+  }
+
   /* --- Helper Mixin Logic (Initial) --- */
   .pittorica-heading--size-1 {
     --pittorica-heading-lh: var(--pittorica-line-height-1);
@@ -46,7 +61,8 @@
     font-size: var(--pittorica-font-size-9);
   }
 
-  /* --- Breakpoint: XS (520px) --- */
+  /* --- Breakpoints (XS, SM, MD, LG, XL) remain the same --- */
+  /* (Skipping full repetition for brevity but keeping implementation consistent) */
   @media (min-width: 520px) {
     .pittorica-heading--xs-size-1 {
       font-size: var(--pittorica-font-size-1);
@@ -86,7 +102,6 @@
     }
   }
 
-  /* --- Breakpoint: SM (768px) --- */
   @media (min-width: 768px) {
     .pittorica-heading--sm-size-1 {
       font-size: var(--pittorica-font-size-1);
@@ -126,7 +141,6 @@
     }
   }
 
-  /* --- Breakpoint: MD (1024px) --- */
   @media (min-width: 1024px) {
     .pittorica-heading--md-size-1 {
       font-size: var(--pittorica-font-size-1);
@@ -166,7 +180,6 @@
     }
   }
 
-  /* --- Breakpoint: LG (1280px) --- */
   @media (min-width: 1280px) {
     .pittorica-heading--lg-size-1 {
       font-size: var(--pittorica-font-size-1);
@@ -206,7 +219,6 @@
     }
   }
 
-  /* --- Breakpoint: XL (1640px) --- */
   @media (min-width: 1640px) {
     .pittorica-heading--xl-size-1 {
       font-size: var(--pittorica-font-size-1);

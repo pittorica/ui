@@ -12,7 +12,14 @@ npm install @pittorica/em-react
 
 ```jsx
 import { Em } from '@pittorica/em-react';
-// TODO: Add usage example
+
+function MyComponent() {
+  return (
+    <p>
+      This is a <Em>very important</Em> message.
+    </p>
+  );
+}
 ```
 
 ## License

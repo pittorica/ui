@@ -12,7 +12,14 @@ npm install @pittorica/strong-react
 
 ```jsx
 import { Strong } from '@pittorica/strong-react';
-// TODO: Add usage example
+
+function MyComponent() {
+  return (
+    <p>
+      This is <Strong>very important</Strong> information.
+    </p>
+  );
+}
 ```
 
 ## License

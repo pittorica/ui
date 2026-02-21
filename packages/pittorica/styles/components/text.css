@@ -27,6 +27,14 @@
     font-weight: 700;
   }
 
+  .pittorica-em {
+    font-style: italic;
+  }
+
+  .pittorica-strong {
+    font-weight: 700;
+  }
+
   /* --- Initial / Base Sizes --- */
   .pittorica-text--size-1 {
     font-size: var(--pittorica-font-size-1);

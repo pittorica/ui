@@ -1,0 +1,20 @@
+@layer pittorica-components {
+  .pittorica-quote {
+    font-style: italic;
+    color: var(--pittorica-slate-11);
+  }
+
+  .pittorica-quote::before {
+    content: open-quote;
+  }
+
+  .pittorica-quote::after {
+    content: close-quote;
+  }
+
+  .pittorica-theme[data-appearance='dark'] .pittorica-quote {
+    color: var(
+      --pittorica-slate-11
+    ); /* slate-11 is already corrected for dark mode */
+  }
+}

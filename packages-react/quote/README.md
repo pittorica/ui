@@ -12,7 +12,14 @@ npm install @pittorica/quote-react
 
 ```jsx
 import { Quote } from '@pittorica/quote-react';
-// TODO: Add usage example
+
+function MyText() {
+  return (
+    <p>
+      As they say, <Quote>less is more</Quote>.
+    </p>
+  );
+}
 ```
 
 ## License

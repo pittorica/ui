@@ -12,7 +12,14 @@ npm install @pittorica/link-react
 
 ```jsx
 import { Link } from '@pittorica/link-react';
-// TODO: Add usage example
+
+function MyLink() {
+  return (
+    <Link href="https://pittorica.dcdavidev.me" target="_blank">
+      Documentation
+    </Link>
+  );
+}
 ```
 
 ## License
