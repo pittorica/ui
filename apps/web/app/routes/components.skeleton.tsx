@@ -88,6 +88,35 @@ export const Example = () => {
           </Card>
         </Section>
 
+        {/* Dark Mode Preview */}
+        <Section>
+          <Heading size="4" mb="4">
+            Dark Mode Preview
+          </Heading>
+          <Card
+            variant="outlined"
+            p="9"
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 32,
+              backgroundColor: 'var(--pittorica-black)',
+              color: 'var(--pittorica-white)',
+            }}
+          >
+            <Box>
+              <Flex align="center" gap="4">
+                <Skeleton variant="circle" width="48px" height="48px" />
+                <Box style={{ flexGrow: 1 }}>
+                  <Skeleton variant="text" mb="2" width="40%" />
+                  <Skeleton variant="text" width="80%" />
+                </Box>
+              </Flex>
+            </Box>
+            <Skeleton variant="rect" height="100px" />
+          </Card>
+        </Section>
+
         {/* Implementation Code */}
         <Box mb="9">
           <Heading size="4" mb="4">

@@ -11,8 +11,21 @@ npm install @pittorica/skeleton-react
 ## Usage
 
 ```jsx
-import { Skeleton } from '@pittorica/skeleton-react';
-// TODO: Add usage example
+import { Skeleton, Flex, Box } from '@pittorica/skeleton-react';
+
+function MyComponent({ loading }) {
+  return (
+    <Flex align="center" gap="3">
+      <Skeleton loading={loading} variant="circle" width={48} height={48}>
+        <img src="avatar.png" alt="User" />
+      </Skeleton>
+      <Box width={150}>
+        <Skeleton loading={loading} variant="text" mb="1" />
+        <Skeleton loading={loading} variant="text" width="60%" />
+      </Box>
+    </Flex>
+  );
+}
 ```
 
 ## License

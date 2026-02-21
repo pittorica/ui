@@ -18,10 +18,29 @@
     background: linear-gradient(
       90deg,
       transparent,
-      color-mix(in srgb, var(--pittorica-source-9) 12%, transparent),
+      rgba(255, 255, 255, 0.08),
       transparent
     );
     animation: pittorica-skeleton-shimmer 2s infinite linear;
+  }
+
+  /* Dark mode specific visibility improvements */
+  .pittorica-theme[data-appearance='dark'] .pittorica-skeleton {
+    background-color: var(--pittorica-slate-4);
+  }
+
+  .pittorica-theme[data-appearance='dark'] .pittorica-skeleton--loading::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+  }
+
+  .pittorica-theme[data-appearance='dark'] .pittorica-skeleton--loading {
+    animation: pittorica-skeleton-pulse-dark 2s cubic-bezier(0.4, 0, 0.6, 1)
+      infinite;
   }
 
   @keyframes pittorica-skeleton-shimmer {
@@ -41,6 +60,16 @@
     }
     50% {
       background-color: var(--pittorica-slate-4);
+    }
+  }
+
+  @keyframes pittorica-skeleton-pulse-dark {
+    0%,
+    100% {
+      background-color: var(--pittorica-slate-4);
+    }
+    50% {
+      background-color: var(--pittorica-slate-5);
     }
   }
 

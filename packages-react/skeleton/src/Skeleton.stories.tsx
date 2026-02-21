@@ -1,6 +1,7 @@
 import { Box } from '@pittorica/box-react';
 import { Flex } from '@pittorica/flex-react';
 import { Text } from '@pittorica/text-react';
+import { PittoricaTheme } from '@pittorica/theme-react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { Skeleton } from './Skeleton';
@@ -13,7 +14,9 @@ const meta = {
 
 export default meta;
 
-export const Basic: StoryObj = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   render: () => (
     <Flex direction="column" gap="3" width="300px">
       <Skeleton variant="text" width="60%" />
@@ -24,7 +27,27 @@ export const Basic: StoryObj = {
   ),
 };
 
-export const AvatarExample: StoryObj = {
+export const DarkMode: Story = {
+  render: () => (
+    <PittoricaTheme
+      appearance="dark"
+      style={{
+        padding: '2rem',
+        background: 'var(--pittorica-surface-0)',
+        borderRadius: '8px',
+      }}
+    >
+      <Flex direction="column" gap="3" width="300px">
+        <Skeleton variant="text" width="60%" />
+        <Skeleton variant="rect" height="150px" />
+        <Skeleton variant="text" />
+        <Skeleton variant="text" width="80%" />
+      </Flex>
+    </PittoricaTheme>
+  ),
+};
+
+export const AvatarExample: Story = {
   render: () => (
     <Flex align="center" gap="3">
       <Skeleton variant="circle" width="48px" height="48px" />
@@ -36,7 +59,7 @@ export const AvatarExample: StoryObj = {
   ),
 };
 
-export const WrappingChildren: StoryObj = {
+export const WrappingChildren: Story = {
   render: () => (
     <Box
       p="4"
