@@ -4,20 +4,7 @@
 @import './reset.css' layer(pittorica-reset);
 
 /* Colors */
-@import './colors/base.css' layer(pittorica-tokens);
-@import './colors/source.css' layer(pittorica-tokens);
-@import './colors/info.css' layer(pittorica-tokens);
-@import './colors/success.css' layer(pittorica-tokens);
-@import './colors/warning.css' layer(pittorica-tokens);
-@import './colors/danger.css' layer(pittorica-tokens);
-@import './colors/surface.css' layer(pittorica-tokens);
-@import './colors/slate.css' layer(pittorica-tokens);
-@import './colors/indigo.css' layer(pittorica-tokens);
-@import './colors/crimson.css' layer(pittorica-tokens);
-@import './colors/red.css' layer(pittorica-tokens);
-@import './colors/teal.css' layer(pittorica-tokens);
-@import './colors/amber.css' layer(pittorica-tokens);
-@import './colors/blue.css' layer(pittorica-tokens);
+@import './colors.css' layer(pittorica-tokens);
 
 @import './fonts.css' layer(pittorica-tokens);
 @import './breakpoints.css' layer(pittorica-tokens);
@@ -29,63 +16,5 @@
 /* Base styles assigned to a layer to prevent specificity conflicts with components */
 @import './base.css' layer(pittorica-base);
 
-/* Layout foundation components */
-@import './components/box.css' layer(pittorica-components);
-@import './components/flex.css' layer(pittorica-components);
-@import './components/grid.css' layer(pittorica-components);
-@import './components/container.css' layer(pittorica-components);
-@import './components/section.css' layer(pittorica-components);
-@import './components/inset.css' layer(pittorica-components);
-
-/* Typography - Text must load before Heading to ensure correct inheritance */
-@import './components/text.css' layer(pittorica-components);
-@import './components/heading.css' layer(pittorica-components);
-@import './components/kbd.css' layer(pittorica-components);
-
-/* Interactive Elements */
-@import './components/button.css' layer(pittorica-components);
-@import './components/icon-button.css' layer(pittorica-components);
-@import './components/checkbox.css' layer(pittorica-components);
-@import './components/radio.css' layer(pittorica-components);
-@import './components/switch.css' layer(pittorica-components);
-@import './components/select.css' layer(pittorica-components);
-@import './components/slider.css' layer(pittorica-components);
-@import './components/text-field.css' layer(pittorica-components);
-@import './components/text-area.css' layer(pittorica-components);
-
-/* Feedback & Overlays */
-@import './components/skeleton.css' layer(pittorica-components);
-@import './components/badge.css' layer(pittorica-components);
-@import './components/callout.css' layer(pittorica-components);
-@import './components/progress.css' layer(pittorica-components);
-@import './components/toast.css' layer(pittorica-components);
-@import './components/tooltip.css' layer(pittorica-components);
-@import './components/popover.css' layer(pittorica-components);
-@import './components/dialog.css' layer(pittorica-components);
-@import './components/alert-dialog.css' layer(pittorica-components);
-@import './components/sheet.css' layer(pittorica-components);
-
-/* Data Structures */
-@import './components/card.css' layer(pittorica-components);
-@import './components/table.css' layer(pittorica-components);
-@import './components/data-list.css' layer(pittorica-components);
-@import './components/divider.css' layer(pittorica-components);
-
-/* Menus & Navigation */
-@import './components/dropdown-menu.css' layer(pittorica-components);
-@import './components/context-menu.css' layer(pittorica-components);
-@import './components/tabs.css' layer(pittorica-components);
-@import './components/segmented-control.css' layer(pittorica-components);
-
-/* Layout & Media Utilities */
-@import './components/aspect-ratio.css' layer(pittorica-components);
-@import './components/avatar.css' layer(pittorica-components);
-@import './components/carousel.css' layer(pittorica-components);
-@import './components/chip.css' layer(pittorica-components);
-
-/* Grouping & Composite Components */
-@import './components/checkbox-group.css' layer(pittorica-components);
-@import './components/checkbox-card.css' layer(pittorica-components);
-@import './components/radio-group.css' layer(pittorica-components);
-@import './components/radio-card.css' layer(pittorica-components);
-@import './components/hover-card.css' layer(pittorica-components);
+/* Components */
+@import './components.css' layer(pittorica-components);
