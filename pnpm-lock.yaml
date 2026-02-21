@@ -287,6 +287,12 @@ importers:
         specifier: '>=19'
         version: 19.2.4(react@19.2.4)
     devDependencies:
+      '@pittorica/flex-react':
+        specifier: ^0.25.0
+        version: 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@pittorica/text-react':
+        specifier: ^0.25.0
+        version: 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@pittorica/theme-react':
         specifier: workspace:*
         version: link:../theme
@@ -5411,6 +5417,15 @@ packages:
     resolution:
       {
         integrity: sha512-Q747Q2OSL2AlZ/EFG2p99t9clJNmX1kZQg59L+nHQlb5wI+IoTRe2wTfh86Hl3hc9847UKCHeH0fxeVssNV8BQ==,
+      }
+    peerDependencies:
+      react: '>=19'
+      react-dom: '>=19'
+
+  '@pittorica/text-react@0.25.0':
+    resolution:
+      {
+        integrity: sha512-D6tg/LwPX5XeZPIWX7pBDdCMRq/14QX5tQm61GNDzBOqe2KK+I1A6bT+hplXvu/WXVOSj35KtMS//kwRgksM6Q==,
       }
     peerDependencies:
       react: '>=19'
@@ -15480,6 +15495,13 @@ snapshots:
       react-dom: 19.2.4(react@19.2.4)
 
   '@pittorica/flex-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+
+  '@pittorica/text-react@0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@pittorica/box-react': 0.25.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       clsx: 2.1.1

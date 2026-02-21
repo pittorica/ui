@@ -5,6 +5,7 @@ import {
   Code,
   Container,
   Flex,
+  Grid,
   Heading,
   Section,
   Table,
@@ -82,6 +83,48 @@ export const Example = () => {
               </AspectRatio>
             </Box>
           </Card>
+        </Section>
+
+        {/* Common Ratios */}
+        <Section>
+          <Heading size="4" mb="4">
+            Common Ratios
+          </Heading>
+          <Grid columns="3" gap="4">
+            <Box>
+              <Text size="2" mb="2" color="gray">
+                16:9 (Video)
+              </Text>
+              <AspectRatio
+                ratio={16 / 9}
+                style={{ borderRadius: 8, overflow: 'hidden' }}
+              >
+                <img src="https://picsum.photos/id/10/400/300" alt="16:9" />
+              </AspectRatio>
+            </Box>
+            <Box>
+              <Text size="2" mb="2" color="gray">
+                4:3 (Classic)
+              </Text>
+              <AspectRatio
+                ratio={4 / 3}
+                style={{ borderRadius: 8, overflow: 'hidden' }}
+              >
+                <img src="https://picsum.photos/id/20/400/300" alt="4:3" />
+              </AspectRatio>
+            </Box>
+            <Box>
+              <Text size="2" mb="2" color="gray">
+                1:1 (Square)
+              </Text>
+              <AspectRatio
+                ratio={1}
+                style={{ borderRadius: 8, overflow: 'hidden' }}
+              >
+                <img src="https://picsum.photos/id/30/400/300" alt="1:1" />
+              </AspectRatio>
+            </Box>
+          </Grid>
         </Section>
 
         {/* Implementation Code */}
