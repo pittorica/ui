@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { Button } from '@pittorica/button-react';
+import { PittoricaTheme } from '@pittorica/theme-react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { expect, fn, userEvent, within } from '@storybook/test';
 
@@ -13,6 +14,7 @@ import {
 
 const meta = {
   title: 'Feedback/AlertDialog',
+  args: { onClick: fn() },
   component: AlertDialog,
   parameters: {
     layout: 'centered',
@@ -67,9 +69,48 @@ export const Destructive: Story = {
   },
 };
 
+export const Dark: Story = {
+  render: (args) => {
+    const [open, setOpen] = useState(false);
+
+    const handleClose = () => {
+      setOpen(false);
+      args.onClose?.();
+    };
+
+    return (
+      <PittoricaTheme
+        appearance="dark"
+        style={{
+          padding: '2rem',
+          background: 'var(--pittorica-surface-0)',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <Button variant="tonal" onClick={() => setOpen(true)}>
+          Open Dark AlertDialog
+        </Button>
+
+        <AlertDialog {...args} open={open} onClose={handleClose}>
+          <AlertDialogTitle>Dark Theme Alert</AlertDialogTitle>
+          <AlertDialogDescription>
+            This alert dialog demonstrates the dark theme appearance. The
+            overlay and content adapt to the dark color scheme.
+          </AlertDialogDescription>
+          <AlertDialogActions>
+            <Button variant="filled" onClick={handleClose}>
+              Close
+            </Button>
+          </AlertDialogActions>
+        </AlertDialog>
+      </PittoricaTheme>
+    );
+  },
+};
+
 export const ForcedInteraction: Story = {
   args: {
-    onClick: fn(),
     closeOnOverlayClick: false,
     closeOnEsc: false,
   },

@@ -18,6 +18,7 @@ import { clsx } from 'clsx';
 
 import { Box, type BoxProps } from '@pittorica/box-react';
 import { Heading } from '@pittorica/heading-react';
+import { PittoricaTheme } from '@pittorica/theme-react';
 
 /* --- Types --- */
 
@@ -125,27 +126,28 @@ export const Dialog = <E extends ElementType = 'div'>({
       <div ref={anchorRef} style={{ display: 'none' }} aria-hidden="true" />
       {createPortal(
         <div
-          className="pittorica-dialog-overlay pittorica-theme"
+          className="pittorica-dialog-overlay"
           onClick={closeOnOverlayClick ? onClose : undefined}
-          data-appearance={finalAppearance}
           aria-hidden="true"
         >
-          <FocusLock returnFocus={true}>
-            <Box
-              as={Tag as ElementType}
-              className={clsx('pittorica-dialog-content', className)}
-              onClick={(e: MouseEvent<HTMLElement>) => e.stopPropagation()}
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby={titleId}
-              aria-describedby={descriptionId}
-              {...(props as BoxProps<E>)}
-            >
-              <DialogContext value={{ titleId, descriptionId }}>
-                {children}
-              </DialogContext>
-            </Box>
-          </FocusLock>
+          <PittoricaTheme appearance={finalAppearance}>
+            <FocusLock returnFocus={true}>
+              <Box
+                as={Tag as ElementType}
+                className={clsx('pittorica-dialog-content', className)}
+                onClick={(e: MouseEvent<HTMLElement>) => e.stopPropagation()}
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby={titleId}
+                aria-describedby={descriptionId}
+                {...(props as BoxProps<E>)}
+              >
+                <DialogContext value={{ titleId, descriptionId }}>
+                  {children}
+                </DialogContext>
+              </Box>
+            </FocusLock>
+          </PittoricaTheme>
         </div>,
         document.body
       )}

@@ -95,6 +95,12 @@
 
     --pittorica-on-surface-0: var(--pittorica-white);
     --pittorica-on-surface-1: var(--pittorica-white);
+    --pittorica-on-surface-2: var(--pittorica-white);
+    --pittorica-on-surface-3: var(--pittorica-white);
+    --pittorica-on-surface-4: var(--pittorica-white);
+    --pittorica-on-surface-5: var(--pittorica-white);
+    --pittorica-on-surface-6: var(--pittorica-white);
+    --pittorica-on-surface-7: var(--pittorica-white);
     --pittorica-on-surface-8: var(--pittorica-black);
     --pittorica-on-surface-9: var(--pittorica-black);
   }

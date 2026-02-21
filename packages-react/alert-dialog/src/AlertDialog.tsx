@@ -18,6 +18,7 @@ import { createPortal } from 'react-dom';
 import { clsx } from 'clsx';
 
 import { Box } from '@pittorica/box-react';
+import { PittoricaTheme } from '@pittorica/theme-react';
 
 /* --- Internal Types --- */
 
@@ -142,24 +143,22 @@ export const AlertDialog = ({
       <div ref={anchorRef} style={{ display: 'none' }} aria-hidden="true" />
       {createPortal(
         <div
-          className={clsx('pittorica-alert-dialog-portal pittorica-theme')}
-          data-appearance={finalAppearance}
+          className={clsx('pittorica-alert-dialog-portal')}
+          onClick={closeOnOverlayClick ? onClose : undefined}
         >
-          <div
-            className="pittorica-alert-dialog-overlay"
-            onClick={closeOnOverlayClick ? onClose : undefined}
-            aria-hidden="true"
-          />
+          <div className="pittorica-alert-dialog-overlay" aria-hidden="true" />
 
-          <Box
-            className={clsx('pittorica-alert-dialog-content', className)}
-            role="alertdialog"
-            aria-modal="true"
-            aria-labelledby={titleId}
-            onClick={(e) => e.stopPropagation()}
-          >
-            {children}
-          </Box>
+          <PittoricaTheme appearance={finalAppearance}>
+            <Box
+              className={clsx('pittorica-alert-dialog-content', className)}
+              role="alertdialog"
+              aria-modal="true"
+              aria-labelledby={titleId}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {children}
+            </Box>
+          </PittoricaTheme>
         </div>,
         document.body
       )}
